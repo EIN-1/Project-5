@@ -29,9 +29,24 @@
     {% endblock %}
 
     <title>Technical Skills {% block extra_title %}{% endblock %}</title>
+     <!-- Favicon -->
+     <link rel="icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
   </head>
-  <body>
-    <h1>hello </h1>
+  <body class="d-flex flex-column min-vh-100">
+    <h1>hello world</h1>
+
+    {% if messages %}
+        <div class="message-container"></div>
+    {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block postloadjs %}
+    {% endblock %}
   
   </body>
 </html>
