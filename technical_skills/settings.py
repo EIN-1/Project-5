@@ -39,14 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-     # i have just installed this -------will check it out with assistance later because of the version
-    'django.contrib.sites', # .sites will be removed if necessarly because of version issues 
+    'django.contrib.sites',
 
     'allauth',
     'allauth.account',
-
-    # Optional -- requires install using `django-allauth[socialaccount]`.
     'allauth.socialaccount',
     'home',
 ]
@@ -119,7 +115,7 @@ WSGI_APPLICATION = 'technical_skills.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -161,8 +157,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+os.path.join(BASE_DIR, 'db.sqlite3'),
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
