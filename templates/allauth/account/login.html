@@ -5,9 +5,9 @@
     {% trans "Sign In" %}
 {% endblock head_title %}
 {% block content %}
-    {% element h1 %}
-        {% trans "Sign In" %}
-    {% endelement %}
+
+<h1>{% trans "Sign In" %}</h1>
+
     {% if not SOCIALACCOUNT_ONLY %}
         {% setvar link %}
             <a href="{{ signup_url }}">
@@ -15,9 +15,10 @@
             {% setvar end_link %}
             </a>
         {% endsetvar %}
-        {% element p %}
-            {% blocktranslate %}If you have not created an account yet, then please {{ link }}sign up{{ end_link }} first.{% endblocktranslate %}
-        {% endelement %}
+
+<p>{% blocktranslate %}If you have not created an account yet, then please 
+    <a href="{{ signup_url}}">sign up</a> {{ site_name }} first.{% endblocktranslate %}</p>
+
         {% url 'account_login' as login_url %}
         {% element form form=form method="post" action=login_url tags="entrance,login" %}
             {% slot body %}

@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-xxl navbar-expand-lg navbar-light container">
+    <div class="col">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">    
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="topnav" class=" collapse navbar-collapse pt-lg-2 d-none d-lg-flex">
+            <div class="col-12 col-lg-3 my-auto py-1 py-lg-2 text-lg-left" id="topnav">
+                
+                <!-- Logo on the left -->
+                <a class="navbar-brand" href="{% url 'home' %}"> Technical Skills</a>
+                
+                <li class="list-inline-item dropdown px-3">
+                    <a class="text-primary nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="text-center">
+                            <div><i class="fas fa-book fa-lg"></i></div>
+                            <p class="my-0">Categories</p>
+                        </div>
+                    </a>
+                </li>
+            </div>
+
+            <div class="col-12 col-lg-6 my-auto py-1 py-lg-2 text-center">
+                <form method="GET" action="">
+                    <div class="input-group w-100">
+                        <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search for courses">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-primary border border-black rounded-0" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-12 col-lg-3 my-auto py-1 py-lg-2 text-lg-right">
+                <ul class="list-inline list-unstyled text-center text-lg-center my-0">
+                    <li class="list-inline-item px-3">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-primary{% endif %} nav-link" href="">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                        ${{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        $0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li class="list-inline-item dropdown px-3">
+                        <a class="text-primary nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>   
+            </div>
+        </div>
+    </div> 
+</nav> 

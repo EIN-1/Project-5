@@ -41,66 +41,27 @@
      <link rel="icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
   </head>
   <body class="d-flex flex-column min-vh-100">
-    <header class="container-fluid fixed-top">
-      <div id="delivery-banner" class="row text-center">
-            <div class="col bg-success text-white">
-                <h4 class="logo-font my-2"> <strong>Ready to learn a new skill?</strong> Join Technical Skills to brighten your horizons and we offer a 
-                <bold>70% discount $ </bold>on the first day of the month. {{ discount_threshold }}</h4>                
-            </div>            
+    {% include 'includes/topbanner.html' %}
+    {% include 'includes/navbar.html' %} 
+    
+
+    <nav class="navbar navbar-expand-lg container-fluid container-fluid d-flex align-items-center text-center justify-content-center bg-primary text-black ">
+        <div class="container-fluid d-flex align-items-center text-center">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {% include 'includes/main-navbar.html' %}
+            {% include 'includes/mobile-top-header.html' %}
         </div>
-      <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-              <a href="{% url 'home' %}" class="nav-link main-logo-link">
-              <!-- Logo on the left -->
-              <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'image/logo.jpg' %}" height="30" width="52" alt="Technical Skills logo"></a>
-                  <h2 class="logo-font text-primary my-0"><strong>Technical</strong> Skills</h2>
-              </a>
-          </div>
-          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-              <form method="GET" action="">
-                  <div class="input-group w-100">
-                      <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search for courses">
-                      <div class="input-group-append">
-                          <button class="form-control btn btn-primary border border-black rounded-0" type="submit">
-                              <span class="icon">
-                                  <i class="fas fa-search"></i>
-                              </span>
-                          </button>
-                      </div>
-                  </div>
-              </form>
-          </div>
-          <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-              <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                  <li class="list-inline-item dropdown">
-                      <a class="text-primary nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <div class="text-center">
-                              <div><i class="fas fa-user fa-lg"></i></div>
-                              <p class="my-0">My Account</p>
-                          </div>
-                      </a>
-                  </li>
-                  <li class="list-inline-item">
-                      <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-primary{% endif %} nav-link" href="">
-                          <div class="text-center">
-                              <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                              <p class="my-0">
-                                  {% if grand_total %}
-                                      ${{ grand_total|floatformat:2 }}
-                                  {% else %}
-                                      $0.00
-                                  {% endif %}
-                              </p>
-                          </div>
-                      </a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </header>
+    </nav>
+
 
     {% if messages %}
-        <div class="message-container"></div>
+        {% include 'includes/main-navbar.html' %}
+        {% include 'includes/mobile-top-header.html' %}
+        <div class="message-container">
+           
+        </div>
     {% endif %}
 
     {% block page_header %}
