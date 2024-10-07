@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: white;
+    background: rgb(25, 71, 99);
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;

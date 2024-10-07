@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-0m3a^l+7=85^rcaw=x3y73j^rq3o)&(kv&m8vf05_e@4=el)l-
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-ein1-project5-nr7dxvb8jo2.ws-eu116.gitpod.io'
+    '8000-ein1-project5-nr7dxvb8jo2.ws-eu116.gitpod.io',
+    '8000-ein1-project5-9h1jd0p8cg6.ws.codeinstitute-ide.net',
+    'https://8000-ein1-project5-9h1jd0p8cg6.ws.codeinstitute-ide.net/'
+     
 ]
 
 
