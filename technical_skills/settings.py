@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'bootstrap5',
     'home',
+    'static',
+    'products',
+    'media',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -66,7 +69,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-     # Add the account middleware:
+
     "allauth.account.middleware.AccountMiddleware",
 ]
 
@@ -120,8 +123,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+         'PORT': '8000',  # or your database port
     }
-}
+    }
 
 
 # Password validation

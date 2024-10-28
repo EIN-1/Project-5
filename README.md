@@ -129,3 +129,6 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
+## Credits
+Formatting file csv to json ['https://csvjson.com/csv2json']

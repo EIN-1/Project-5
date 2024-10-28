@@ -1,0 +1,383 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+    "courseName": "2022 Complete Python Bootcamp From Zero to Hero in Python",
+    "instructor": "Jose Portilla",
+    "courseUrl": "https://www.udemy.com/courseName/complete-python-bootcamp/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/567828_67d0.jpg",
+    "description": "Learn Python like a Professional  Start from the basics and go all the way to creating your own applications and games",
+    "rating": 4.5,
+    "reviews":35768,
+    "duration": 22,
+    "lectures": 155,
+    "level": "All Levels",
+    "price": 319.99,
+    "flag": false,
+    "students": 1629692
+    }
+    
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+    "courseName": "The Web Developer Bootcamp 2022",
+    "instructor": "Colt Steele",
+    "courseUrl": "https://www.udemy.com/courseName/the-web-developer-bootcamp/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/625204_436a_3.jpg",
+    "description": "COMPLETELY REDONE - The only courseName you need to learn web development - HTML, CSS, JS, Node, and More!",
+    "rating": 4.7,
+    "reviews": 248508,
+    "duration": 64,
+    "lectures": 615,
+    "level": "All Levels",
+    "price": 269.99,
+    "flag": false,
+    "students": 830559
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+    "courseName": "The Complete 2022 Web Development Bootcamp",
+    "instructor": "Dr. Angela Yu",
+    "courseUrl": "https://www.udemy.com/courseName/the-complete-web-development-bootcamp/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/1565838_e54e_16.jpg",
+    "description": "Become a Full-Stack Web Developer with just ONE courseName. HTML, CSS, Javascript, Node, React, MongoDB, Web3 and DApps",
+    "rating": 4.7,
+    "reviews": 234837,
+    "duration": 65.5,
+    "lectures": 490,
+    "level": "All Levels",
+    "price": 349.99,
+    "flag": true,
+    "students": 794897
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+    "courseName": "Angular - The Complete Guide (2023 Edition)",
+    "instructor": "Maximilian Schwarzmüller",
+    "courseUrl": "https://www.udemy.com/courseName/the-complete-guide-to-angular-2/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/756150_c033_2.jpg",
+    "description": "Master Angular 14 (formerly \"Angular 2\") and build awesome, reactive web apps with the successor of Angular.js",
+    "rating": 4.5,
+    "reviews":35768,
+    "duration": 34.5,
+    "lectures": 472,
+    "level": "All Levels",
+    "price": 319.99,
+   "flag": true,
+    "students": 634196
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+    "courseName": "Java Programming Masterclass covering Java 11 & Java 17",
+    "instructor": "Tim Buchalka, Tim Buchalka's Learn Programming Academy",
+    "courseUrl": "https://www.udemy.com/courseName/java-the-complete-java-developer-courseName/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/533682_c10c_4.jpg",
+    "description": "Learn Java In This courseName And Become a Computer Programmer. Obtain valuable Core Java Skills And Java Certification",
+    "rating": 4.5,
+    "reviews": 171838,
+    "duration": 80.5,
+    "lectures": 401,
+    "level": "All Levels",
+    "price": 349.99,
+      "flag": true,
+    "students": 727934
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+    "courseName": "React - The Complete Guide (incl Hooks, React Router, Redux)",
+    "instructor": "Academind by Maximilian Schwarzmüller, Maximilian Schwarzmüller",
+    "courseUrl": "https://www.udemy.com/courseName/react-the-complete-guide-incl-redux/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/1362070_b9a1_2.jpg",
+    "description": "Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and way more!",
+    "rating": 4.5,
+    "reviews":35768,
+    "duration": 49.5,
+    "lectures": 495,
+    "level": "All Levels",
+    "price": 319.99,
+    "flag": true,
+    "students": 649985
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+    "courseName": "Machine Learning A-Z™: Hands-On Python & R In Data Science",
+    "instructor": "Kirill Eremenko, Hadelin de Ponteves, Ligency I Team, Ligency Team",
+    "courseUrl": "https://www.udemy.com/courseName/machinelearning/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/950390_270f_3.jpg",
+    "description": "Learn to create Machine Learning Algorithms in Python and R from two Data Science experts. Code templates included.",
+    "rating": 4.5,
+    "reviews": 163104,
+    "duration": 42.5,
+    "lectures": 287,
+    "level": "All Levels",
+    "price": 269.99,
+
+   "flag": false,
+    "students": 900823
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+    "courseName": "The Complete JavaScript courseName 2023: From Zero to Expert!",
+    "instructor": "Jonas Schmedtmann",
+    "courseUrl": "https://www.udemy.com/courseName/the-complete-javascript-courseName/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/851712_fc61_6.jpg",
+    "description": "The modern JavaScript courseName for everyone! Master JavaScript with projects, challenges and theory. Many courseNames in one!",
+    "rating": 4.7,
+    "reviews": 156031,
+    "duration": 69,
+    "lectures": 320,
+    "level": "All Levels",
+    "price": 349.99,
+
+   "flag": true,
+    "students": 699335
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+    "courseName": "100 Days of Code: The Complete Python Pro Bootcamp for 2022",
+    "instructor": "Dr. Angela Yu",
+    "courseUrl": "https://www.udemy.com/courseName/100-days-of-code/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/2776760_f176_10.jpg",
+    "description": "Master Python by building 100 projects in 100 days. Learn data science, automation, build websites, games and apps!",
+    "rating": 4.7,
+    "reviews": 150024,
+    "duration": 64,
+    "lectures": 676,
+    "level": "All Levels",
+    "price": 319.99,
+   "flag": true,
+    "students": 662274
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+    "courseName": "Python for Data Science and Machine Learning Bootcamp",
+    "instructor": "Jose Portilla",
+    "courseUrl": "https://www.udemy.com/courseName/python-for-data-science-and-machine-learning-bootcamp/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/903744_8eb2.jpg",
+    "description": "Learn how to use NumPy, Pandas, Seaborn , Matplotlib , Plotly , Scikit-Learn , Machine Learning, Tensorflow , and more!",
+    "rating": 4.5,
+    "reviews":35768,
+    "duration": 25,
+    "lectures": 165,
+    "level": "All Levels",
+    "price": 319.99,
+   "flag": true,
+    "students": 588524
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 11,
+    "fields": {
+    "courseName": "The Data Science courseName 2022: Complete Data Science Bootcamp",
+    "instructor": "365 Careers, 365 Careers Team",
+    "courseUrl": "https://www.udemy.com/courseName/the-data-science-courseName-complete-data-science-bootcamp/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/1754098_e0df_3.jpg",
+    "description": "Complete Data Science Training: Mathematics, Statistics, Python, Advanced Statistics in Python, Machine & Deep Learning",
+    "rating": 4.5,
+    "reviews":35768,
+    "duration": 32,
+    "lectures": 517,
+    "level": "All Levels",
+    "price": 319.99,
+   "flag": true,
+    "students": 539202
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 12,
+    "fields": {
+    "courseName": "Automate the Boring Stuff with Python Programming",
+    "instructor": "Al Sweigart",
+    "courseUrl": "https://www.udemy.com/courseName/automate/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/543600_64d1_4.jpg",
+    "description": "A practical programming courseName for office workers, academics, and administrators who want to improve their productivity.",
+    "rating": 4.7,
+    "reviews": 103366,
+    "duration": 9.5,
+    "lectures": 51,
+    "level": "All Levels",
+    "price": 319.99,
+    "flag": false,
+    "students": 1060445
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 13,
+    "fields": {
+    "courseName": "Complete C# Unity Game Developer 2D",
+    "instructor": "GameDev.tv Team, Rick Davidson, Gary Pettie",
+    "courseUrl": "https://www.udemy.com/courseName/unitycourseName/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/258316_55e9_12.jpg",
+    "description": "Learn Unity in C# & Code Your First Five 2D Video Games for Web, Mac & PC. The Tutorials Cover Tilemap",
+    "rating": 4.7,
+    "reviews": 96126,
+    "duration": 18.5,
+    "lectures": 140,
+    "level": "All Levels",
+    "price": 349.99,
+    "flag": false,
+    "students": 433485
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 14,
+    "fields": {
+    "courseName": "Learn Python Programming Masterclass",
+    "instructor": "Tim Buchalka, Jean-Paul Roberts, Tim Buchalka's Learn Programming Academy",
+    "courseUrl": "https://www.udemy.com/courseName/python-the-complete-python-developer-courseName/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/629302_8a2d_2.jpg",
+    "description": "This Python For Beginners courseName Teaches You The Python Language  Fast.  Includes Python Online Training With Python 3",
+    "rating": 4.7,
+    "duration": 72.5,
+    "lectures": 534,
+    "level": "All Levels",
+    "price": 269.99,
+      "flag": false,
+    "students": 394722
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 15,
+    "fields": {
+    "courseName": "Selenium WebDriver with Java -Basics to Advanced+Frameworks",
+    "instructor": "Rahul Shetty",
+    "courseUrl": "https://www.udemy.com/courseName/selenium-real-time-examplesinterview-questions/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/354176_fe73_5.jpg",
+    "description": "TOP RATED  #1 Master SELENIUM java 4.0 (Latest) courseName\" -5 Million students learning worldWide with great collaboration",
+    "rating": 4.7,
+    "duration": 53.5,
+    "lectures": 327,
+    "level": "All Levels",
+    "price": 319.99,
+   "flag": true,
+    "students": 280503
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+    "courseName": "Build Responsive Real-World Websites with HTML and CSS",
+    "instructor": "Jonas Schmedtmann",
+    "courseUrl": "https://www.udemy.com/courseName/design-and-develop-a-killer-website-with-html5-and-css3/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/437398_46c3_10.jpg",
+    "description": "Learn modern HTML5, CSS3 and web design by building a stunning website for your portfolio! Includes flexbox and CSS Grid",
+    "rating": 4.8,
+    "reviews": 85094,
+    "duration": 37.5,
+    "lectures": 151,
+    "level": "All Levels",
+    "price": 349.99,
+    "flag": true,
+    "students": 341962
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 17,
+    "fields": {
+    "courseName": "iOS & Swift - The Complete iOS App Development Bootcamp",
+    "instructor": "Dr. Angela Yu",
+    "courseUrl": "https://www.udemy.com/courseName/ios-13-app-development-bootcamp/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/1778502_f4b9_12.jpg",
+    "description": "From Beginner to iOS App Developer with Just One courseName! Fully Updated with a Comprehensive Module Dedicated to SwiftUI!",
+    "rating": 4.8,
+    "reviews": 80067,
+    "duration": 50.5,
+    "lectures": 542,
+    "level": "All Levels",
+    "price": 349.99,
+    "flag": true,
+    "students": 311592
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 18,
+    "fields": {
+    "courseName": "Modern React with Redux",
+    "instructor": "Stephen Grider",
+    "courseUrl": "https://www.udemy.com/courseName/react-redux/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/705264_caa9_13.jpg",
+    "description": "Master React and Redux with React Router, Webpack, and Create-React-App.  Includes Hooks!",
+    "rating": 4.7,
+    "reviews": 77591,
+    "duration": 52.5,
+    "lectures": 574,
+    "level": "All Levels",
+    "price": 379.99,
+    "flag": true,
+    "students": 275832
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 19,
+    "fields": {
+    "courseName": "The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert",
+    "instructor": "Colt Steele, Ian Schoonover",
+    "courseUrl": "https://www.udemy.com/courseName/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/1187016_51b3.jpg",
+    "description": "JUST COMPLETELY REDONE!  Master SQL, Work With Complex Databases, Build Reports, and More!",
+    "rating": 4.7,
+    "reviews": 76126,
+    "duration": 37.5,
+    "lectures": 650,
+    "level": "Beginner",
+    "price": 359.99,
+    "flag": true,
+    "students": 344881
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 20,
+    "fields": {
+    "courseName": "The Complete Web Developer courseName 2.0",
+    "instructor": "Rob Percival, Codestars • over 2 million students worldwide!",
+    "courseUrl": "https://www.udemy.com/courseName/the-complete-web-developer-courseName-2/",
+    "imageUrl": "https://img-b.udemycdn.com/courseName/240x135/764164_de03_2.jpg",
+    "description": "Learn Web Development by building 25 websites and mobile apps using HTML, CSS, Javascript, PHP, Python, MySQL & more!",
+    "rating": 4.7,
+    "reviews": 6126,
+    "duration": 28.5,
+    "lectures": 288,
+    "level": "All Levels",
+    "price": 269.99,
+    "flag": false,
+    "students": 304994
+    }
+  }
+]
