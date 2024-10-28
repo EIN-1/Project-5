@@ -3,9 +3,8 @@ html {
 }
 
 body {
-    background: rgb(25, 71, 99);
-    background-size: cover;
+    background: rgb(33, 99, 139);
     height: calc(100vh - 164px);
-    color: #555;
+    color: black;
     font-family: 'Lato';
 }
