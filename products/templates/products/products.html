@@ -31,7 +31,7 @@
                             {% else %}
                                 <img class="card-img-top img-fluid" src="{% static 'images/noimage.png' %}" alt="{{ product.courseName }}">
                             {% endif %}
-                            <div class="card-body">
+                            <div class="card-body shadow rounded bg-info">
                                 <h5 class="card-title">{{ product.courseName }}</h5>
                                 <p class="card-text">{{ product.description }}</p>
                                 <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>

@@ -16,13 +16,12 @@
             <div class="row">
                 <div class="col text-center mt-3">
                     <h2 class="logo-font">Products</h2>
-                    <hr class="w-50 mb-1">
                 </div>
             </div>
             <div class="row">
                 {% for product in products %}
-                    <div class="col-sm-6 col-md-4 col-lg-3">  <!-- I will adjust column sizes as needed depending on my website-->
-                        <div class="card h-100 border-0">
+                    <div class="col-sm-6 col-md-4 col-lg-3 mt-4">  <!-- I will adjust column sizes as needed depending on my website-->
+                        <div class="card h-100 border-0 shadow p-3 bg-body-tertiary rounded">
                             {% if product.imageUrl %}
                                 <img class="card-img-top img-fluid" src="{{ product.imageUrl }}" alt="{{ product.courseName }}">
                             {% else %}
@@ -31,10 +30,17 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ product.courseName }}</h5>
                                 <p class="card-text">{{ product.description }}</p>
-                                <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                <strong class="mb-0 text-left fs-5">
+                                    {% if product.flag %}
+                                        <span class="badge bg-success">Best Seller</span>  <!-- Bootstrap badge for true -->
+                                    {% endif %}
+                                </strong>
+                                <p class="lead mb-0 text-sm-left font-weight-bold">{{ product.instructor }}</p>
+                                <p class="mb-0 text-left fs-5">${{ product.price }}</p>
                                 <small class="text-muted">
                                     {% if product.rating %}
-                                        <i class="fas fa-star mr-1"></i>{{ product.rating }} / 5
+                                        <i class="fas fa-star mr-1"></i>{{ product.rating }} / 5 ({{ product.reviews}}) . {{ product.students}} students
+                                        <p>{{ product.duration }} total hours . {{ product.lectures}} lectures . {{ product.level}}</p>
                                     {% else %}
                                         No Rating
                                     {% endif %}

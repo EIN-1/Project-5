@@ -23,6 +23,7 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: rgb(124, 189, 232);
+	background: rgb(190, 190, 224);
 	z-index: -1;
 }
+
