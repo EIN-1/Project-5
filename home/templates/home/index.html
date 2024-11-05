@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+<!-- /workspace/Project-5/home/templates/home/index.html -->
 {% block page_header %}
 <div class="container header-container">
     <div class="row">
@@ -11,12 +11,41 @@
 {% endblock %}
 
 {% block content %}
-<div class="container h-100">
-    <div class="row h-100">
-        <div class="col-7 col-md 6 my-auto">
-            <h1 class="col"> new courses in the home template index.html</h1>
+    <div class="overlay">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col text-center mt-3">
+                    <h2 class="logo-font">Products</h2>
+                    <hr class="w-50 mb-1">
+                </div>
+            </div>
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-sm-6 col-md-4 col-lg-3">  <!-- I will adjust column sizes as needed depending on my website-->
+                        <div class="card h-100 border-0">
+                            {% if product.imageUrl %}
+                                <img class="card-img-top img-fluid" src="{{ product.imageUrl }}" alt="{{ product.courseName }}">
+                            {% else %}
+                                <img class="card-img-top img-fluid" src="{% static 'image/x/noimage.png' %}" alt="{{ product.courseName }}">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ product.courseName }}</h5>
+                                <p class="card-text">{{ product.description }}</p>
+                                <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                <small class="text-muted">
+                                    {% if product.rating %}
+                                        <i class="fas fa-star mr-1"></i>{{ product.rating }} / 5
+                                    {% else %}
+                                        No Rating
+                                    {% endif %}
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p>No products available.</p>
+                {% endfor %}
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}
-

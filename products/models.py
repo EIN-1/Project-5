@@ -1,11 +1,11 @@
 #/workspace/Project-5/products/models.py
 from django.db import models
 
+
 # Create your models here.
 class Product(models.Model):
-   
-    product = models.IntegerField('product', null=True, blank=True)
-    id = models.IntegerField(primary_key=True, unique=True)
+    
+    
     courseName = models.CharField(max_length=254)
     instructor = models.CharField(max_length=254)
     courseUrl = models.URLField(max_length=1024, null=True, blank=True)

@@ -16,6 +16,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -27,9 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '8000-ein1-project5-nr7dxvb8jo2.ws-eu116.gitpod.io',
-    '8000-ein1-project5-9h1jd0p8cg6.ws.codeinstitute-ide.net',
-    'https://8000-ein1-project5-9h1jd0p8cg6.ws.codeinstitute-ide.net/'
-     
+    '8000-ein1-project5-9h1jd0p8cg6.ws.codeinstitute-ide.net'  
 ]
 
 
@@ -125,7 +124,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
          'PORT': '8000',  # or your database port
     }
-    }
+}
 
 
 # Password validation
@@ -165,16 +164,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-os.path.join(BASE_DIR, 'db.sqlite3'),
+# Set the STATIC_ROOT
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Set to a directory for collecting static files
+
+# Additional static file directories (where Django will look for static files)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),  # If you have additional static files to include
+]
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField' 
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-
+# Media files configuration (for file uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

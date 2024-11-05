@@ -1,11 +1,10 @@
 from django.contrib import admin
 from .models import Product
-
+#/workspace/Project-5/products/admin.py
 # Register your models here.
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
-        'product',
-        'id',
+        
         'courseName',
         'instructor',
         'courseUrl',
@@ -23,4 +22,5 @@ class ProductAdmin(admin.ModelAdmin):
 
     ordering = ('id',)
 admin.site.register(Product, ProductAdmin)
+
 
