@@ -67,4 +67,4 @@ def cart_detail(request):
             product = get_object_or_404(Product, id=product_id)
             cart.append(product)
 
-    return render(request, 'cart_detail.html', {'cart_items': cart_items})
+    return render(request, 'cart/details.html', {'cart_items': cart})
