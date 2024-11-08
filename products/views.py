@@ -33,6 +33,6 @@ def list_all_products(request):
     # return render(request, 'home/index.html', context)
 
 def retrieve_product(request, id):
-    product = Product.object.get(id=id)
+    product = Product.objects.get(id=id)
 
     return render(request, 'products/product.html')
