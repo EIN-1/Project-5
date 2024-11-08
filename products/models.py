@@ -3,9 +3,7 @@ from django.db import models
 
 
 # Create your models here.
-class Product(models.Model):
-    
-    
+class Product(models.Model):    
     courseName = models.CharField(max_length=254)
     instructor = models.CharField(max_length=254)
     courseUrl = models.URLField(max_length=1024, null=True, blank=True)

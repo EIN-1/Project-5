@@ -23,21 +23,28 @@
                 </div>
             </div>
             <div class="row">
-                {% for product in products %}
-                    <div class="col-sm-6 col-md-4 col-lg-3">  <!-- I will adjust column sizes as needed depending on my website-->
-                        <div class="card h-100 border-0">
+                {% for product in page_obj %}
+                    <div class="col-sm-6 col-md-4 col-lg-3 mt-4">  <!-- I will adjust column sizes as needed depending on my website-->
+                        <div class="card h-100 border-0 shadow p-3 bg-body-tertiary rounded">
                             {% if product.imageUrl %}
                                 <img class="card-img-top img-fluid" src="{{ product.imageUrl }}" alt="{{ product.courseName }}">
                             {% else %}
-                                <img class="card-img-top img-fluid" src="{% static 'images/noimage.png' %}" alt="{{ product.courseName }}">
+                                <img class="card-img-top img-fluid" src="{% static 'image/x/noimage.png' %}" alt="{{ product.courseName }}">
                             {% endif %}
-                            <div class="card-body shadow rounded bg-info">
+                            <div class="card-body">
                                 <h5 class="card-title">{{ product.courseName }}</h5>
                                 <p class="card-text">{{ product.description }}</p>
-                                <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                <strong class="mb-0 text-left fs-5">
+                                    {% if product.flag %}
+                                        <span class="badge bg-success">Best Seller</span>  <!-- Bootstrap badge for true -->
+                                    {% endif %}
+                                </strong>
+                                <p class="lead mb-0 text-sm-left font-weight-bold">{{ product.instructor }}</p>
+                                <p class="mb-0 text-left fs-5">${{ product.price }}</p>
                                 <small class="text-muted">
                                     {% if product.rating %}
-                                        <i class="fas fa-star mr-1"></i>{{ product.rating }} / 5
+                                        <i class="fas fa-star mr-1"></i>{{ product.rating }} / 5 ({{ product.reviews}}) . {{ product.students}} students
+                                        <p>{{ product.duration }} total hours . {{ product.lectures}} lectures . {{ product.level}}</p>
                                     {% else %}
                                         No Rating
                                     {% endif %}
@@ -51,5 +58,26 @@
             </div>
         </div>
     </div>
+
+    <div class="d-flex justify-content-center">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                {% endif %}
+    
+                <li class="page-item disabled">
+                    <span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+                </li>
+    
+                {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    
 {% endblock %}
 
