@@ -1,7 +1,8 @@
 #/workspace/Project-5/products/views.py
 from django.core.paginator import Paginator
-from django.shortcuts import render
-from .models import Product
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Product, Cart
+from django.shortcuts import redirect, get_object_or_404
 
 # Create your views here.
 """ A view to all products including sorting and search queries """
@@ -36,3 +37,21 @@ def retrieve_product(request, id):
     product = Product.objects.get(id=id)
 
     return render(request, 'products/product.html', {'product':product})
+
+
+def add_to_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    if request.user.is_authenticated:
+        # For logged-in users: add to Cart model in the database
+        cart, created = Cart.objects.get_or_create(user=request.user, product=product)
+    else:
+        # For anonymous users: store cart items in the session
+        cart = request.session.get('cart', [])
+        if product_id in cart:
+            return
+        else:
+            cart.append(product_id)
+        request.session['cart'] = cart  # Save cart back to session
+
+    return redirect('cart_detail')  # Redirect to cart detail page or any page of your choice
