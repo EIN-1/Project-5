@@ -1,4 +1,5 @@
 #/workspace/Project-5/products/views.py
+from django.core.paginator import Paginator
 from django.shortcuts import render
 from .models import Product
 
