@@ -46,6 +46,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'bootstrap5',
+    'django_bootstrap5',
+    'crispy_forms',
+    'crispy_bootstrap5', 
+
     'home',
     'static',
     'products',
@@ -101,7 +105,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
-EMAIL_BACKEND = 'django.core:mail.backend.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -113,6 +117,9 @@ LOGIN_REDIRECT_URL = '/' # i will come back here later
 
 WSGI_APPLICATION = 'technical_skills.wsgi.application'
 
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
