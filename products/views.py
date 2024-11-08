@@ -55,3 +55,16 @@ def add_to_cart(request, product_id):
         request.session['cart'] = cart  # Save cart back to session
 
     return redirect('cart_detail')  # Redirect to cart detail page or any page of your choice
+
+def cart_detail(request):
+    if request.user.is_authenticated:
+        # Retrieve cart from database for logged-in users
+        cart, created = Cart.objects.get_or_create(user=request.user)
+    else:
+        # Retrieve cart from session for anonymous users
+        cart = request.session.get('cart', [])
+        for product_id in cart:
+            product = get_object_or_404(Product, id=product_id)
+            cart.append(product)
+
+    return render(request, 'cart_detail.html', {'cart_items': cart_items})
