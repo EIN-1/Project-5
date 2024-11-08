@@ -18,10 +18,20 @@
 {% block content %}
     <div class="row m-5">
         <div class="col">
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">{{product.courseName}}</h5>
-                  <h6 class="card-subtitle mb-2 text-body-secondary">by {{product.instructor}}</h6>
+                  <!-- Rating and Student Count -->
+                  <div class="d-flex align-items-center">
+                    <!-- Star Rating -->
+                    <div class="me-2">
+                        <h6 class="card-subtitle mb-2 text-body-secondary">by {{product.instructor}}</h6>
+                    </div>
+    
+                    <!-- Student Count -->
+                    <span class="badge text-bg-primary">{{product.category.name}}</span>
+                </div>
+                  
                   <p class="card-text">{{product.description}}</p>
                     <!-- Rating and Student Count -->
                     <div class="d-flex align-items-center">
@@ -39,15 +49,17 @@
                         <!-- Student Count -->
                         <span class="text-muted ms-2">{{ product.students|intcomma }} students</span>
                     </div>
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
+
+                    <h6 class="card-subtitle mb-2 text-body-secondary mt-3">{{product.duration}} total hours</h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary mt-3">{{product.lectures}} total lessons</h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary mt-3">for {{product.level}}</h6>
                 </div>
               </div>
         </div>
 
 
-        <div class="col-3">
-            <div class="card" style="width: 18rem;">
+        <div class="col-4">
+            <div class="card">
                 <img src={{product.imageUrl}} class="card-img-top" alt={{product.courseName}}>
                 <div class="card-body">
                   <h5 class="card-title">${{product.price}}</h5>
@@ -56,6 +68,6 @@
                 </div>
               </div>
         </div>
-    </div>       
+    </div>
 {% endblock %}
 
