@@ -6,8 +6,7 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
-
-class Product(models.Model):    
+    
 class Product(models.Model):    
     courseName = models.CharField(max_length=254)
     instructor = models.CharField(max_length=254)
