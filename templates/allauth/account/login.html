@@ -1,5 +1,7 @@
 {% extends "account/base_entrance.html" %}
 {% load i18n %}
+{% load bootstrap5 %}
+{% load static %}
 <!--/workspace/Project-5/templates/allauth/account/login.html-->
 {% load allauth account %}
 {% block head_title %}
@@ -17,7 +19,7 @@
             </a>
         {% endsetvar %}
 
-<p>{% blocktranslate %}If you have not created an account yet, then please 
+    <p>{% blocktranslate %}If you have not created an account yet, then please 
     <a href="{{ signup_url}}">sign up</a> {{ site_name }} first.{% endblocktranslate %}</p>
 
         {% url 'account_login' as login_url %}
