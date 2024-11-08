@@ -5,7 +5,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">    
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div id="navbarNavDropdown" class="collapse navbar-collapse  pt-lg-2 d-none d-lg-flex">
+        <div id="avbarSupportedContent" class="collapse navbar-collapse">
             <div class="col-12 col-lg-3 my-auto py-1 py-lg-2 text-lg-left">
                 <li class="list-inline-item dropdown px-3">
                     <a class="nav-link text-primary" href="#categories" id="categories-options" data-bs-toggle="dropdown" aria-expanded="false">
@@ -16,12 +16,11 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="course-link">
                         <li><a href="" class="dropdown-item">Design</a></li>
-                         <li><a href="" class="dropdown-item">IT and Software</a></li>
-                         <li><a href="" class="dropdown-item">Marketing</a></li>
-                         <li><a href="" class="dropdown-item">All courses</a></li>
-                     </ul>
+                        <li><a href="" class="dropdown-item">IT and Software</a></li>
+                        <li><a href="" class="dropdown-item">Marketing</a></li>
+                        <li><a href="" class="dropdown-item">All courses</a></li>
+                    </ul>
                 </li>
-                
             </div>
 
             <div class="col-12 col-lg-6 my-auto py-1 py-lg-2 text-center">
@@ -55,7 +54,6 @@
                             </div>
                         </a>
                     </li>
-                    
                     <li class="list-inline-item dropdown px-3">
                         <a class="nav-link text-primary " href="#" id="user-options" data-bs-toggle="dropdown" aria-expanded="false">
                             <div class="text-center">
@@ -64,9 +62,9 @@
                             </div>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Register</a></li>
-                            <li><a class="dropdown-item" href="#">Login</a></li>
-                          </ul>
+                            <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
+                            <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
+                        </ul>
                     </li>
                 </ul>   
             </div>
