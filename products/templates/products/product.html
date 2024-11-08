@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 
 <!-- Example for including a CSS file -->
 <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
@@ -22,6 +23,22 @@
                   <h5 class="card-title">{{product.courseName}}</h5>
                   <h6 class="card-subtitle mb-2 text-body-secondary">by {{product.instructor}}</h6>
                   <p class="card-text">{{product.description}}</p>
+                    <!-- Rating and Student Count -->
+                    <div class="d-flex align-items-center">
+                        <!-- Star Rating -->
+                        <div class="me-2">
+                            {% for i in "12345" %}
+                                {% if forloop.counter <= product.rating %}
+                                    <i class="fas fa-star text-warning"></i>  <!-- Filled star with Bootstrap warning color (gold) -->
+                                {% else %}
+                                    <i class="far fa-star text-warning"></i>  <!-- Empty star with Bootstrap warning color (gold) -->
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+        
+                        <!-- Student Count -->
+                        <span class="text-muted ms-2">{{ product.students|intcomma }} students</span>
+                    </div>
                   <a href="#" class="card-link">Card link</a>
                   <a href="#" class="card-link">Another link</a>
                 </div>
