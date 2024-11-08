@@ -31,6 +31,12 @@ class Product(models.Model):
         return self.courseName
 
 class Cart(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='cart_items')
-    course = models.ForeignKey(Product, on_delete=models.PROTECT)
-    added_at= models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+class CartItem(models.Model):
+    cart = models.ForeignKey(Cart, related_name='items', on_delete=models.CASCADE)
+    product = models.ForeignKey('Product', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.product.name

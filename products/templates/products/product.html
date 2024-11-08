@@ -64,7 +64,7 @@
                 <div class="card-body">
                   <h5 class="card-title">${{product.price}}</h5>
                   <p class="card-text">Take this course.</p>
-                  <a href="#" class="btn btn-light btn-block">Add to Cart</a>
+                  <a href="{% url 'add_to_cart' product.id %}" class="btn btn-light btn-block">Add to Cart</a>
                 </div>
               </div>
         </div>
