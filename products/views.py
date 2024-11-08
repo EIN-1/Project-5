@@ -49,7 +49,7 @@ def add_to_cart(request, product_id):
         # For anonymous users: store cart items in the session
         cart = request.session.get('cart', [])
         if product_id in cart:
-            return
+            return redirect('cart_detail')
         else:
             cart.append(product_id)
         request.session['cart'] = cart  # Save cart back to session
@@ -63,8 +63,8 @@ def cart_detail(request):
     else:
         # Retrieve cart from session for anonymous users
         cart = request.session.get('cart', [])
-        for product_id in cart:
-            product = get_object_or_404(Product, id=product_id)
+        for product in cart:
+            # product = get_object_or_404(Product, id=product_id)
             cart.append(product)
 
     return render(request, 'cart/details.html', {'cart_items': cart})
