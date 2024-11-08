@@ -44,7 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'allauth',
+    'allauth.account',
     'bootstrap5',
+    'crispy_forms',
+    'crispy_bootstrap5',
+
     'home',
     'static',
     'products',
@@ -176,4 +180,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Media files configuration (for file uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#Crispy forms
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
