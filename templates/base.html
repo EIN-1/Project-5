@@ -58,10 +58,9 @@
             {% include 'includes/main-navbar.html' %}
             {% include 'includes/mobile-top-header.html' %}
         </div>
-    </nav>
+    </nav> 
+    {% include 'includes/footer.html' %}
     
-   
-
     {% if messages %}
         <div class="message-container">
            
@@ -75,6 +74,7 @@
     {% block content %}
     <div>
         {% include 'products/products.html' %}
+        {% include 'includes/footer.html' %}
     </div>
     
     {% endblock %}
