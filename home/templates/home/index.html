@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="row">
-                {% for product in products %}
+                {% for product in page_obj %}
                     <div class="col-sm-6 col-md-4 col-lg-3 mt-4">  <!-- I will adjust column sizes as needed depending on my website-->
                         <div class="card h-100 border-0 shadow p-3 bg-body-tertiary rounded">
                             {% if product.imageUrl %}
@@ -54,4 +54,25 @@
             </div>
         </div>
     </div>
+
+    <div class="d-flex justify-content-center">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page=1">&laquo; First</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+                {% endif %}
+    
+                <li class="page-item disabled">
+                    <span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+                </li>
+    
+                {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a></li>
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    
 {% endblock %}
