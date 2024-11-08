@@ -35,4 +35,4 @@ def list_all_products(request):
 def retrieve_product(request, id):
     product = Product.objects.get(id=id)
 
-    return render(request, 'products/product.html')
+    return render(request, 'products/product.html', {'product':product})
