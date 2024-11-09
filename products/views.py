@@ -72,3 +72,19 @@ def cart_detail(request):
         cart_count = len(cart_items)  # Count the number of products in the session cart
 
     return render(request, 'cart/details.html', {'cart_items': cart_items, 'cart_count':cart_count})
+
+def remove_from_cart(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    if request.user.is_authenticated:
+        # For logged-in users, find and delete the CartItem
+        cart, created = Cart.objects.get_or_create(user=request.user)
+        CartItem.objects.filter(cart=cart, product=product).delete()
+    else:
+        # For anonymous users, remove the product ID from the session
+        cart = request.session.get('cart', set())
+        if product_id in cart:
+            cart.remove(product_id)
+            request.session['cart'] = list(cart)  # Save the updated cart back to the session
+
+    return redirect('cart_detail')  # Redirect to the cart detail page or another desired page
