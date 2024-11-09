@@ -97,11 +97,12 @@ def remove_from_cart(request, product_id):
 @login_required
 def checkout(request):
     # Retrieve the user's cart items
-    cart_items = CartItem.objects.filter(user=request.user)
+    cart = Cart.objects.get(user=request.user)
+    cart_items = cart.items.all()
     if not cart_items:
         messages.error(request, "Your cart is empty.")
         return redirect('cart_detail')
-    render(request, 'checkout/checkou.html', {'cart_items':cart_items})
+    return render(request, 'checkout/checkout.html', {'cart_items':cart_items})
 
 
 # @login_required
