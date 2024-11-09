@@ -3,10 +3,11 @@ import stripe
 from django.conf import settings
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Product, Cart, CartItem
+from .models import Product, Cart, CartItem, Order, OrderItems
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.db import transaction
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -151,7 +152,7 @@ def checkout(request):
                 OrderItems.objects.create(
                     order=order,
                     product=cart_item.product,
-                    price=cart_item.get_total_price(),
+                    price=cart_item.product.price,
                 )
 
             # Save the order and prepare for payment confirmation
