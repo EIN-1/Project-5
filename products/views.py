@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product, Cart, CartItem
 from django.shortcuts import redirect, get_object_or_404
+from django.contrib import messages
 
 # Create your views here.
 """ A view to all products including sorting and search queries """
@@ -86,5 +87,7 @@ def remove_from_cart(request, product_id):
         if product_id in cart:
             cart.remove(product_id)
             request.session['cart'] = list(cart)  # Save the updated cart back to the session
+
+    messages.success(request, f"{product.courseName} was removed from your cart.") #Messages for success
 
     return redirect('cart_detail')  # Redirect to the cart detail page or another desired page
