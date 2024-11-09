@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product, Cart, CartItem
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 """ A view to all products including sorting and search queries """
@@ -91,3 +92,36 @@ def remove_from_cart(request, product_id):
     messages.success(request, f"{product.courseName} was removed from your cart.") #Messages for success
 
     return redirect('cart_detail')  # Redirect to the cart detail page or another desired page
+
+
+@login_required
+def checkout(request):
+    # Retrieve the user's cart items
+    cart_items = CartItem.objects.filter(user=request.user)
+    if not cart_items:
+        messages.error(request, "Your cart is empty.")
+        return redirect('cart_detail')
+    render(request, 'checkout/checkou.html', {'cart_items':cart_items})
+
+
+# @login_required
+# def checkout(request):
+#     # Retrieve the user's cart items
+#     cart_items = CartItem.objects.filter(user=request.user)
+#     if not cart_items:
+#         messages.error(request, "Your cart is empty.")
+#         return redirect('cart_detail')
+
+#     # Calculate total cost
+#     total_price = sum(item.price for item in cart_items)
+
+#     # Payment processing logic here using Stripe
+#     # In this placeholder, we'll assume payment is successful.
+#     # If payment is successful, proceed with the order
+
+#     # Clear the user's cart
+#     cart_items.delete()
+
+#     # Provide feedback to the user
+#     messages.success(request, "Checkout successful! Thank you for your purchase.")
+#     return redirect('order_confirmation')  # Redirect to an order confirmation page
