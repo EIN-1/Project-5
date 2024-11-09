@@ -31,7 +31,7 @@ class Product(models.Model):
         return self.courseName
 
 class Cart(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, related_name='cart')
     created_at = models.DateTimeField(auto_now_add=True)
 
 class CartItem(models.Model):
@@ -39,4 +39,4 @@ class CartItem(models.Model):
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.product.name
+        return self.product.courseName
