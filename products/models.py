@@ -40,3 +40,17 @@ class CartItem(models.Model):
 
     def __str__(self):
         return self.product.courseName
+
+    
+
+class Order(models.Model):
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    amount = models.IntegerField()
+    stripe_id = models.CharField(max_length=255)
+    status = models.CharField(max_length=20)
+    date = models.DateTimeField(auto_now_add=True)
+
+class OrderItems(models.Model):
+    order = models.ForeignKey(Order, related_name='items', on_delete=models.PROTECT)
+    product = models.ForeignKey(Product, related_name='order_item', on_delete=models.PROTECT)
+    price = models.IntegerField()
