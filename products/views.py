@@ -1,10 +1,15 @@
 #/workspace/Project-5/products/views.py
+import stripe
+from django.conf import settings
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Product, Cart, CartItem
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 # Create your views here.
 """ A view to all products including sorting and search queries """
@@ -94,6 +99,17 @@ def remove_from_cart(request, product_id):
     return redirect('cart_detail')  # Redirect to the cart detail page or another desired page
 
 
+# @login_required
+# def checkout(request):
+#     # Retrieve the user's cart items
+#     cart = Cart.objects.get(user=request.user)
+#     cart_items = cart.items.all()
+#     if not cart_items:
+#         messages.error(request, "Your cart is empty.")
+#         return redirect('cart_detail')
+#     return render(request, 'checkout/checkout.html', {'cart_items':cart_items})
+
+
 @login_required
 def checkout(request):
     # Retrieve the user's cart items
@@ -102,27 +118,56 @@ def checkout(request):
     if not cart_items:
         messages.error(request, "Your cart is empty.")
         return redirect('cart_detail')
-    return render(request, 'checkout/checkout.html', {'cart_items':cart_items})
+
+    # Calculate total cost
+    total_price = sum(item.product.price for item in cart_items)
+    stripe_total = int(total_price * 100)
+
+    # Payment processing logic here using Stripe
+    # Create Stripe PaymentIntent
+    try:
+        payment_intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency='usd',
+            metadata={'user_id': request.user.id}
+        )
+    except Exception as e:
+        messages.error(request, f"Stripe error: {e}")
+        return redirect('cart_detail')
+
+    # Save order to the database (status initially set to "Pending")
+    try:
+        with transaction.atomic():
+            # Create the order
+            order = Order.objects.create(
+                user=request.user,
+                amount=total_price,
+                stripe_id=payment_intent['id'],  # Store Stripe PaymentIntent ID
+                status="Pending"
+            )
+
+            # Add each cart item to the OrderItems table
+            for cart_item in cart_items:
+                OrderItems.objects.create(
+                    order=order,
+                    product=cart_item.product,
+                    price=cart_item.get_total_price(),
+                )
+
+            # Save the order and prepare for payment confirmation
+            # Clear the user's cart
+            cart_items.delete()
+
+    except Exception as e:
+        messages.error(request, f"An error occurred during checkout: {e}")
+        return redirect('cart_detail')
 
 
-# @login_required
-# def checkout(request):
-#     # Retrieve the user's cart items
-#     cart_items = CartItem.objects.filter(user=request.user)
-#     if not cart_items:
-#         messages.error(request, "Your cart is empty.")
-#         return redirect('cart_detail')
+     # Pass the PaymentIntent client_secret to the template
+    context = {
+        'total_price': total_price,
+        'stripe_publishable_key': settings.STRIPE_PUBLISHABLE_KEY,
+        'client_secret': payment_intent['client_secret'],
+    }
 
-#     # Calculate total cost
-#     total_price = sum(item.price for item in cart_items)
-
-#     # Payment processing logic here using Stripe
-#     # In this placeholder, we'll assume payment is successful.
-#     # If payment is successful, proceed with the order
-
-#     # Clear the user's cart
-#     cart_items.delete()
-
-#     # Provide feedback to the user
-#     messages.success(request, "Checkout successful! Thank you for your purchase.")
-#     return redirect('order_confirmation')  # Redirect to an order confirmation page
+    return render(request, 'checkout/checkout.html', context)
