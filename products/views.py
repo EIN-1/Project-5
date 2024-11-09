@@ -172,3 +172,7 @@ def checkout(request):
     }
 
     return render(request, 'checkout/checkout.html', context)
+
+@login_required
+def order_confirmation(request):
+    return render(request, 'orders/order-confirmation.html')
