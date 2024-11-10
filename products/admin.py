@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, Order
 #/workspace/Project-5/products/admin.py
 # Register your models here.
 class ProductAdmin(admin.ModelAdmin):
@@ -28,4 +28,13 @@ class CategoryAdmin(admin.ModelAdmin):
 
     # You can customize the display here if needed
     ordering = ('name',)
+
+@admin.register(Order)
+class OrderAdmin(admin.ModelAdmin):
+    list_display = ('user', 'amount', 'status', 'stripe_id', 'date',)
+    search_fields = ('user',)
+    list_filter = ('status','date',)
+
+    # You can customize the display here if needed
+    ordering = ('date',)
 
