@@ -8,20 +8,24 @@
 
         <!-- Navbar Content -->
         <div class="collapse navbar-collapse" id="navbarContent">
-            <!-- Categories Dropdown -->
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-primary" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-book me-1"></i>Categories
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                        {% for cat in categories %}
-                            <li><a href="?category={{ cat.id }}" class="dropdown-item">{{ cat.name }}</a></li>
-                        {% endfor %}
-                        <li><a href="?" class="dropdown-item">All Courses</a></li>
-                    </ul>
-                </li>
-            </ul>
+            {% url 'products' as products_list_url %}
+            {% url 'home' as home_url %}
+            {% if request.path == products_list_url or request.path == home_url %}
+                <!-- Categories Dropdown -->
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-primary" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-book me-1"></i>Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                            {% for cat in categories %}
+                                <li><a href="?category={{ cat.id }}" class="dropdown-item">{{ cat.name }}</a></li>
+                            {% endfor %}
+                            <li><a href="?" class="dropdown-item">All Courses</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            {% endif %}
 
             <!-- Search Bar -->
             <form class="d-flex mx-auto w-50" method="GET" action="">
