@@ -29,8 +29,18 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">{{product.courseName}}</h5>
+                                    <div class="mb-2 text-muted small">
+                                        <span>{{ product.duration|intcomma }} total hours</span>
+                                        <span class="text-primary"> • </span>
+                                        <span>{{ product.category.name }}</span>
+                                    </div>
                                     <p class="card-text">{{product.description}}</p>
-                                    <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-primary">Add to cart</a>
+                                    <div class="d-flex flex-column mt-4">
+                                        <a href="/products/{{product.id}}/" class="btn btn-outline-primary btn-sm" type="button">Details</a>
+                                        <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mt-2" type="button">
+                                        Add to Cart
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         '
