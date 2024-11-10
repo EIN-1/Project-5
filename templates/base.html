@@ -71,14 +71,11 @@
     {% block page_header %}
   
     {% endblock %}
-
-    {% block content %}
-    <div>
-        {% include 'products/products.html' %}
-        {% include 'includes/footer.html' %}
-    </div>
+    {% block content %}     
+   
     
     {% endblock %}
+    {% include 'includes/footer.html' %}
 
     {% block postloadjs %}
     {% endblock %}
