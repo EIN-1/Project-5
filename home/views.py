@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from products.models import Product
+from products.models import Product, Category
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.db.models import Q
@@ -9,9 +9,17 @@ from django.db.models import Q
 
 def index(request):
     """ A view to return the index page """
+    # Get the category filter
+    category_query = request.GET.get('category', None)
     # Get the search query from the request
     search_query = request.GET.get('search', '')
     products = Product.objects.all()  # Fetch all products
+    categories = Category.objects.all()
+
+    if category_query:
+        products = products.filter(
+            category=category_query
+        )
 
     if search_query:
         products = products.filter(
@@ -29,7 +37,7 @@ def index(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)  # This gets the current page’s data
 
-    return render(request, 'home/index.html', {'page_obj': page_obj})
+    return render(request, 'home/index.html', {'page_obj': page_obj, 'categories':categories})
 
 
     # print("products in database =",products)
