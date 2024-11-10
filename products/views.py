@@ -9,6 +9,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.db.models import Q
+from django.views.decorators.csrf import csrf_exempt
+import json
+from django.http import JsonResponse
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -219,3 +222,50 @@ def order_details(request, order_id):
     order = Order.objects.get(id=order_id)
     items = order.items.all()
     return render(request, 'orders/order-detail.html', {'order': order, 'items':items})
+
+
+@login_required
+@csrf_exempt
+def complete_payment(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        payment_intent_id = data.get('paymentIntentId')
+        if not payment_intent_id:
+            return JsonResponse({"success": False, "error": "Invalid payment."}, status=400)
+        # Verify the payment with Stripe
+        try:
+            payment_intent = stripe.PaymentIntent.retrieve(payment_intent_id)
+            if payment_intent.status == 'succeeded':
+                with transaction.atomic():
+                    # Create the order
+                    cart = Cart.objects.get(user=request.user)
+                    cart_items = cart.items.all()
+                    total_price = sum(item.product.price for item in cart_items)
+
+                    order = Order.objects.create(
+                        user=request.user,
+                        amount=total_price,
+                        stripe_id=payment_intent_id,
+                        status="Completed"
+                    )
+
+                    # Add each cart item to the OrderItems table
+                    for cart_item in cart_items:
+                        OrderItems.objects.create(
+                            order=order,
+                            product=cart_item.product,
+                            price=cart_item.product.price,
+                        )
+
+                    # Clear the user's cart
+                    cart_items.delete()
+
+                return JsonResponse({"success": True})
+
+            else:
+                return JsonResponse({"success": False, "error": "Payment not completed."}, status=400)
+
+        except Exception as e:
+            return JsonResponse({"success": False, "error": str(e)}, status=400)
+
+    return JsonResponse({"success": False, "error": "Invalid request method."}, status=400)
