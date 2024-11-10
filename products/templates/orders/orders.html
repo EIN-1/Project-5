@@ -24,7 +24,7 @@
                         </div>
                         <h6 class="text-success">{{ order.status }}</h6>
                         <div class="d-flex flex-column mt-4">
-                            <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm" type="button">Details</button>
+                            <a href='{% url "order_details" order.id %}' data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm" type="button">Details</a>
                         </div>
                         </div>
                     </div>
