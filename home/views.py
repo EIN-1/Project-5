@@ -19,18 +19,18 @@ def subscribe_newsletter(request):
     next_url = request.POST.get('next', '/')
     if request.method == 'POST':
         email = request.POST.get('email')
-        try:
-            member_info = {
-                'email_address': email,
-                'status': 'subscribed',
-            }
-            response = mailchimp.lists.add_list_member(
-                settings.MAILCHIMP_AUDIENCE_ID,
-                member_info,
-            )
-            messages.success(request, "You've successfully subscribed to our newsletter!")
-        except:
-            messages.error(request, "There was an error subscribing. Please try again.")
+        # try:
+        member_info = {
+            'email_address': email,
+            'status': 'subscribed',
+        }
+        response = mailchimp.lists.add_list_member(
+            settings.MAILCHIMP_AUDIENCE_ID,
+            member_info,
+        )
+        messages.success(request, "You've successfully subscribed to our newsletter!")
+        # except:
+        #     messages.error(request, "There was an error subscribing. Please try again.")
     return redirect(next_url)
 
 
