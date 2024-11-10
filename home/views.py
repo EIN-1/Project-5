@@ -2,8 +2,37 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from products.models import Product, Category
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db.models import Q
+from mailchimp_marketing import Client
+from django.conf import settings
+from django.contrib import messages
+
+mailchimp = Client()
+mailchimp.set_config({
+  'api_key': settings.MAILCHIMP_API_KEY,
+  'server': settings.MAILCHIMP_REGION,
+})
+
+
+def subscribe_newsletter(request):
+    next_url = request.POST.get('next', '/')
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        try:
+            member_info = {
+                'email_address': email,
+                'status': 'subscribed',
+            }
+            response = mailchimp.lists.add_list_member(
+                settings.MAILCHIMP_AUDIENCE_ID,
+                member_info,
+            )
+            messages.success(request, "You've successfully subscribed to our newsletter!")
+        except:
+            messages.error(request, "There was an error subscribing. Please try again.")
+    return redirect(next_url)
+
 
 # Create your views here.
 
