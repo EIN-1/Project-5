@@ -18,7 +18,7 @@
                         {% for cat in categories %}
                             <li><a href="?category={{ cat.id }}" class="dropdown-item">{{ cat.name }}</a></li>
                         {% endfor %}
-                        <li><a href="?category=all" class="dropdown-item">All Courses</a></li>
+                        <li><a href="?" class="dropdown-item">All Courses</a></li>
                     </ul>
                 </li>
             </ul>
@@ -45,15 +45,28 @@
                 </li>
 
                 <!-- User Account Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-primary" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user fa-lg"></i> My Account
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>
-                        <li><a class="dropdown-item" href="{% url 'account_signup' %}">Register</a></li>
-                    </ul>
-                </li>
+                {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-primary" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user fa-lg"></i> {{ user.username }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="{% url 'my_profile' %}">Profile</a></li>
+                            <li><a class="dropdown-item" href="{% url 'my_orders' %}">Orders</a></li>
+                            <li><a type="button" class="dropdown-item btn btn-outline-danger" href="{% url 'account_logout' %}">Logout</a></li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <!-- Content for guests or non-logged-in users -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                        </li>                        
+                      </ul>
+                {% endif %}
             </ul>
         </div>
     </div>
