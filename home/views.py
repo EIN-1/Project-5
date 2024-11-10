@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
 from products.models import Product
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
 
 # Create your views here.
 
@@ -24,3 +26,8 @@ def index(request):
     # }
 
     # return render(request, 'home/index.html',context)
+
+@login_required
+def profile_view(request):
+    return render(request, 'account/profile.html')
+
