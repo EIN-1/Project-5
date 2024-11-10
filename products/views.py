@@ -88,6 +88,7 @@ def add_to_cart(request, product_id):
         cart = set(cart)  # Convert to set for unique items
         cart.add(product_id)  # Add the product ID if not already present
         request.session['cart'] = list(cart)  # Save the cart back to session
+    messages.success(request, message='Item successfully added to cart')
 
     return redirect(next_url)  # Redirect to the cart detail page or any page of your choice
 
