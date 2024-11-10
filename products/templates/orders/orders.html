@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section style="background-color: #eee;">
+    <div class="container py-5">
+        {% for order in orders %}      
+            <div class="row justify-content-center">
+                <div class="col-md-12 col-xl-10">
+                <div class="card shadow-0 border rounded-3">
+                    <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6 col-xl-6">
+                        <h5># {{ order.id }}</h5>
+                        <div class="d-flex flex-row">
+                            <div class="text-danger mb-1 me-2">
+                                Date:
+                            </div>
+                            <span>{{ order.date }}</span>
+                        </div>
+                        </div>
+                        <div class="col-md-6 border-sm-start-none border-start">
+                        <div class="d-flex flex-row align-items-center mb-1">
+                            <h4 class="mb-1 me-1">${{ order.amount }}</h4>
+                        </div>
+                        <h6 class="text-success">{{ order.status }}</h6>
+                        <div class="d-flex flex-column mt-4">
+                            <a href='{% url "order_details" order.id %}' data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm" type="button">Details</a>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        {% endfor %}    
+    </div>
+  </section>
+{% endblock %}

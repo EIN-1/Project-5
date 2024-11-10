@@ -21,25 +21,16 @@
             <h6 class="mb-3">Summary</h6>
             <div class="d-flex justify-content-between">
               <p class="mb-2">Total price:</p>
-              <p class="mb-2">$195.90</p>
+              <p class="mb-2">${{total_price}}</p>
             </div>
             <div class="d-flex justify-content-between">
-              <p class="mb-2">Discount:</p>
-              <p class="mb-2 text-danger">- $60.00</p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <p class="mb-2">Shipping cost:</p>
-              <p class="mb-2">+ $14.00</p>
+              <p class="mb-2">Items:</p>
+              <p class="mb-2 text-danger">{{cart_count}}</p>
             </div>
             <hr />
             <div class="d-flex justify-content-between">
               <p class="mb-2">Total price:</p>
-              <p class="mb-2 fw-bold">$149.90</p>
-            </div>
-  
-            <div class="input-group mt-3 mb-4">
-              <input type="text" class="form-control border" name="" placeholder="Promo code" />
-              <button class="btn btn-light text-primary border">Apply</button>
+              <p class="mb-2 fw-bold">${{ total_price }}</p>
             </div>
   
             <hr />
@@ -59,36 +50,7 @@
                 </a>
                 <div class="price text-muted">Total: $295.99</div>
               </div>
-            </div>
-  
-            <div class="d-flex align-items-center mb-4">
-              <div class="me-3 position-relative">
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-secondary">
-                  1
-                </span>
-                <img src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/5.webp" style="height: 96px; width: 96x;" class="img-sm rounded border" />
-              </div>
-              <div class="">
-                <a href="#" class="nav-link">
-                  Apple Watch Series 4 Space <br />
-                  Large size
-                </a>
-                <div class="price text-muted">Total: $217.99</div>
-              </div>
-            </div>
-  
-            <div class="d-flex align-items-center mb-4">
-              <div class="me-3 position-relative">
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-secondary">
-                  3
-                </span>
-                <img src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/1.webp" style="height: 96px; width: 96x;" class="img-sm rounded border" />
-              </div>
-              <div class="">
-                <a href="#" class="nav-link">GoPro HERO6 4K Action Camera - Black</a>
-                <div class="price text-muted">Total: $910.00</div>
-              </div>
-            </div>
+            </div>           
           </div>
         </div>
       </div>

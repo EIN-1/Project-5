@@ -176,3 +176,15 @@ def checkout(request):
 @login_required
 def order_confirmation(request):
     return render(request, 'orders/order-confirmation.html')
+
+@login_required
+def my_orders(request):
+    orders = Order.objects.filter(user=request.user)
+    return render(request, 'orders/orders.html', {'orders':orders})
+
+
+@login_required
+def order_details(request, order_id):
+    order = Order.objects.get(id=order_id)
+    items = order.items.all()
+    return render(request, 'orders/order-detail.html', {'order': order, 'items':items})
