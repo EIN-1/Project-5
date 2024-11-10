@@ -30,7 +30,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{product.courseName}}</h5>
                                     <p class="card-text">{{product.description}}</p>
-                                    <a href="/products/add_to_cart?next={{request.get_full_path}}" class="btn btn-primary">Add to cart</a>
+                                    <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-primary">Add to cart</a>
                                 </div>
                             </div>
                         '
@@ -110,34 +110,37 @@
         }) {% endcomment %}
 
         document.addEventListener('DOMContentLoaded', function() {
-            var tooltipTriggerList = [].slice.call(document.querySelectorAll('.product-card'));
-            var currentTooltip = null;
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('.product-card'));
+            var currentPopover = null;
     
-            tooltipTriggerList.forEach(function(card) {
-                // Initialize tooltip for each card
-                var tooltip = new bootstrap.Tooltip(card);
-    
-                card.addEventListener('mouseenter', function() {
-                    // Hide any currently visible tooltip
-                    if (currentTooltip) {
-                        currentTooltip.hide();
-                    }
-    
-                    // Show the tooltip for the hovered card
-                    tooltip.show();
-                    currentTooltip = tooltip;
+            popoverTriggerList.forEach(function(card) {
+                // Initialize popover for each card
+                var popover = new bootstrap.Popover(card, {
+                    trigger: 'manual' // Use manual trigger to control show/hide behavior
                 });
     
-                card.addEventListener('mouseleave', function() {
-                    // Tooltip stays until another card is hovered, so nothing here
+                card.addEventListener('click', function() {
+                    // Toggle the current popover and hide any previous one
+                    if (currentPopover && currentPopover !== popover) {
+                        currentPopover.hide();
+                    }
+    
+                    // Toggle current popover visibility
+                    if (currentPopover === popover) {
+                        popover.hide();
+                        currentPopover = null;
+                    } else {
+                        popover.show();
+                        currentPopover = popover;
+                    }
                 });
             });
     
-            // Hide tooltip when clicking anywhere outside a card
+            // Hide popover when clicking outside any product card
             document.addEventListener('click', function(e) {
-                if (!e.target.closest('.product-card') && currentTooltip) {
-                    currentTooltip.hide();
-                    currentTooltip = null;
+                if (!e.target.closest('.product-card') && currentPopover) {
+                    currentPopover.hide();
+                    currentPopover = null;
                 }
             });
         });
