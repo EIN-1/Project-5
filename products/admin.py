@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, Order
+from .models import Product, Category, Order, OrderItems
 #/workspace/Project-5/products/admin.py
 # Register your models here.
 class ProductAdmin(admin.ModelAdmin):
