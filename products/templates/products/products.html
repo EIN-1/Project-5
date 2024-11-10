@@ -25,7 +25,7 @@
                 {% for product in page_obj %}
                     <!-- Course Card -->
                     <div class="col-md-4">
-                        <div class="card h-100 shadow-sm border-0" data-bs-toggle="tooltip" data-bs-html="true" title='
+                        <div class="card h-100 shadow-sm border-0 product-card" data-bs-toggle="tooltip" data-bs-html="true" title='
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">{{product.courseName}}</h5>
@@ -104,10 +104,43 @@
 
     <script>
         // Initialize Bootstrap tooltips
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        {% comment %} var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
+        }) {% endcomment %}
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('.product-card'));
+            var currentTooltip = null;
+    
+            tooltipTriggerList.forEach(function(card) {
+                // Initialize tooltip for each card
+                var tooltip = new bootstrap.Tooltip(card);
+    
+                card.addEventListener('mouseenter', function() {
+                    // Hide any currently visible tooltip
+                    if (currentTooltip) {
+                        currentTooltip.hide();
+                    }
+    
+                    // Show the tooltip for the hovered card
+                    tooltip.show();
+                    currentTooltip = tooltip;
+                });
+    
+                card.addEventListener('mouseleave', function() {
+                    // Tooltip stays until another card is hovered, so nothing here
+                });
+            });
+    
+            // Hide tooltip when clicking anywhere outside a card
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.product-card') && currentTooltip) {
+                    currentTooltip.hide();
+                    currentTooltip = null;
+                }
+            });
+        });
     </script>
     
 {% endblock %}
