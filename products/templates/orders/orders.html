@@ -3,7 +3,7 @@
 {% block content %}
 <section style="background-color: #eee;">
     <div class="container py-5">
-        {% for order in orders %}      
+        {% for order in page_obj.orders %}      
             <div class="row justify-content-center">
                 <div class="col-md-12 col-xl-10">
                 <div class="card shadow-0 border rounded-3">
@@ -35,4 +35,5 @@
         {% endfor %}    
     </div>
   </section>
+  {% include 'includes/pagination.html' with page_obj=page_obj%}
 {% endblock %}

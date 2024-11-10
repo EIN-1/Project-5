@@ -12,7 +12,8 @@
 
     {% block extra_meta %}
     {% endblock %}
-
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/core@1.6.8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.6.12"></script>
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
@@ -94,6 +95,7 @@
 
     {% block postloadjs %}
     {% endblock %}
+    
 
     <script>
         // Initialize all toasts on the page automatically when the page loads

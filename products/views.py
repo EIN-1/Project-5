@@ -182,7 +182,13 @@ def order_confirmation(request):
 @login_required
 def my_orders(request):
     orders = Order.objects.filter(user=request.user)
-    return render(request, 'orders/orders.html', {'orders':orders})
+    paginator = Paginator(orders, 10)  # Show 10 courses per page
+
+    # Get the page number from the request
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)  # This gets the current page’s data
+
+    return render(request, 'orders/orders.html', {'page_obj':page_obj})
 
 
 @login_required

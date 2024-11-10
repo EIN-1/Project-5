@@ -1,0 +1,106 @@
+{% load humanize %}
+
+<!-- Course Card -->
+<div class="col-md-4">
+    <div class="card h-100 shadow-sm border-0 product-card" data-bs-toggle="tooltip" data-bs-html="true" title='
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{product.courseName}}</h5>
+                <div class="mb-2 text-muted small">
+                    <span>{{ product.duration|intcomma }} total hours</span>
+                    <span class="text-primary"> • </span>
+                    <span>{{ product.category.name }}</span>
+                </div>
+                <p class="card-text">{{product.description}}</p>
+                <div class="d-flex flex-column mt-4">
+                    <a href="/products/{{product.id}}/" class="btn btn-outline-primary btn-sm" type="button">Details</a>
+                    <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mt-2" type="button">
+                    Add to Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    '
+    >
+        <img src={{product.imageUrl}} class="card-img-top" alt={{product.courseName}}>
+        <div class="card-body">
+            <h5 class="card-title">{{product.courseName}}</h5>
+            <div class="mb-2 text-muted small">
+                <span>By {{ product.instructor }}</span>                        
+            </div>
+            <div class="mb-2 text-muted small">
+                <span>{{ product.students|intcomma }} students</span>                        
+            </div>
+            <div class="mb-2 text-muted small">
+                <span>{{ product.duration|intcomma }} total hours</span>
+                <span class="text-primary"> • </span>
+                <span>{{ product.level }}</span>
+                <span class="text-primary"> • </span>
+                <span>{{ product.lectures }} lectures<br /></span>
+            </div>
+            
+            <div class="d-flex justify-content-between align-items-center">
+                <span class="badge bg-warning">Best Seller</span>
+                <span class="text-warning">
+                    <!-- Star Rating -->                        
+                    {% for i in "12345" %}
+                        {% if forloop.counter <= product.rating %}
+                            <i class="fas fa-star text-warning"></i>  <!-- Filled star with Bootstrap warning color (gold) -->
+                        {% else %}
+                            <i class="far fa-star text-warning"></i>  <!-- Empty star with Bootstrap warning color (gold) -->
+                        {% endif %}
+                    {% endfor %}
+                </span>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mt-2">
+                <span class="fw-bold">${{product.price}}</span>
+                <span >{{product.reviews|intcomma}} reviews</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Initialize Bootstrap tooltips
+    {% comment %} var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    }) {% endcomment %}
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('.product-card'));
+        var currentPopover = null;
+
+        popoverTriggerList.forEach(function(card) {
+            // Initialize popover for each card
+            var popover = new bootstrap.Popover(card, {
+                trigger: 'manual' // Use manual trigger to control show/hide behavior
+            });
+
+            card.addEventListener('click', function() {
+                // Toggle the current popover and hide any previous one
+                if (currentPopover && currentPopover !== popover) {
+                    currentPopover.hide();
+                }
+
+                // Toggle current popover visibility
+                if (currentPopover === popover) {
+                    popover.hide();
+                    currentPopover = null;
+                } else {
+                    popover.show();
+                    currentPopover = popover;
+                }
+            });
+        });
+
+        // Hide popover when clicking outside any product card
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.product-card') && currentPopover) {
+                currentPopover.hide();
+                currentPopover = null;
+            }
+        });
+    });
+</script>

@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
-<!-- Example for including a CSS file -->
-<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+{% load humanize %}
 
 <!-- /workspace/Project-5/products/templates/products.html -->
 {% block page_header %}
@@ -22,40 +20,15 @@
                     <h2 class="logo-font">Products</h2>
                 </div>
             </div>
-            <div class="row">
+            <div class="container mt-5">
+            <div class="row row-gap-3">
                 {% for product in page_obj %}
-                    <div class="col-sm-6 col-md-4 col-lg-3 mt-4">  <!-- I will adjust column sizes as needed depending on my website-->
-                        <div class="card h-100 border-0 shadow p-3 bg-body-tertiary rounded">
-                            {% if product.imageUrl %}
-                                <img class="card-img-top img-fluid" src="{{ product.imageUrl }}" alt="{{ product.courseName }}">
-                            {% else %}
-                                <img class="card-img-top img-fluid" src="{% static 'image/x/noimage.png' %}" alt="{{ product.courseName }}">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ product.courseName }}</h5>
-                                <p class="card-text">{{ product.description }}</p>
-                                <strong class="mb-0 text-left fs-5">
-                                    {% if product.flag %}
-                                        <span class="badge bg-success">Best Seller</span>  <!-- Bootstrap badge for true -->
-                                    {% endif %}
-                                </strong>
-                                <p class="lead mb-0 text-sm-left font-weight-bold">{{ product.instructor }}</p>
-                                <p class="mb-0 text-left fs-5">${{ product.price }}</p>
-                                <small class="text-muted">
-                                    {% if product.rating %}
-                                        <i class="fas fa-star mr-1"></i>{{ product.rating }} / 5 ({{ product.reviews}}) . {{ product.students}} students
-                                        <p>{{ product.duration }} total hours . {{ product.lectures}} lectures . {{ product.level}}</p>
-                                    {% else %}
-                                        No Rating
-                                    {% endif %}
-                                </small>
-                            </div>
-                        </div>
-                    </div>
+                    {% include 'products/product_card.html' with product=product %}
                 {% empty %}
                     <p>No products available.</p>
                 {% endfor %}
             </div>
+        </div>
         </div>
     </div>
 
@@ -78,6 +51,51 @@
             </ul>
         </nav>
     </div>
+
+
+    <script>
+        // Initialize Bootstrap tooltips
+        {% comment %} var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        }) {% endcomment %}
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('.product-card'));
+            var currentPopover = null;
+    
+            popoverTriggerList.forEach(function(card) {
+                // Initialize popover for each card
+                var popover = new bootstrap.Popover(card, {
+                    trigger: 'manual' // Use manual trigger to control show/hide behavior
+                });
+    
+                card.addEventListener('click', function() {
+                    // Toggle the current popover and hide any previous one
+                    if (currentPopover && currentPopover !== popover) {
+                        currentPopover.hide();
+                    }
+    
+                    // Toggle current popover visibility
+                    if (currentPopover === popover) {
+                        popover.hide();
+                        currentPopover = null;
+                    } else {
+                        popover.show();
+                        currentPopover = popover;
+                    }
+                });
+            });
+    
+            // Hide popover when clicking outside any product card
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.product-card') && currentPopover) {
+                    currentPopover.hide();
+                    currentPopover = null;
+                }
+            });
+        });
+    </script>
     
 {% endblock %}
 
