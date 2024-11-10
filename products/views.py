@@ -161,31 +161,31 @@ def checkout(request):
         return redirect('cart_detail')
 
     # Save order to the database (status initially set to "Pending")
-    try:
-        with transaction.atomic():
-            # Create the order
-            order = Order.objects.create(
-                user=request.user,
-                amount=total_price,
-                stripe_id=payment_intent['id'],  # Store Stripe PaymentIntent ID
-                status="Pending"
-            )
+    # try:
+    #     with transaction.atomic():
+    #         # Create the order
+    #         order = Order.objects.create(
+    #             user=request.user,
+    #             amount=total_price,
+    #             stripe_id=payment_intent['id'],  # Store Stripe PaymentIntent ID
+    #             status="Pending"
+    #         )
 
-            # Add each cart item to the OrderItems table
-            for cart_item in cart_items:
-                OrderItems.objects.create(
-                    order=order,
-                    product=cart_item.product,
-                    price=cart_item.product.price,
-                )
+    #         # Add each cart item to the OrderItems table
+    #         for cart_item in cart_items:
+    #             OrderItems.objects.create(
+    #                 order=order,
+    #                 product=cart_item.product,
+    #                 price=cart_item.product.price,
+    #             )
 
-            # Save the order and prepare for payment confirmation
-            # Clear the user's cart
-            cart_items.delete()
+    #         # Save the order and prepare for payment confirmation
+    #         # Clear the user's cart
+    #         cart_items.delete()
 
-    except Exception as e:
-        messages.error(request, f"An error occurred during checkout: {e}")
-        return redirect('cart_detail')
+    # except Exception as e:
+    #     messages.error(request, f"An error occurred during checkout: {e}")
+    #     return redirect('cart_detail')
 
 
      # Pass the PaymentIntent client_secret to the template
