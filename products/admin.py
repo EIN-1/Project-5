@@ -6,14 +6,15 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = (        
         'courseName',
         'rating',
-        'lectures',
+        'instructor',
         'level',
         'price',
         'flag',
         'category',
     )
-
     list_editable = ('category',)
+    list_filter = ('category','rating', 'level', 'flag',)
+    search_fields = ('courseName', 'instructor', 'price',)
 
     ordering = ('id',)
 admin.site.register(Product, ProductAdmin)
