@@ -3,7 +3,7 @@ import stripe
 from django.conf import settings
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Product, Cart, CartItem, Order, OrderItems
+from .models import Product, Cart, CartItem, Order, OrderItems, Category
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -25,11 +25,18 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def list_all_products(request):
     # Get the search query from the request
+    category_query = request.GET.get('category', None)
     search_query = request.GET.get('search', '')
     products = Product.objects.all()  # Fetch all products
-
+    categories = Category.objects.all()
     # Filter products based on the search query across multiple fields
     products = Product.objects.all()
+
+    if category_query:
+        products = products.filter(
+            category=category_query
+        )
+
     if search_query:
         products = products.filter(
             Q(courseName__icontains=search_query) |
@@ -46,7 +53,7 @@ def list_all_products(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)  # This gets the current page’s data
 
-    return render(request, 'products/products.html', {'page_obj': page_obj, 'search_query': search_query, })
+    return render(request, 'products/products.html', {'page_obj': page_obj, 'search_query': search_query, 'categories': categories })
     
     # print("products in database =",products)
     # total_products = products.count()  # Count total products
