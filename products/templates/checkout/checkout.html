@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<script src="https://js.stripe.com/v3/"></script>
 <section class="bg-light py-5">
     <div class="container">
       <div class="row">
@@ -9,8 +10,8 @@
           <div class="card shadow-0 border">
             <!-- Stripe payment form -->
             <form id="payment-form">
-              <div id="card-element"><!-- Stripe Card Element will be inserted here --></div>
-              <button id="submit">Pay ${{ total_price }}</button>
+              <div id="card-element"></div> <!-- Stripe will embed the card form here -->
+              <button id="submit">Pay</button>
             </form>
           </div>
           <div id="payment-message" class="hidden"></div>
@@ -58,34 +59,41 @@
     </div>
   </section>
 
-  <script src="https://js.stripe.com/v3/"></script>
+  
   <script>
-      const stripe = Stripe("{{ stripe_publishable_key }}");
-      const clientSecret = "{{ client_secret }}";
+    const stripe = Stripe("{{ stripe_publishable_key }}");
+    const elements = stripe.elements();
+    const cardElement = elements.create('card');
+    cardElement.mount('#card-element');
 
-      // Set up Stripe.js and Elements to use in the form
-      const elements = stripe.elements();
-      const cardElement = elements.create("card");
-      cardElement.mount("#card-element");
+    const form = document.getElementById('payment-form');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        
+        const { error, paymentIntent } = await stripe.confirmCardPayment("{{ client_secret }}", {
+            payment_method: { card: cardElement }
+        });
 
-      const form = document.getElementById("payment-form");
-
-      form.addEventListener("submit", async (event) => {
-          event.preventDefault();
-
-          const { error } = await stripe.confirmCardPayment(clientSecret, {
-              payment_method: {
-                  card: cardElement,
-              },
-          });
-
-          if (error) {
-              // Show error to customer
-              document.getElementById("payment-message").textContent = error.message;
-          } else {
-              // Redirect to confirmation page
-              window.location.href = "{% url 'order_confirmation' %}";
-          }
-      });
+        if (error) {
+            alert(error.message); // Handle errors
+        } else {
+            // Send payment confirmation to the server
+            fetch("{% url 'complete_payment' %}", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify({ paymentIntentId: paymentIntent.id })
+            }).then(response => response.json())
+              .then(data => {
+                  if (data.success) {
+                    window.location.href = "{% url 'order_confirmation' %}";
+                  } else {
+                    alert("Payment failed, please try again.");
+                  }
+              });
+        }
+    });
   </script>
 {% endblock %}
