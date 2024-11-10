@@ -193,6 +193,7 @@ def checkout(request):
         'total_price': total_price,
         'stripe_publishable_key': settings.STRIPE_PUBLISHABLE_KEY,
         'client_secret': payment_intent['client_secret'],
+        'cart_items': cart_items
     }
 
     return render(request, 'checkout/checkout.html', context)

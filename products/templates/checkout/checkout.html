@@ -35,22 +35,23 @@
   
             <hr />
             <h6 class="text-dark my-4">Items in cart</h6>
-  
-            <div class="d-flex align-items-center mb-4">
-              <div class="me-3 position-relative">
-                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-secondary">
-                  1
-                </span>
-                <img src="https://mdbootstrap.com/img/bootstrap-ecommerce/items/7.webp" style="height: 96px; width: 96x;" class="img-sm rounded border" />
-              </div>
-              <div class="">
-                <a href="#" class="nav-link">
-                  Gaming Headset with Mic <br />
-                  Darkblue color
-                </a>
-                <div class="price text-muted">Total: $295.99</div>
-              </div>
-            </div>           
+            {% for item in cart_items %}
+              <div class="d-flex align-items-center mb-4">
+                <div class="me-3 position-relative">
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-secondary">
+                    1
+                  </span>
+                  <img src={{item.product.imageUrl}} alt={{item.product.courseName}} style="height: 96px; width: 96x;" class="img-sm rounded border" />
+                </div>
+                <div class="">
+                  <a href="{% url 'product-detail' item.product.id %}" class="nav-link">
+                    {{item.product.courseName}} <br />
+                    {{item.product.instructor}}
+                  </a>
+                  <div class="price text-muted">Total: ${{item.product.price}}</div>
+                </div>
+              </div> 
+            {% endfor %}          
           </div>
         </div>
       </div>
