@@ -49,6 +49,8 @@ def retrieve_product(request, id):
 
 def add_to_cart(request, product_id):
     product = get_object_or_404(Product, id=product_id)
+    # Get the 'next' parameter from the query string
+    next_url = request.GET.get('next', '/')
 
     if request.user.is_authenticated:
         # For logged-in users, add to the Cart model in the database
@@ -62,7 +64,7 @@ def add_to_cart(request, product_id):
         cart.add(product_id)  # Add the product ID if not already present
         request.session['cart'] = list(cart)  # Save the cart back to session
 
-    return redirect('cart_detail')  # Redirect to the cart detail page or any page of your choice
+    return redirect(next_url)  # Redirect to the cart detail page or any page of your choice
 
 def cart_detail(request):
     cart_items = []
