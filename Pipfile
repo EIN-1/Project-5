@@ -12,6 +12,7 @@ sqlparse = "==0.5.1"
 crispy-bootstrap5 = "==2024.10" 
 django-crispy-forms = "==2.3"
 stripe = "==11.2.0"
+mailchimp-marketing = "==3.0.80"
 
 [dev-packages]
 
