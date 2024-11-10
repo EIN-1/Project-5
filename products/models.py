@@ -44,7 +44,7 @@ class CartItem(models.Model):
     
 
 class Order(models.Model):
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, on_delete=models.PROTECT, related_name='orders')
     amount = models.IntegerField()
     stripe_id = models.CharField(max_length=255)
     status = models.CharField(max_length=20)
