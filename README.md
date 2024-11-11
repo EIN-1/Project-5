@@ -295,3 +295,43 @@ Our platform is a simple and efficient e-learning marketplace built with Django,
 ## 8. Security and Privacy
   - Environment variable management for sensitive data (e.g., SECRET_KEY, Stripe API keys).
   - Secure user data handling with hashed passwords and secure payment processing via Stripe.
+
+# Usage
+The platform allows users to register, browse, purchase, and enroll in courses. Below are step-by-step instructions for using the main features:
+
+## 1. Registering a New Account
+  - Go to the Register page.
+  - Fill out the required details (username, email, password) and submit the form.
+  - Check your email for a verification link (if email verification is enabled) and complete the verification to activate your account.
+## 2. Logging In
+  - Navigate to the Login page.
+  - Enter your registered email and password.
+  - Upon successful login, you will be redirected to the homepage.
+## 3. Browsing Courses
+  - From the homepage, you can browse all available courses or filter by category to find courses that match your interests.
+  - Use the search bar to look up specific courses by title or keyword.
+## 4. Viewing Course Details
+  - Click on any course card to open its tooltip.
+  - The tooltip enables you to add the course to cart or view the course details.
+  - Here, you can find a course description, price, and image preview.
+  - If you’re interested, you can add the course to your shopping cart.
+## 5. Adding Courses to the Shopping Cart
+  - On a course's detail page, click Add to Cart to add it to your shopping cart.
+  - You can view your shopping cart at any time by clicking the cart icon in the navigation bar.
+## 6. Managing the Shopping Cart
+  - In the cart, you can:
+    - Remove courses if you no longer wish to purchase them.
+    - Review your total before proceeding to checkout.
+## 7. Checking Out and Making a Payment
+  - Once your cart is ready, click on Checkout.
+  - You will be redirected to a secure checkout page integrated with Stripe.
+  - Enter your payment details and complete the payment.
+  **Note**: For testing purposes, you can use the Stripe test card number 4242 4242 4242 4242 with any valid expiration date and CVC code.
+  - After payment, you will be redirected to a confirmation page.
+## 8. Viewing Order History
+  - Once logged in, go to My Account and navigate to the Order History section to view a list of all courses you’ve purchased.
+## 9. Admin Features (For Admin Users Only)
+  - Admin users can log into the Admin Dashboard to manage courses, users, and orders.
+  - Admins have access to additional features, including:
+    - Adding, updating, or removing courses.
+    - Viewing user accounts and order details.
