@@ -210,3 +210,88 @@ This schema provides a scalable, relational data structure suited for an e-learn
 The wireframes for the site were created in the software Balsamiq. The wireframes have been created for desktop, tablet and mobile devices. The text content wasn't finalized during the wireframe process. It's also worth mentioning that there are some visual differences in the deployed version compared to the original wireframes, the reason being design choices that was made during the creation process.
 
 ![Wireframes](screenshots/homepage_wireframe.png)
+
+# User Stories
+Below the user stories for the project are listed to clarify why particular feature matters. These will then be tested and confirmed in the Testing section.
+
+## 1. User Registration and Authentication
+  - As a user, I want to be able to create an account so that I can access my purchased courses and manage my profile.
+  - As a user, I want to securely log in and log out of my account to protect my personal information.
+  - As a user, I want the option to reset my password so that I can regain access if I forget it.
+## 2. Course Browsing and Discovery
+  - As a user, I want to browse available courses so that I can find one that interests me.
+  - As a user, I want to filter courses by categories (e.g., Development, Design, Marketing) so that I can quickly find courses relevant to my interests.
+  - As a user, I want to view a course's details, such as the description, category, price, and an image, so that I can understand its value before purchasing.
+## 3. Shopping Cart and Checkout
+  - As a user, I want to add a course to my shopping cart so that I can continue browsing without losing my selection.
+  - As a user, I want to view the contents of my cart so that I can review my selections before purchasing.
+  - As a user, I want to remove courses from my cart if I change my mind before checkout.
+  - As a user, I want to proceed to checkout and pay using Stripe so that I can securely purchase the course.
+## 4. Payment Processing with Stripe
+  - As a user, I want a secure and reliable payment process so that I can confidently complete my purchase.
+  - As a user, I want to receive an email confirmation and a receipt after I’ve made a payment so that I have a record of my purchase.
+## 5. Accessing Purchased Courses
+  - As a user, I want to access a list of all the courses I’ve purchased so that I can go back to them whenever I want.
+  - As a user, I want to be able to download any resources associated with the course so that I can review them offline if needed.
+## 6. Course Management (Admin)
+  - As an admin, I want to be able to create, update, and delete courses so that I can manage the course offerings.
+  - As an admin, I want to categorize courses by topic or difficulty so that users can filter courses easily.
+  - As an admin, I want to view sales and order histories so that I can understand the platform’s performance and popular courses.
+## 7. User Profile Management
+  - As a user, I want to update my personal information (like name, email) in my profile so that it stays accurate and up-to-date.
+  - As a user, I want to view my order history and purchase details so that I can keep track of my learning investments.
+## 8. Security and Privacy
+  - As a user, I want my information to be stored securely and to feel confident my data is protected.
+  - As a user, I want to receive notifications of any important updates or security-related changes so that I can stay informed and secure.
+## 9. UI and User Experience
+  - As a user, I want a clean, intuitive interface so that I can easily navigate and find the courses I need.
+  - As a user, I want a responsive design so that I can access the platform easily from my phone, tablet, or desktop.
+## 10. Notifications and Receipts
+  - As a user, I want to receive a notification upon completing a purchase so that I’m immediately aware of my successful order.
+  - As a user, I want an emailed receipt and access to my invoice details so that I have a permanent record of my transaction.
+
+
+# Admin User Stories
+## 1. Course Management
+  - As an admin, I want to create, update, and delete courses, so that I can keep the course offerings current and relevant for users.
+  - As an admin, I want to categorize courses, so that users can easily find courses in specific areas of interest.
+  - As an admin, I want to add and update images for each course, so that users have a visual preview of what the course is about.
+## 2. User Management
+  - As an admin, I want to view a list of registered users, so that I can monitor and manage user activities.
+  - As an admin, I want to activate or deactivate user accounts, so that I can control access for users who violate terms or security policies.
+  - As an admin, I want to assign different roles users, so that responsibilities are clear within the admin team.
+## 3. Order and Payment Management
+  - As an admin, I want to view a list of all orders, so that I can track user purchases and sales data.
+  - As an admin, I want to update the status of orders (e.g., processing, completed), so that I can ensure all orders are correctly tracked.
+  - As an admin, I want to view payment details and history for each order, so that I can assist users with payment issues and verify transactions.
+
+# Features
+Our platform is a simple and efficient e-learning marketplace built with Django, allowing users to explore, purchase, and enroll in courses. Key features include:
+
+## 1. User Authentication and Authorization
+  - Secure registration, login, and logout system.
+  - Role-based permissions for admins, staff, and regular users.
+  - Password reset and email verification.
+## 2. Course Management
+  - Admin dashboard: Create, update, and delete courses easily from the admin panel.
+  - Categorization: Assign courses to categories, helping users discover courses by topic or area of interest.
+  - Course details: Each course includes a title, description, and cover image to provide users with a course overview.
+## 3. Course Catalog and Search
+  - Browse courses in an organized catalog view with filters by category and search functionality.
+  - Display course details, including title, description, price, and ratings, to assist users in making informed decisions.
+## 4. Shopping Cart and Checkout
+  - Add multiple courses to a shopping cart before purchasing.
+  - Remove items from cart.
+  - Checkout and Payment Integration: Integrated with Stripe for secure, real-time payment processing.
+## 5. Order History and Enrollment
+  - View past orders and receipts for courses purchased.
+  - Allowing users to easily view purchased courses.
+## 6. Admin Panel for Content and User Management
+  - Access to an admin dashboard where admins can:
+  - Manage courses, users, orders, and enrollments.
+  - View sales and analytics to monitor platform performance.
+## 7. Responsive Design
+  - Fully responsive UI for optimal viewing across devices, including mobile, tablet, and desktop.
+## 8. Security and Privacy
+  - Environment variable management for sensitive data (e.g., SECRET_KEY, Stripe API keys).
+  - Secure user data handling with hashed passwords and secure payment processing via Stripe.
