@@ -1,134 +1,337 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome EIN-1 Elsie,
+# Technical Skills
+Welcome to **Technical Skills!** This project is designed to help users access the most relevant courses for the technical skills they seek to learn. Whether you're a beginner looking to get started or an advanced user seeking specialized knowledge, Technical Skills has comprehensive suite of courses, and expert guidance to support your goals.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Built with Django, JavaScript, and Bootstrap, this platform is highly scalable, easy to navigate and scalable, making it a perfect solution for learners and curious people.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+Why Choose **Technical Skills?**
 
-## Gitpod Reminders
+> - Simplifies the skill search process with a user-friendly interface.
+> - Provides an intuitive course catalog and a robust search functionality.
+> - Built with performance and scalability in mind, supporting thousands of users and courses.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+View Live Site [Technical Skills](https://pages.github.com/).
 
-`python3 -m http.server`
+# Project
 
-A blue button should appear to click: _Make Public_,
+## Objective
+To provide users with a clear path to begin or strengthen their technical skills by offering guidance on relevant courses and learning opportunities, especially for those unsure of where to start or which skills to pursue. This has been done to demonstrate my knowledge of the Django Framework, Python, JavaScript, CSS and HTML.
 
-Another blue button should appear to click: _Open Browser_.
+## Site Users Goal
+To find tailored learning paths and relevant courses that support the users' technical skill development, helping them confidently choose where to start and progress toward their career or personal learning objectives.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+## Site Owner Goal
+To provide a well-organized and user-friendly platform that connects users with high-quality technical courses, boosting engagement and satisfaction while driving course enrollments and fostering a community of lifelong learners.
 
-A blue button should appear to click: _Make Public_,
+# Business Model
+1. ## Target Audience
+	- **Primary Users**: Individuals seeking to learn or reinforce technical skills but unsure of where to begin or which courses to take.
+	- **Secondary Users**: Employers or organizations looking to upskill employees through curated courses.
+2. ## Value Proposition
+	- **For Learners**: A centralized platform offering tailored recommendations to guide users in discovering courses that align with their skill level, learning goals, and career ambitions.
+	- **For Organizations**: A resource for enabling focused technical training and skill development for employees.
+3. ## Revenue Streams
+	- **Course Sales**: Revenue generated from one-time course purchases or subscriptions.
+	- **Featured Course Listings**: Paid placement for course providers to have their courses featured prominently on the platform.
+	- **Corporate Partnerships**: Offering tailored packages for companies interested in upskilling employees, potentially with bulk pricing or access to exclusive content.
+	- **Affiliate Links**: Earning a commission by partnering with other educational platforms or providers and directing traffic through affiliate links.
+4. ## Cost Structure
+	- **Platform Development & Maintenance**: Regular updates, bug fixes, and feature improvements to ensure a seamless user experience.
+	- **Marketing & Outreach**: Campaigns targeting learners and organizations through social media, SEO, content marketing, and partnerships.
+	- **Customer Support**: Providing support for learners and partners to improve satisfaction and resolve issues.
+5. ## Key Partners
+	- **Course Providers**: Partnering with subject matter experts, institutions, and tech platforms to offer diverse, high-quality courses.
+	- **Tech Platforms**: Integrations with payment processors (like Stripe) and analytics tools to enhance service offerings.
+	- **Affiliate Partners**: External platforms that offer specialized or complementary courses to expand course options.
+6. ## Channels
+	- **Web Platform**: The main interface for users to browse, purchase, and participate in courses.
+	- **Email Marketing**: Reaching out to users with new course recommendations, discounts, and personalized learning suggestions.
+	- **Social Media Presence**: Engaging with the community, sharing success stories, and promoting trending courses.
+8. ## Key Activities
+	- **Platform Development**: Regularly developing new features, ensuring compatibility, and maintaining high usability.
+	- **Course Curation & Quality Control**: Selecting and featuring courses that align with user needs and maintain high standards.
+	- **Marketing & Customer Acquisition**: Implementing strategies to attract new users and improve brand visibility.
 
-Another blue button should appear to click: _Open Browser_.
+# Marketing Techniques
+1. ## Social Media Campaigns
+	- **Targeted Ads**: Use ads on platforms like Facebook, Instagram, and LinkedIn, focusing on audiences interested in skill-building and professional development.
+	- **Influencer Partnerships**: Collaborate with industry influencers or tech educators who can share insights about the courses available on the platform.
+	- **Live Sessions & Webinars**: Host free live sessions, webinars, or Q&As on social channels to demonstrate the value of selected courses.
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+2. ## Email Marketing
+	- **Personalized Course Recommendations**: Send emails with course suggestions based on users' interests, previous searches, or completed courses.
+	- **Weekly Newsletters**: Share the latest courses, learning resources, and trending tech topics in a newsletter format.
+	- **Promotional Campaigns**: Offer discounts on popular courses during peak enrollment times, such as the start of the year, new job cycles, or key industry events.
 
-To log into the Heroku toolbelt CLI:
+3. ## Search Engine Optimization (SEO)
+	- **Keyword Targeting**: Optimize the website and course descriptions for terms such as “learn tech skills,” “beginner coding courses,” and “best online tech courses.”
+	- **Technical SEO**: Improve load times, mobile responsiveness, and accessibility to rank higher in search results.
+	- **Backlinking**: Build partnerships and gain backlinks from reputable tech blogs, educational websites, and industry publications to boost site authority.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+4. ## Affiliate & Referral Program
+	- **Referral Incentives**: Reward users who refer friends with discounts on their next course or access to exclusive content.
+	- **Affiliate Partnerships**: Collaborate with career development websites, tech bloggers, and educational platforms to promote courses and receive commissions on sales generated through affiliates.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+5. ## Corporate Partnerships and B2B Outreach
+	- **Upskilling Programs for Businesses**: Market directly to businesses interested in upskilling employees, offering volume discounts and custom learning paths.
+	- **LinkedIn Outreach**: Network with HR and L&D professionals on LinkedIn, promoting the platform as a valuable resource for employee development.
 
-### Connecting your Mongo database
+6. ## Community Building
+	- **Discussion Forums & Peer Support**: Create a space where users can ask questions, share learning experiences, and get advice, fostering a community feeling.
+	- **User-Generated Content**: Encourage users to share their projects, code snippets, or experiences, and feature the best examples on the platform’s social channels or blog.
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+7. ## Influencer & Industry Partnerships
+	- **Guest Appearances on Podcasts and Webinars**: Partner with influencers or thought leaders to appear in their content, introducing the platform to a wider audience.
+	- **Collaborations with Online Tech Communities**: Work with platforms like GitHub, Stack Overflow, or specialized subreddits to engage with users in their preferred learning spaces.
 
-------
+8. ## Paid Advertising
+	- **Google Ads & Retargeting**: Use Google Ads to reach users searching for technical courses and retarget site visitors who didn’t complete purchases.
+	- **Seasonal & Limited-Time Offers**: Run promotional campaigns around significant times like "Back to School" or "New Year, New Skill" campaigns to capitalize on users’ learning motivations.
 
-## Release History
+# Project Management
+This project was managed using GitHub's project management tools to ensure organized and efficient development. GitHub Projects and Issues were utilized to create a Kanban-style workflow, which allowed the team to track progress and prioritize tasks effectively. Each task or bug was represented as an "Issue," and labeled based on its type (e.g., "feature," "bug," "enhancement") for quick categorization.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+**The Kanban board** provided visibility into the project’s workflow by dividing tasks into stages, such as "To Do," "In Progress," and "Completed." This helped maintain an organized workflow, identify bottlenecks, and keep team members aligned on priorities.
 
-**June 18, 2024,** Add Mongo back into template
+Using GitHub’s tools allowed for seamless version control and communication within the team, ensuring that every change was documented and linked to the relevant tasks, fostering transparency and accountability across the project.
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+![Screenshot of the github project Kanban board.](screenshots/Kanban.png)
 
-**May 28 2024:** Fix Mongo and Links installs
+# Database Schema
 
-**April 26 2024:** Update node version to 16
+This document outlines the database schema used in the e-learning Django project, describing each model and the relationships among them.
 
-**September 20 2023:** Update Python version to 3.9.17.
+## 1. Category Table
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- **Fields**:
+  - `id`: (Primary Key, Auto-generated by Django)
+  - `name`: Name of the category (CharField, max length 254)
+  - `description`: Description of the category (TextField)
+  
+- **Description**: Contains course categories to help organize and filter the courses on the platform.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- **Relationships**:
+  - Each `Product` (course) has a foreign key to a single `Category`.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## 2. Product Table
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- **Fields**:
+  - `id`: (Primary Key, Auto-generated by Django)
+  - `courseName`: Name of the course (CharField, max length 254)
+  - `instructor`: Name of the instructor (CharField, max length 254)
+  - `courseUrl`: URL for more course information (URLField, optional)
+  - `imageUrl`: URL to the course image (URLField, optional)
+  - `description`: Detailed description of the course (TextField)
+  - `category`: Foreign key to `Category` (on_delete=PROTECT, optional)
+  - `rating`: Course rating (DecimalField, max_digits=6, decimal_places=2, optional)
+  - `reviews`: Number of course reviews (IntegerField, optional)
+  - `duration`: Duration of the course in hours (DecimalField, max_digits=6, decimal_places=2)
+  - `lectures`: Number of lectures in the course (IntegerField, optional)
+  - `level`: Course difficulty level (CharField, max length 50)
+  - `price`: Course price (DecimalField, max_digits=10, decimal_places=2)
+  - `flag`: Boolean indicating whether the course is featured
+  - `students`: Number of enrolled students (IntegerField, optional)
+  
+- **Description**: Stores comprehensive details about each course offered.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- **Relationships**:
+  - Each course belongs to a single `Category`.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## 3. Cart Table
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- **Fields**:
+  - `id`: (Primary Key, Auto-generated by Django)
+  - `user`: Foreign key to `User` (on_delete=CASCADE, optional)
+  - `created_at`: Timestamp of when the cart was created (DateTimeField, auto_add_now)
+  
+- **Description**: Manages cart associations for users, storing temporary order data before checkout.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- **Relationships**:
+  - Each cart has a one-to-many relationship with `CartItem`, linking multiple items to a single cart.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## 4. CartItem Table
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- **Fields**:
+  - `id`: (Primary Key, Auto-generated by Django)
+  - `cart`: Foreign key to `Cart` (on_delete=CASCADE)
+  - `product`: Foreign key to `Product` (on_delete=CASCADE)
+  
+- **Description**: Stores individual items within each cart, associating products with a specific user’s cart.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- **Relationships**:
+  - Each `CartItem` links a specific product to a cart.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## 5. Order Table
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+- **Fields**:
+  - `id`: (Primary Key, Auto-generated by Django)
+  - `user`: Foreign key to `User` (on_delete=PROTECT)
+  - `amount`: Total amount for the order (IntegerField)
+  - `stripe_id`: Stripe PaymentIntent ID for payment verification (CharField, max length 255)
+  - `status`: Status of the order (e.g., Pending, Completed, Canceled) (CharField, max length 20)
+  - `date`: Timestamp of when the order was created (DateTimeField, auto_add_now)
+  
+- **Description**: Stores completed orders with Stripe payment details and status.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- **Relationships**:
+  - Each order has a one-to-many relationship with `OrderItems`, associating multiple purchased products with a single order.
 
-------
+## 6. OrderItems Table
 
-## FAQ about the uptime script
+- **Fields**:
+  - `id`: (Primary Key, Auto-generated by Django)
+  - `order`: Foreign key to `Order` (on_delete=PROTECT)
+  - `product`: Foreign key to `Product` (on_delete=PROTECT)
+  - `price`: Price at the time of purchase (IntegerField)
+  
+- **Description**: Logs the specific products purchased within each order, including price snapshots.
 
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- **Relationships**:
+  - Each `OrderItem` links a purchased product to an order, maintaining an association between items and orders.
 
 ---
 
-Happy coding!
+## Relationships Summary
 
-## Credits
-Formatting file csv to json ['https://csvjson.com/csv2json']
+- **One-to-Many**:
+  - Each `Category` can have multiple `Products`.
+  - Each `Cart` can contain multiple `CartItems`.
+  - Each `Order` can include multiple `OrderItems`.
+
+- **Many-to-One**:
+  - Each `Product` belongs to a single `Category`.
+  - Each `OrderItem` and `CartItem` associates a single `Product` with an order or cart.
+
+This schema provides a scalable, relational data structure suited for an e-learning platform with courses, shopping carts, and an integrated payment system.
+
+# User Experience (UX)
+## Wireframes
+The wireframes for the site were created in the software Balsamiq. The wireframes have been created for desktop, tablet and mobile devices. The text content wasn't finalized during the wireframe process. It's also worth mentioning that there are some visual differences in the deployed version compared to the original wireframes, the reason being design choices that was made during the creation process.
+
+![Wireframes](screenshots/homepage_wireframe.png)
+
+# User Stories
+Below the user stories for the project are listed to clarify why particular feature matters. These will then be tested and confirmed in the Testing section.
+
+## 1. User Registration and Authentication
+  - As a user, I want to be able to create an account so that I can access my purchased courses and manage my profile.
+  - As a user, I want to securely log in and log out of my account to protect my personal information.
+  - As a user, I want the option to reset my password so that I can regain access if I forget it.
+## 2. Course Browsing and Discovery
+  - As a user, I want to browse available courses so that I can find one that interests me.
+  - As a user, I want to filter courses by categories (e.g., Development, Design, Marketing) so that I can quickly find courses relevant to my interests.
+  - As a user, I want to view a course's details, such as the description, category, price, and an image, so that I can understand its value before purchasing.
+## 3. Shopping Cart and Checkout
+  - As a user, I want to add a course to my shopping cart so that I can continue browsing without losing my selection.
+  - As a user, I want to view the contents of my cart so that I can review my selections before purchasing.
+  - As a user, I want to remove courses from my cart if I change my mind before checkout.
+  - As a user, I want to proceed to checkout and pay using Stripe so that I can securely purchase the course.
+## 4. Payment Processing with Stripe
+  - As a user, I want a secure and reliable payment process so that I can confidently complete my purchase.
+  - As a user, I want to receive an email confirmation and a receipt after I’ve made a payment so that I have a record of my purchase.
+## 5. Accessing Purchased Courses
+  - As a user, I want to access a list of all the courses I’ve purchased so that I can go back to them whenever I want.
+  - As a user, I want to be able to download any resources associated with the course so that I can review them offline if needed.
+## 6. Course Management (Admin)
+  - As an admin, I want to be able to create, update, and delete courses so that I can manage the course offerings.
+  - As an admin, I want to categorize courses by topic or difficulty so that users can filter courses easily.
+  - As an admin, I want to view sales and order histories so that I can understand the platform’s performance and popular courses.
+## 7. User Profile Management
+  - As a user, I want to update my personal information (like name, email) in my profile so that it stays accurate and up-to-date.
+  - As a user, I want to view my order history and purchase details so that I can keep track of my learning investments.
+## 8. Security and Privacy
+  - As a user, I want my information to be stored securely and to feel confident my data is protected.
+  - As a user, I want to receive notifications of any important updates or security-related changes so that I can stay informed and secure.
+## 9. UI and User Experience
+  - As a user, I want a clean, intuitive interface so that I can easily navigate and find the courses I need.
+  - As a user, I want a responsive design so that I can access the platform easily from my phone, tablet, or desktop.
+## 10. Notifications and Receipts
+  - As a user, I want to receive a notification upon completing a purchase so that I’m immediately aware of my successful order.
+  - As a user, I want an emailed receipt and access to my invoice details so that I have a permanent record of my transaction.
+
+
+# Admin User Stories
+## 1. Course Management
+  - As an admin, I want to create, update, and delete courses, so that I can keep the course offerings current and relevant for users.
+  - As an admin, I want to categorize courses, so that users can easily find courses in specific areas of interest.
+  - As an admin, I want to add and update images for each course, so that users have a visual preview of what the course is about.
+## 2. User Management
+  - As an admin, I want to view a list of registered users, so that I can monitor and manage user activities.
+  - As an admin, I want to activate or deactivate user accounts, so that I can control access for users who violate terms or security policies.
+  - As an admin, I want to assign different roles users, so that responsibilities are clear within the admin team.
+## 3. Order and Payment Management
+  - As an admin, I want to view a list of all orders, so that I can track user purchases and sales data.
+  - As an admin, I want to update the status of orders (e.g., processing, completed), so that I can ensure all orders are correctly tracked.
+  - As an admin, I want to view payment details and history for each order, so that I can assist users with payment issues and verify transactions.
+
+# Features
+Our platform is a simple and efficient e-learning marketplace built with Django, allowing users to explore, purchase, and enroll in courses. Key features include:
+
+## 1. User Authentication and Authorization
+  - Secure registration, login, and logout system.
+  - Role-based permissions for admins, staff, and regular users.
+  - Password reset and email verification.
+## 2. Course Management
+  - Admin dashboard: Create, update, and delete courses easily from the admin panel.
+  - Categorization: Assign courses to categories, helping users discover courses by topic or area of interest.
+  - Course details: Each course includes a title, description, and cover image to provide users with a course overview.
+## 3. Course Catalog and Search
+  - Browse courses in an organized catalog view with filters by category and search functionality.
+  - Display course details, including title, description, price, and ratings, to assist users in making informed decisions.
+## 4. Shopping Cart and Checkout
+  - Add multiple courses to a shopping cart before purchasing.
+  - Remove items from cart.
+  - Checkout and Payment Integration: Integrated with Stripe for secure, real-time payment processing.
+## 5. Order History and Enrollment
+  - View past orders and receipts for courses purchased.
+  - Allowing users to easily view purchased courses.
+## 6. Admin Panel for Content and User Management
+  - Access to an admin dashboard where admins can:
+  - Manage courses, users, orders, and enrollments.
+  - View sales and analytics to monitor platform performance.
+## 7. Responsive Design
+  - Fully responsive UI for optimal viewing across devices, including mobile, tablet, and desktop.
+## 8. Security and Privacy
+  - Environment variable management for sensitive data (e.g., SECRET_KEY, Stripe API keys).
+  - Secure user data handling with hashed passwords and secure payment processing via Stripe.
+
+# Usage
+The platform allows users to register, browse, purchase, and enroll in courses. Below are step-by-step instructions for using the main features:
+
+## 1. Registering a New Account
+  - Go to the Register page.
+  - Fill out the required details (username, email, password) and submit the form.
+  - Check your email for a verification link (if email verification is enabled) and complete the verification to activate your account.
+## 2. Logging In
+  - Navigate to the Login page.
+  - Enter your registered email and password.
+  - Upon successful login, you will be redirected to the homepage.
+## 3. Browsing Courses
+  - From the homepage, you can browse all available courses or filter by category to find courses that match your interests.
+  - Use the search bar to look up specific courses by title or keyword.
+## 4. Viewing Course Details
+  - Click on any course card to open its tooltip.
+  - The tooltip enables you to add the course to cart or view the course details.
+  - Here, you can find a course description, price, and image preview.
+  - If you’re interested, you can add the course to your shopping cart.
+## 5. Adding Courses to the Shopping Cart
+  - On a course's detail page, click Add to Cart to add it to your shopping cart.
+  - You can view your shopping cart at any time by clicking the cart icon in the navigation bar.
+## 6. Managing the Shopping Cart
+  - In the cart, you can:
+    - Remove courses if you no longer wish to purchase them.
+    - Review your total before proceeding to checkout.
+## 7. Checking Out and Making a Payment
+  - Once your cart is ready, click on Checkout.
+  - You will be redirected to a secure checkout page integrated with Stripe.
+  - Enter your payment details and complete the payment.
+  **Note**: For testing purposes, you can use the Stripe test card number 4242 4242 4242 4242 with any valid expiration date and CVC code.
+  - After payment, you will be redirected to a confirmation page.
+## 8. Viewing Order History
+  - Once logged in, go to My Account and navigate to the Order History section to view a list of all courses you’ve purchased.
+## 9. Admin Features (For Admin Users Only)
+  - Admin users can log into the Admin Dashboard to manage courses, users, and orders.
+  - Admins have access to additional features, including:
+    - Adding, updating, or removing courses.
+    - Viewing user accounts and order details.
