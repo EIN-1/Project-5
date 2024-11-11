@@ -1,57 +1,54 @@
 <!-- Footer -->
-<footer class="footer-container container-fluid text-center text-lg-start bg-light">
+<footer class="footer-container container-fluid text-center text-lg-center bg-light">
   <!-- Grid container -->
   <div class="container p-4 pb-0">
       <!-- Section: Links and Newsletters -->
       <section>
-          <!-- Grid row -->
+            <!-- Grid row -->
           <div class="row">
-              
-              <!-- Social Media Links -->
-              <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                  <h3 class="fw-bold">Technical Skills</h3>
-                  <p>Let's connect on social media.</p>
-                  <div class="d-flex justify-content-start">
-                      <a aria-label="facebook" class="text-dark me-2" target="_blank" href="https://www.facebook.com/"><i class="fa-brands fa-facebook h2"></i></a>
-                      <a aria-label="x" class="text-dark me-2" target="_blank" href="https://x.com/?lang=en"><i class="fa-brands fa-x-twitter h2"></i></a>
-                      <a aria-label="instagram" class="text-dark me-2" target="_blank" href="https://www.instagram.com/"><i class="fa-brands fa-instagram h2"></i></a>
-                      <a aria-label="tiktok" class="text-dark me-2" target="_blank" href="https://www.tiktok.com/login"><i class="fa-brands fa-tiktok h2"></i></a>
-                      <a aria-label="you tube" class="text-dark me-2" target="_blank" href="https://www.youtube.com/"><i class="fa-brands fa-youtube h2"></i></a>
-                  </div>
-              </div>
+                <!-- Social Media Links -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h3 class="fw-bold">Technical Skills</h3>
+                    <p>Let's connect on social media.</p>
+                    <div class="d-flex justify-content-center">
+                        <a aria-label="facebook" class="text-dark me-2" target="_blank" href="https://www.facebook.com/"><i class="fa-brands fa-facebook h2"></i></a>
+                        <a aria-label="x" class="text-dark me-2" target="_blank" href="https://x.com/?lang=en"><i class="fa-brands fa-x-twitter h2"></i></a>
+                        <a aria-label="instagram" class="text-dark me-2" target="_blank" href="https://www.instagram.com/"><i class="fa-brands fa-instagram h2"></i></a>
+                        <a aria-label="tiktok" class="text-dark me-2" target="_blank" href="https://www.tiktok.com/login"><i class="fa-brands fa-tiktok h2"></i></a>
+                        <a aria-label="you tube" class="text-dark me-2" target="_blank" href="https://www.youtube.com/"><i class="fa-brands fa-youtube h2"></i></a>
+                    </div>
+                </div>
 
-              <!-- Payment Methods -->
-              <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                  <h4 class="fw-bold">Payment Methods</h4>
-                  <div class="d-flex justify-content-start">
-                      <a aria-label="visa" class="text-dark me-2" target="_blank" href="https://visa.com"><i class="fa-brands fa-cc-visa h2"></i></a>
-                      <a aria-label="mastercard" class="text-dark me-2" target="_blank" href="https://mastercard.com"><i class="fa-brands fa-cc-mastercard h2"></i></a>
-                      <a aria-label="stripe" class="text-dark me-2" target="_blank" href="https://stripe.com"><i class="fa-brands fa-cc-stripe h2"></i></a>
-                      <a aria-label="paypal" class="text-dark me-2" target="_blank" href="https://paypal.com"><i class="fa-brands fa-cc-paypal h2"></i></a>
-                  </div>
-              </div>
+                <!-- Payment Methods -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h4 class="fw-bold">Payment Methods</h4>
+                    <div class="d-flex justify-content-center">
+                        <a aria-label="visa" class="text-dark me-2" target="_blank" href="https://visa.com"><i class="fa-brands fa-cc-visa h2"></i></a>
+                        <a aria-label="mastercard" class="text-dark me-2" target="_blank" href="https://mastercard.com"><i class="fa-brands fa-cc-mastercard h2"></i></a>
+                        <a aria-label="stripe" class="text-dark me-2" target="_blank" href="https://stripe.com"><i class="fa-brands fa-cc-stripe h2"></i></a>
+                        <a aria-label="paypal" class="text-dark me-2" target="_blank" href="https://paypal.com"><i class="fa-brands fa-cc-paypal h2"></i></a>
+                    </div>
+                </div>
 
-              <!-- Contact Information -->
-              <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                  <h4 class="fw-bold">Contact Us</h4>
-                  <p><i class="fa-solid fa-envelope me-2"></i> info@gmail.com</p>
-                  <p><i class="fa-solid fa-phone me-2"></i> +49 123 456 789</p>
-                  <p><i class="fa-solid fa-print me-2"></i> +49 123 456 780</p>
-              </div>
+                <!-- Contact Information -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h4 class="fw-bold">Contact Us</h4>
+                    <p><i class="fa-solid fa-envelope me-2"></i> info@gmail.com</p>
+                    <p><i class="fa-solid fa-print me-2"></i> +49 123 456 780</p>
+                </div>
 
-              <!-- Newsletter Subscription Form -->
-              <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                  <h4 class="fw-bold">Subscribe to Our Newsletter</h4>
-                  <form action="{% url 'subscribe_to_news_letter' %}?next={{request.get_full_path}}" method="POST" class="d-flex flex-column">
-                      {% csrf_token %}
-                      <input type="email" name="email" class="form-control mb-2" placeholder="Enter your email" required>
-                      <button type="submit" class="btn btn-outline-primary fw-bold">Subscribe</button>
-                  </form>
-                  <small class="text-light d-block mt-2">Stay updated on the latest news and offers!</small>
-              </div>
-
-          </div>
-          <!-- Grid row -->
+                <!-- Newsletter Subscription Form -->
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h4 class="fw-bold">Subscribe to Our Newsletter</h4>
+                    <form action="{% url 'subscribe_to_news_letter' %}?next={{request.get_full_path}}" method="POST" class="d-flex flex-column">
+                        {% csrf_token %}
+                        <input type="email" name="email" class="form-control mb-2" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-outline-primary fw-bold">Subscribe</button>
+                    </form>
+                    <small class="text-light d-block mt-2">Stay updated on the latest news and offers!</small>
+                </div>
+            </div>
+            <!-- Grid row -->
       </section>
       <!-- Section: Links and Newsletters -->
 
