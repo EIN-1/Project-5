@@ -204,3 +204,9 @@ This document outlines the database schema used in the e-learning Django project
   - Each `OrderItem` and `CartItem` associates a single `Product` with an order or cart.
 
 This schema provides a scalable, relational data structure suited for an e-learning platform with courses, shopping carts, and an integrated payment system.
+
+# User Experience (UX)
+## Wireframes
+The wireframes for the site were created in the software Balsamiq. The wireframes have been created for desktop, tablet and mobile devices. The text content wasn't finalized during the wireframe process. It's also worth mentioning that there are some visual differences in the deployed version compared to the original wireframes, the reason being design choices that was made during the creation process.
+
+![Wireframes](screenshots/homepage_wireframe.png)
