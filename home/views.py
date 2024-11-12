@@ -7,6 +7,7 @@ from django.db.models import Q
 from mailchimp_marketing import Client
 from django.conf import settings
 from django.contrib import messages
+from django.views.generic import TemplateView
 
 mailchimp = Client()
 mailchimp.set_config({
@@ -73,3 +74,12 @@ def index(request):
 def profile_view(request):
     return render(request, 'account/profile.html')
 
+
+class PrivacyPolicyView(TemplateView):
+    template_name = "home/privacy_policy.html"
+
+class FaqView(TemplateView):
+    template_name = "home/faq.html"
+
+class AboutView(TemplateView):
+    template_name = "home/about.html"
