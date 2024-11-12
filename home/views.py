@@ -60,7 +60,7 @@ def index(request):
             Q(instructor__icontains=search_query)
         )
 
-    paginator = Paginator(products, 10) #Return 10 items per page
+    paginator = Paginator(products, 6) #Return 10 items per page
 
     # Get the page number from the request
     page_number = request.GET.get('page')

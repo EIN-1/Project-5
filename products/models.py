@@ -32,6 +32,9 @@ class Product(models.Model):
     def __str__(self):
         return self.courseName
 
+    class Meta:
+        ordering = ['-students']
+
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, related_name='cart')
     created_at = models.DateTimeField(auto_now_add=True)

@@ -11,7 +11,7 @@ Why Choose **Technical Skills?**
 > - Provides an intuitive course catalog and a robust search functionality.
 > - Built with performance and scalability in mind, supporting thousands of users and courses.
 
-View Live Site [Technical Skills](https://pages.github.com/).
+View Live Site [Technical Skills](https://technical-skills-12c3cb7561cc.herokuapp.com/).
 
 # Project
 

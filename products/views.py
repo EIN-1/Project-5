@@ -50,7 +50,7 @@ def list_all_products(request):
             Q(instructor__icontains=search_query)
         )
 
-    paginator = Paginator(products, 10)  # Show 10 courses per page
+    paginator = Paginator(products, 6)  # Show 10 courses per page
 
     # Get the page number from the request
     page_number = request.GET.get('page')
