@@ -1,6 +1,7 @@
 #/workspace/Project-5/products/models.py
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 
 User = get_user_model()
@@ -31,6 +32,9 @@ class Product(models.Model):
 
     def __str__(self):
         return self.courseName
+
+    def get_absolute_url(self):
+        return reverse('product-detail', args=[str(self.id)])
 
     class Meta:
         ordering = ['-students']

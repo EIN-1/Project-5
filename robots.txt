@@ -13,4 +13,4 @@ Allow: /
 Allow: /products/
 
 # Sitemap URL for improved crawling
-Sitemap: https://technicalskills.com/sitemap.xml
+Sitemap: https://technical-skills-12c3cb7561cc.herokuapp.com/sitemap.xml

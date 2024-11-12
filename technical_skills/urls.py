@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.sitemaps.views import sitemap
 from django.conf import settings
 from django.conf.urls.static import static 
 from home.views import profile_view
+from home.sitemaps import StaticViewSitemap, ProductSitemap
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'products': ProductSitemap,
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +32,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('products/', include('products.urls')),
     path('profile/', profile_view, name='my_profile'),  # Link to profile view
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

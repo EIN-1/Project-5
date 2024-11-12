@@ -59,7 +59,9 @@ INSTALLED_APPS = [
 
     'home',
     'static',
-    'products'
+    'products',
+
+    'django.contrib.sitemaps',
 ]
 
 CSRF_TRUSTED_ORIGINS = [
