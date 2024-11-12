@@ -34,7 +34,8 @@ DEBUG = env.bool('DEBUG', default=False)
 
 ALLOWED_HOSTS = [
     '8000-ein1-project5-nr7dxvb8jo2.ws-eu116.gitpod.io',
-    '8000-ein1-project5-9h1jd0p8cg6.ws.codeinstitute-ide.net'  
+    '8000-ein1-project5-9h1jd0p8cg6.ws.codeinstitute-ide.net',
+    'technical-skills-12c3cb7561cc.herokuapp.com',
 ]
 
 
@@ -63,6 +64,7 @@ INSTALLED_APPS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.herokuapp.com",
+    "https://technical-skills-12c3cb7561cc.herokuapp.com",
     "https://*.codeinstitute-ide.net",
     "https://*.gitpod.io"
     ]
