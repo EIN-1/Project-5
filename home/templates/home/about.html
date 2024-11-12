@@ -1,32 +1,38 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container my-5">
     <!-- About Us Header -->
     <div class="text-center mb-5">
-        <h1>About Us</h1>
+        <h1 class="fw-bold">About Us</h1>
         <p class="lead">We are passionate about helping learners reach their potential with high-quality courses in technical skills.</p>
     </div>
 
     <!-- Mission Section -->
-    <div class="row mb-5">
+    <div class="row mb-5 align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <img src="{% static 'image/technical_skill.jpg' %}" alt="Our Mission" class="img-fluid rounded">
+        </div>
         <div class="col-lg-6">
-            <img src="path/to/your-image.jpg" alt="Our Mission" class="img-fluid rounded">
+            <h2 class="fw-semibold">Our Mission</h2>
+            <p>Our mission is to empower individuals and businesses by providing practical, hands-on learning experiences in technology. We focus on essential, job-ready skills to enhance career prospects and drive innovation.</p>
         </div>
-        <div class="col-lg-6 d-flex align-items-center">
-            <div>
-                <h2>Our Mission</h2>
-                <p>Our mission is to empower individuals and businesses by providing practical and hands-on learning experiences in technology. We focus on essential, job-ready skills to enhance career prospects and drive innovation.</p>
-            </div>
-        </div>
-    </div>    
+    </div>
 
     <!-- Contact Section -->
     <div class="text-center mt-5">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or feedback, feel free to reach out to us.</p>
-        <p><i class="bi bi-envelope"></i> <a href="mailto:support@yourdomain.com">support@yourdomain.com</a></p>
-        <p><i class="bi bi-telephone"></i> +123-456-7890</p>
+        <h2 class="fw-semibold">Contact Us</h2>
+        <p>If you have any questions or feedback, feel free to reach out to us:</p>
+        <p>
+            <i class="bi bi-envelope"></i> 
+            <a href="mailto:support@technicalskills.com">support@technicalskills.com</a>
+        </p>
+        <p>
+            <i class="bi bi-telephone"></i> 
+            +49 123 456 780
+        </p>
     </div>
 </div>
+
 {% endblock content %}
