@@ -1,28 +1,31 @@
 {% load humanize %}
 
 <!-- Course Card -->
-<div class="col-md-4">
-    <div class="card h-100 shadow-sm border-0 product-card" data-bs-toggle="tooltip" data-bs-html="true" title='
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{product.courseName}}</h5>
-                <div class="mb-2 text-muted small">
-                    <span>{{ product.duration|intcomma }} total hours</span>
-                    <span class="text-primary"> • </span>
-                    <span>{{ product.category.name }}</span>
-                </div>
-                <p class="card-text">{{product.description}}</p>
-                <div class="d-flex flex-column mt-4">
-                    <a href="/products/{{product.id}}/" class="btn btn-outline-primary btn-sm" type="button">Details</a>
-                    <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mt-2" type="button">
-                    Add to Cart
-                    </a>
+<div class="col-md-4 mb-3">
+    <div class="card h-100 shadow-sm border-0 product-card"
+        data-bs-toggle="tooltip" data-bs-html="true" 
+        title='
+            <div class="card d-none d-md-block">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.courseName}}</h5>
+                    <div class="mb-2 text-muted small">
+                        <span>{{ product.duration|intcomma }} total hours</span>
+                        <span class="text-primary"> • </span>
+                        <span>{{ product.category.name }}</span>
+                    </div>
+                    <p class="card-text">{{product.description}}</p>
+                    <div class="d-flex flex-column mt-4">
+                        <a href="/products/{{product.id}}/" class="btn btn-outline-primary btn-sm" type="button">Details</a>
+                        <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mt-2" type="button">
+                            Add to Cart
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    '
-    >
+        '>
+        <!-- Product Image -->
         <img src="{{product.imageUrl}}" class="card-img-top" alt="{{ product.courseName }}">
+
         <div class="card-body">
             <h5 class="card-title">{{product.courseName}}</h5>
             <div class="mb-2 text-muted small">
@@ -38,7 +41,8 @@
                 <span class="text-primary"> • </span>
                 <span>{{ product.lectures }} lectures<br /></span>
             </div>
-            
+
+            <!-- Product Info -->
             <div class="d-flex justify-content-between align-items-center">
                 {% if product.flag %}
                     <span class="badge bg-warning text-dark">Best Seller</span>
@@ -47,21 +51,30 @@
                     <!-- Star Rating -->                        
                     {% for i in "12345" %}
                         {% if forloop.counter <= product.rating %}
-                            <i class="fas fa-star text-warning"></i>  <!-- Filled star with Bootstrap warning color (gold) -->
+                            <i class="fas fa-star text-warning"></i>  <!-- Filled star -->
                         {% else %}
-                            <i class="far fa-star text-warning"></i>  <!-- Empty star with Bootstrap warning color (gold) -->
+                            <i class="far fa-star text-warning"></i>  <!-- Empty star -->
                         {% endif %}
                     {% endfor %}
                 </span>
             </div>
 
+            <!-- Price & Reviews -->
             <div class="d-flex justify-content-between align-items-center mt-2">
                 <span class="fw-bold">${{product.price}}</span>
-                <span >{{product.reviews|intcomma}} reviews</span>
+                <span>{{product.reviews|intcomma}} reviews</span>
             </div>
+        </div>
+
+        <div class="d-flex d-sm-none justify-content-around align-items-center mt-2 mb-2">
+            <a href="/products/{{product.id}}/" class="btn btn-outline-primary btn-sm mb-2 me-2" type="button">Details</a>
+            <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mb-2 ms-2" type="button">
+                Add to Cart
+            </a>
         </div>
     </div>
 </div>
+
 
 <script>
     // Initialize Bootstrap tooltips
