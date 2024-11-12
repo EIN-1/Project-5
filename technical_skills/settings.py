@@ -9,18 +9,18 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import environ
 import os
 from pathlib import Path
-import environ
 
+#Environment initialization
+env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-#Environment initialization
-env = environ.Env()
-environ.Env.read_env()
-
+# Take environment variables from .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
@@ -112,7 +112,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -201,4 +200,13 @@ MAILCHIMP_API_KEY=env('MAILCHIMP_API_KEY')
 MAILCHIMP_REGION=env('MAILCHIMP_REGION')
 MAILCHIMP_AUDIENCE_ID=('MAILCHIMP_AUDIENCE_ID')
 
-
+# Email configuration
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
