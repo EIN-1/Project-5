@@ -1,0 +1,10 @@
+Hello {{ user.username }},
+
+Thank you for registering with {{ current_site.name }}. To complete your registration, please confirm your email address by clicking the link below:
+
+{{ activate_url }}
+
+If you did not request this, please ignore this email.
+
+Best regards,
+The {{ current_site.name }} Team

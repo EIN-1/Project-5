@@ -1,3 +1,4 @@
+/* /workspace/Project-5/static/base.css */
 html {
     height: 100%;
 }
@@ -17,13 +18,19 @@ body {
     width: 1.5rem;
 }
 
-.overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: rgb(190, 190, 224);
-	z-index: -1;
+.bg-my-primary {
+    color: #0EABB0 !important;  /* Correct usage of !important */
 }
 
+.dark {
+    color: #000000 !important;  /* Also corrected here */
+}
+
+
+.my-primary {
+    color: #0EABB0;  /* Custom class, avoids conflicts */
+}
+
+.my-dark {
+    color: #000000;  /* Custom class */
+}

@@ -122,6 +122,7 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4 
 LOGIN_URL = '/account/login/'
 LOGIN_REDIRECT_URL = '/' # i will come back here later
+ACCOUNT_EMAIL_CONFIRMATION_HTML_TEMPLATE = 'account/email/email_confirmation_message.html'
 
 WSGI_APPLICATION = 'technical_skills.wsgi.application'
 
