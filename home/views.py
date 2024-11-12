@@ -69,15 +69,6 @@ def index(request):
     return render(request, 'home/index.html', {'page_obj': page_obj, 'categories':categories})
 
 
-    # print("products in database =",products)
-    # total_products = products.count()  # Count total products
-    # context = {
-    #     'total_products': total_products,
-    #     'products': products,
-    # }
-
-    # return render(request, 'home/index.html',context)
-
 @login_required
 def profile_view(request):
     return render(request, 'account/profile.html')
