@@ -70,6 +70,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -174,6 +175,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # Set the STATIC_ROOT
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Set to a directory for collecting static files
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Additional static file directories (where Django will look for static files)
 STATICFILES_DIRS = [
