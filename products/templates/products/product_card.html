@@ -40,7 +40,9 @@
             </div>
             
             <div class="d-flex justify-content-between align-items-center">
-                <span class="badge bg-warning text-dark">Best Seller</span>
+                {% if product.flag %}
+                    <span class="badge bg-warning text-dark">Best Seller</span>
+                {% endif %}
                 <span class="text-warning">
                     <!-- Star Rating -->                        
                     {% for i in "12345" %}
