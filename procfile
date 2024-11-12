@@ -1,1 +1,1 @@
-web: gunicorn technical_skills.wsgi
+web: gunicorn gettingstarted.wsgi
