@@ -1,0 +1,16 @@
+# robots.txt for technicalskills.com
+
+# Allow all web crawlers to index the main parts of the site
+User-agent: *
+Disallow: /admin/
+Disallow: /account/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /profile/
+
+# Allow indexing of essential public pages
+Allow: /
+Allow: /products/
+
+# Sitemap URL for improved crawling
+Sitemap: https://technicalskills.com/sitemap.xml
