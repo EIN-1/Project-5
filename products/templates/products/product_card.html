@@ -16,7 +16,7 @@
                     <p class="card-text">{{product.description}}</p>
                     <div class="d-flex flex-column mt-4">
                         <a href="/products/{{product.id}}/" class="btn btn-outline-primary btn-sm" type="button">Details</a>
-                        <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mt-2" type="button">
+                        <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mt-2 text-dark" type="button">
                             Add to Cart
                         </a>
                     </div>
