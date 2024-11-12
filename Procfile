@@ -1,1 +1,1 @@
-web: gunicorn --workers 3 --compress technical_skills.wsgi:application
+web: gunicorn technical_skills.wsgi
