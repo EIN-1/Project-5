@@ -1,4 +1,4 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![KS logo](static/image/logo.png)
 
 # Technical Skills
 Welcome to **Technical Skills!** This project is designed to help users access the most relevant courses for the technical skills they seek to learn. Whether you're a beginner looking to get started or an advanced user seeking specialized knowledge, Technical Skills has comprehensive suite of courses, and expert guidance to support your goals.
@@ -335,3 +335,143 @@ The platform allows users to register, browse, purchase, and enroll in courses. 
   - Admins have access to additional features, including:
     - Adding, updating, or removing courses.
     - Viewing user accounts and order details.
+
+# Deployment
+
+Follow these steps to deploy the Technical Skills course platform on **Heroku**. This guide covers setting up static files, environment variables, and Stripe integration for payment processing.
+
+---
+
+### Prerequisites
+- **Heroku Account**: Sign up at [Heroku](https://www.heroku.com/).
+- **Heroku CLI**: Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) for managing deployments.
+- **Git**: Required for pushing code to Heroku.
+
+---
+
+### Preparing the Django Project
+
+1. **Install Gunicorn and Whitenoise**:
+   - Install Gunicorn (WSGI server for production) and Whitenoise (for static file handling):
+     ```bash
+     pip install gunicorn whitenoise
+     ```
+
+2. **Update `requirements.txt`**:
+   - Freeze dependencies for Heroku:
+     ```bash
+     pip freeze > requirements.txt
+     ```
+
+3. **Create a `Procfile`**:
+   - In the project root, create a `Procfile` (no extension) to specify how Heroku should run the project:
+     ```plaintext
+     web: gunicorn <project_name>.wsgi
+     ```
+     Replace `<project_name>` with your Django project folder name (contains `settings.py`).
+
+4. **Configure Static Files**:
+   - Update static file settings in `settings.py`:
+     ```python
+     STATIC_ROOT = BASE_DIR / "staticfiles"
+     STATIC_URL = "/static/"
+
+     # Add Whitenoise Middleware
+     MIDDLEWARE = [
+         "whitenoise.middleware.WhiteNoiseMiddleware",
+         # other middlewares
+     ]
+     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+     ```
+
+5. **Database Configuration**:
+   - Install `dj-database-url` to handle Heroku’s PostgreSQL:
+     ```bash
+     pip install dj-database-url
+     ```
+   - Update `DATABASES` in `settings.py` to use Heroku’s database:
+     ```python
+     import dj_database_url
+     DATABASES = {
+         "default": dj_database_url.config(default="sqlite:///db.sqlite3")
+     }
+     ```
+
+6. **Environment Variables**:
+   - Use environment variables for sensitive data like `SECRET_KEY`, `DEBUG`, and Stripe API keys:
+     ```python
+     import os
+     SECRET_KEY = os.getenv("SECRET_KEY", "your-default-secret-key")
+     DEBUG = os.getenv("DEBUG", "False") == "True"
+     STRIPE_PUBLIC_KEY = os.getenv("STRIPE_PUBLIC_KEY")
+     STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
+     ```
+
+---
+
+### Deploying to Heroku
+
+1. **Log In to Heroku**:
+   ```bash
+   heroku login
+   ```
+
+2. **Create a New Heroku App**:
+  ```bash
+    heroku create your-app-name
+    Replace your-app-name with a preferred name, or omit it for a random name.
+  ```
+
+3. **Set Up Environment Variables**:
+  - Configure environment variables on Heroku:
+    ```bash
+      heroku config:set SECRET_KEY='your-secret-key'
+      heroku config:set DEBUG=False
+      heroku config:set STRIPE_PUBLIC_KEY='your-stripe-public-key'
+      heroku config:set STRIPE_SECRET_KEY='your-stripe-secret-key'
+      Add Heroku PostgreSQL:
+    ```
+
+4. **Add a PostgreSQL database to your Heroku app**:
+    ```bash
+    heroku addons:create heroku-postgresql:hobby-dev
+    Push Code to Heroku:
+    ```
+
+5. **Initialize Git, add, and commit the code if not already done**:
+    ```bash
+    Copy code
+    git init
+    git add .
+    git commit -m "Initial commit"
+    ```
+6. **Push code to Heroku**:
+    ```bash
+    git push heroku main
+    ```
+7. **Run Migrations**:
+  - Apply migrations on Heroku:
+  ```bash
+  heroku run python manage.py migrate
+  ```
+8. **Create a Superuser**:
+
+  - Set up a superuser to access the admin interface:
+  ```bash
+  heroku run python manage.py createsuperuser
+  Testing the Deployment
+  ```
+9. **Access the Application**:
+  - Open your app in a browser:
+  ```bash
+  heroku open
+  ```
+10. **Test Stripe Payments (Sandbox)**:
+  - Use Stripe test card 4242 4242 4242 4242 to test transactions.
+11. **Monitor Logs**:
+  - Check logs for any issues:
+  ```bash
+  heroku logs --tail
+  ```
+
+

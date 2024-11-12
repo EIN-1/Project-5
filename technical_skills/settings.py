@@ -9,22 +9,28 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import environ
 import os
 from pathlib import Path
+
+#Environment initialization
+env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Take environment variables from .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0m3a^l+7=85^rcaw=x3y73j^rq3o)&(kv&m8vf05_e@4=el)l-'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False)
 
 ALLOWED_HOSTS = [
     '8000-ein1-project5-nr7dxvb8jo2.ws-eu116.gitpod.io',
@@ -106,7 +112,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -125,12 +130,8 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-         'PORT': '8000',  # or your database port
-    }
+DATABASES = {    
+    'default': env.db(),
 }
 
 
@@ -191,11 +192,21 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 #Stripe
-STRIPE_SECRET_KEY = "sk_test_51QJ94dJPghJt2bslt2xoaWCFCuhfM6TeHj6WwhC75owk8Dl3ArVw4316tjVKyXY8l8IeaXiWE281iUHh9stmIijP00jAmY1Vwh"
-STRIPE_PUBLISHABLE_KEY = "pk_test_51QJ94dJPghJt2bsljoK5CtiQ8ItqLMb55t5TCuewVEaFdtCypDIy5I6tyFrw5xqgVUOIHYPLy4JFGQnkmWJkqTkU00HKJks7aU"
+STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
+STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
 
 #MAILCHIMP
-MAILCHIMP_API_KEY="f0b82ba3f4b0a89d87b6f835d1bc8202-us3"
-MAILCHIMP_REGION="us3"
-MAILCHIMP_AUDIENCE_ID="def7bc149b"
+MAILCHIMP_API_KEY=env('MAILCHIMP_API_KEY')
+MAILCHIMP_REGION=env('MAILCHIMP_REGION')
+MAILCHIMP_AUDIENCE_ID=('MAILCHIMP_AUDIENCE_ID')
 
+# Email configuration
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
