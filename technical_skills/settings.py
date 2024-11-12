@@ -58,8 +58,7 @@ INSTALLED_APPS = [
 
     'home',
     'static',
-    'products',
-    'media',
+    'products'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
