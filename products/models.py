@@ -59,6 +59,9 @@ class Order(models.Model):
     status = models.CharField(max_length=20)
     date = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        ordering = ['-date']
+
 class OrderItems(models.Model):
     order = models.ForeignKey(Order, related_name='items', on_delete=models.PROTECT)
     product = models.ForeignKey(Product, related_name='order_item', on_delete=models.PROTECT)
