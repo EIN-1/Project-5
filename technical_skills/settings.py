@@ -211,6 +211,7 @@ MAILCHIMP_REGION=env('MAILCHIMP_REGION')
 MAILCHIMP_AUDIENCE_ID=('MAILCHIMP_AUDIENCE_ID')
 
 # Email configuration
+DEFAULT_FROM_EMAIL = 'Technical Skills'
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:

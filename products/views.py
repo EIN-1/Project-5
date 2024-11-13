@@ -12,6 +12,7 @@ from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.http import JsonResponse
+from .emails import send_checkout_email
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -214,9 +215,6 @@ def my_orders(request):
     # Get the page number from the request
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)  # This gets the current page’s data
-
-    print(page_obj)
-
     return render(request, 'orders/orders.html', {'page_obj':page_obj, 'orders':orders})
 
 
@@ -238,6 +236,7 @@ def complete_payment(request):
         # Verify the payment with Stripe
         try:
             payment_intent = stripe.PaymentIntent.retrieve(payment_intent_id)
+            order = None
             if payment_intent.status == 'succeeded':
                 with transaction.atomic():
                     # Create the order
@@ -259,9 +258,11 @@ def complete_payment(request):
                             product=cart_item.product,
                             price=cart_item.product.price,
                         )
-
+                    
                     # Clear the user's cart
                     cart_items.delete()
+                send_checkout_email(request.user.email, order)
+                    
 
                 return JsonResponse({"success": True})
 
