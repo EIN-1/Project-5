@@ -8,6 +8,7 @@ from mailchimp_marketing import Client
 from django.conf import settings
 from django.contrib import messages
 from django.views.generic import TemplateView
+from .models import Carousel
 
 mailchimp = Client()
 mailchimp.set_config({
@@ -45,6 +46,7 @@ def index(request):
     search_query = request.GET.get('search', '')
     products = Product.objects.all()  # Fetch all products
     categories = Category.objects.all()
+    carousel = Carousel.objects.filter(active=True)
 
     if category_query:
         products = products.filter(
@@ -67,7 +69,7 @@ def index(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)  # This gets the current page’s data
 
-    return render(request, 'home/index.html', {'page_obj': page_obj, 'categories':categories})
+    return render(request, 'home/index.html', {'page_obj': page_obj, 'categories':categories, 'carousel':carousel})
 
 
 @login_required
