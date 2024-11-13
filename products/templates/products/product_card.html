@@ -2,7 +2,7 @@
 
 <!-- Course Card -->
 <div class="col-md-4 mb-3">
-    <div class="card h-100 shadow-sm border-0 product-card"
+    <div class="card h-100 shadow border-0 product-card"
         data-bs-toggle="tooltip" data-bs-html="true" 
         title='
             <div class="card d-none d-md-block">
@@ -24,8 +24,12 @@
             </div>
         '>
         <!-- Product Image -->
-        <img src="{{product.imageUrl}}" class="card-img-top" alt="{{ product.courseName }}">
-
+        <img src="{{product.imageUrl}}" class="card-img-top" alt="{{ product.courseName }}"
+            srcset="{{ product.imageUrl }} 320w, 
+            {{ product.imageUrl }} 640w, 
+            {{ product.imageUrl }} 1024w"
+        >
+        
         <div class="card-body">
             <p class="card-title h5">{{product.courseName}}</p>
             <div class="mb-2 text-muted small">
