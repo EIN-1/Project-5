@@ -88,38 +88,41 @@
     }) {% endcomment %}
 
     document.addEventListener('DOMContentLoaded', function() {
-        var popoverTriggerList = [].slice.call(document.querySelectorAll('.product-card'));
-        var currentPopover = null;
-
-        popoverTriggerList.forEach(function(card) {
-            // Initialize popover for each card
-            var popover = new bootstrap.Popover(card, {
-                trigger: 'manual' // Use manual trigger to control show/hide behavior
+        // Check if the screen width is larger than 768px (e.g., md and larger)
+        if (window.innerWidth >= 768) {
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('.product-card'));
+            var currentPopover = null;
+    
+            popoverTriggerList.forEach(function(card) {
+                // Initialize popover for each card
+                var popover = new bootstrap.Popover(card, {
+                    trigger: 'manual' // Use manual trigger to control show/hide behavior
+                });
+    
+                card.addEventListener('click', function() {
+                    // Toggle the current popover and hide any previous one
+                    if (currentPopover && currentPopover !== popover) {
+                        currentPopover.hide();
+                    }
+    
+                    // Toggle current popover visibility
+                    if (currentPopover === popover) {
+                        popover.hide();
+                        currentPopover = null;
+                    } else {
+                        popover.show();
+                        currentPopover = popover;
+                    }
+                });
             });
-
-            card.addEventListener('click', function() {
-                // Toggle the current popover and hide any previous one
-                if (currentPopover && currentPopover !== popover) {
+    
+            // Hide popover when clicking outside any product card
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.product-card') && currentPopover) {
                     currentPopover.hide();
-                }
-
-                // Toggle current popover visibility
-                if (currentPopover === popover) {
-                    popover.hide();
                     currentPopover = null;
-                } else {
-                    popover.show();
-                    currentPopover = popover;
                 }
             });
-        });
-
-        // Hide popover when clicking outside any product card
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.product-card') && currentPopover) {
-                currentPopover.hide();
-                currentPopover = null;
-            }
-        });
-    });
+        }
+    });    
 </script>
