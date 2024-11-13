@@ -14,7 +14,9 @@
 {% include 'home/carousel.html' with carousel=carousel %}  
     <div class="overlay">
         <div class="container-fluid">   
-                  
+            <div class="col text-center mt-3">
+                <a href="{% url 'products' %}" class="btn btn-outline-primary text-dark">All Products ></a>
+            </div>
             <div class="container mt-5">
                 <div class="row row-gap-3">
                     {% for product in page_obj %}
