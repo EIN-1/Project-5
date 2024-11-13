@@ -45,7 +45,7 @@
                     <form action="{% url 'subscribe_to_news_letter' %}?next={{request.get_full_path}}" method="POST" class="d-flex flex-column">
                         {% csrf_token %}
                         <input type="email" name="email" class="form-control mb-2" placeholder="Enter your email" required>
-                        <button type="submit" class="btn btn-outline-primary fw-bold">Subscribe</button>
+                        <button type="submit" class="btn btn-outline-primary fw-bold text-dark">Subscribe</button>
                     </form>
                     <small class="text-light d-block mt-2">Stay updated on the latest news and offers!</small>
                 </div>
@@ -55,14 +55,14 @@
       <!-- Section: Links and Newsletters -->
 
       <!-- Copyright Section -->
-      <div class="py-3 bg-light text-primary">
+      <div class="py-3 bg-light">
         <div class="container">
             <div class="row">         
                 <div class="col text-center">                    
                     <a href="{% url 'about' %}" class="link link-offset-2 link-underline-opacity-25 link-dark">About Us</a> |                        
                     <a href="{% url 'privacy_policy' %}" class="link link-offset-2 link-underline-opacity-25 link-dark">Privacy Policy</a> |                        
                     <a href="{% url 'faq' %}" class="link link-offset-2 link-underline-opacity-25 link-dark">Frequently Asked</a>                     
-                    <p><strong><i class="fa-regular fa-copyright"></i> 2024 All rights reserved.</strong>
+                    <p><strong class="text-dark"><i class="fa-regular fa-copyright"></i> 2024 All rights reserved.</strong>
                 </div>
             </div>
         </div>
