@@ -16,7 +16,7 @@
 
     {% load bootstrap5 %}
     {% bootstrap_css %}
-    {% bootstrap_javascript %}
+   
 
     {% block extra_css %}
     {% endblock %}
@@ -37,6 +37,7 @@
      <link rel="icon" type="image/x-icon" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
      <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
      <link rel="icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
+     <link rel="stylesheet" href="{% static 'base.css' %}"
   </head>
   <body class="d-flex flex-column min-vh-100" style="background-color: #d2c9ff;">
     {% include 'includes/navbar.html' %}    
@@ -70,7 +71,7 @@
 
     {% block postloadjs %}
     {% endblock %}
-    
+    {% bootstrap_javascript %}
 
     <script>
         // Initialize all toasts on the page automatically when the page loads

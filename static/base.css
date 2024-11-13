@@ -34,3 +34,10 @@ body {
 .my-dark {
     color: #000000;  /* Custom class */
 }
+
+.cat_badge{
+    background-color: purple;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}

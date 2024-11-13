@@ -5,69 +5,104 @@
 <!-- Example for including a CSS file -->
 <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 
-<!-- /workspace/Project-5/products/templates/products.html -->
-{% block page_header %}
-    <div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-    </div>
-
-{% endblock %}
-
 {% block content %}
-    <div class="row m-5">
-        <div class="col-md-4 mb-4">
-            <div class="card mb-4 border-0 shadow rounded bg-white">
-                <div class="card-body">
-                  <h5 class="card-title">{{product.courseName}}</h5>
-                  <!-- Rating and Student Count -->
-                  <div class="d-flex align-items-center">
-                    <!-- Star Rating -->
-                    <div class="me-2">
-                        <h6 class="card-subtitle mb-2 text-body-secondary">by {{product.instructor}}</h6>
-                    </div>
-    
-                    <!-- Student Count -->
-                    <span class="badge text-bg-primary">{{product.category.name}}</span>
+<div class="row justify-content-center my-5 d-none d-md-flex">
+    <!-- Left Card -->
+    <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow rounded bg-white">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.courseName }}</h5>
+                <!-- Instructor and Category Badge -->
+                <div class="d-flex align-items-center mb-2">
+                    <h6 class="card-subtitle text-body-secondary me-2">by {{ product.instructor }}</h6>
+                   
                 </div>
-                  
-                  <p class="card-text">{{product.description}}</p>
-                    <!-- Rating and Student Count -->
-                    <div class="d-flex align-items-center">
+                <span class="badge bg-primary">{{ product.category.name }}</span>
+                <!-- Course Description -->
+                <p class="card-text">{{ product.description }}</p>
+                <!-- Star Rating and Student Count -->
+                <div class="d-flex align-items-center mb-3">
+                    <div class="me-2">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= product.rating %}
+                                <i class="fas fa-star text-warning"></i> <!-- Filled star -->
+                            {% else %}
+                                <i class="far fa-star text-warning"></i> <!-- Empty star -->
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <span class="text-muted ms-2">{{ product.students|intcomma }} students</span>
+                </div>
+                <!-- Course Details -->
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{ product.duration }} total hours</h6>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{ product.lectures }} total lessons</h6>
+                <h6 class="card-subtitle mb-2 text-body-secondary">for {{ product.level }}</h6>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Card -->
+    <div class="col-md-4">
+        <div class="card border-0 shadow rounded">
+            <img src="{{ product.imageUrl }}" class="card-img-top" alt="{{ product.courseName }}">
+            <div class="card-body text-center">
+                <h5 class="card-title">${{ product.price }}</h5>
+                <p class="card-text">Take this course.</p>
+                <a href="{% url 'add_to_cart' product.id %}?next={{ request.get_full_path }}" class="btn btn-outline-primary fw-bold">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    {% comment %} Product details on small screens {% endcomment %}
+    <div class="row m2-2 d-md-none">
+        <div class="col-md-8 offset-md-2 mb-4 ml-2">
+            <div class="card border-0 shadow rounded bg-white">
+                <!-- Product Image -->
+                <img src="{{ product.imageUrl }}" class="card-img-top" alt="{{ product.courseName }}">
+    
+                <div class="card-body">
+                    <!-- Course Title and Instructor -->
+                    <h5 class="card-title">{{ product.courseName }}</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">by {{ product.instructor }}</h6>
+    
+                    <!-- Category Badge -->
+                    <span class="cat_badge">{{ product.category.name }}</span>
+                    <!-- Course Description -->
+                    <p class="card-text mt-3">{{ product.description }}</p>
+    
+                    <!-- Star Rating and Student Count -->
+                    <div class="d-flex align-items-center mb-3">
                         <!-- Star Rating -->
                         <div class="me-2">
                             {% for i in "12345" %}
                                 {% if forloop.counter <= product.rating %}
-                                    <i class="fas fa-star text-warning"></i>  <!-- Filled star with Bootstrap warning color (gold) -->
+                                    <i class="fas fa-star text-warning"></i>  <!-- Filled star -->
                                 {% else %}
-                                    <i class="far fa-star text-warning"></i>  <!-- Empty star with Bootstrap warning color (gold) -->
+                                    <i class="far fa-star text-warning"></i>  <!-- Empty star -->
                                 {% endif %}
                             {% endfor %}
                         </div>
-        
                         <!-- Student Count -->
                         <span class="text-muted ms-2">{{ product.students|intcomma }} students</span>
                     </div>
-
-                    <h6 class="card-subtitle mb-2 text-body-secondary mt-3">{{product.duration}} total hours</h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary mt-3">{{product.lectures}} total lessons</h6>
-                    <h6 class="card-subtitle mb-2 text-body-secondary mt-3">for {{product.level}}</h6>
+    
+                    <!-- Additional Course Information -->
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ product.duration }} total hours</h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">{{ product.lectures }} total lessons</h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">for {{ product.level }}</h6>
+    
+                    <!-- Price and Add to Cart Button -->
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <h5 class="fw-bold text-primary">${{ product.price }}</h5>
+                        <a href="{% url 'add_to_cart' product.id %}?next={{ request.get_full_path }}" class="btn btn-outline-primary fw-bold">
+                            Add to Cart
+                        </a>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
-
-
-        <div class="col-4">
-            <div class="card">
-                <img src={{product.imageUrl}} class="card-img-top" alt={{product.courseName}}>
-                <div class="card-body">
-                  <h5 class="card-title">${{product.price}}</h5>
-                  <p class="card-text">Take this course.</p>
-                  <a href="{% url 'add_to_cart' product.id %}?next={{ request.get_full_path }}" class="btn btn-outline-primary fw-bold ">Add to Cart</a>
-                </div>
-              </div>
-        </div>
-    </div>
+    </div>    
 {% endblock %}
 
