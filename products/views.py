@@ -332,3 +332,13 @@ def delete_course(request, course_id):
         return redirect('course-list')  # Redirect to a list of courses or another appropriate view
 
     return render(request, 'products/confirm_delete_course.html', {'course': course})
+
+@staff_member_required  # This ensures only admin users can access this view
+def all_orders(request):
+    orders = Order.objects.all().order_by('-date')  # Get all orders, ordered by date
+    return render(request, 'products/admin/all_orders.html', {'orders': orders})
+
+@staff_member_required
+def order_detail(request, id):
+    order = get_object_or_404(Order, id=id)
+    return render(request, 'products/admin/order_detail.html', {'order': order})
