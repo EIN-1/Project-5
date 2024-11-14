@@ -306,3 +306,17 @@ def create_course(request):
         form = CreateCourseForm()
 
     return render(request, 'products/admin/create_course.html', {'form': form})
+
+@login_required
+def edit_course(request, course_id):
+    course = get_object_or_404(Product, id=course_id)
+
+    if request.method == 'POST':
+        form = EditCourseForm(request.POST, instance=course)
+        if form.is_valid():
+            form.save()  # Save the updated course
+            return redirect('product-detail', id=course.id)  # Redirect to course detail page or elsewhere
+    else:
+        form = EditCourseForm(instance=course)  # Pre-populate form with existing course data
+
+    return render(request, 'products/admin/edit_course.html', {'form': form, 'course': course})
