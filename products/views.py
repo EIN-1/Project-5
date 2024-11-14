@@ -320,3 +320,15 @@ def edit_course(request, course_id):
         form = EditCourseForm(instance=course)  # Pre-populate form with existing course data
 
     return render(request, 'products/admin/edit_course.html', {'form': form, 'course': course})
+
+@login_required
+def delete_course(request, course_id):
+    course = get_object_or_404(Product, id=course_id)
+    
+    if request.method == 'POST':
+        # Delete the course if the form is submitted (confirmation action)
+        course.delete()
+        messages.success(request, f'Course "{course.courseName}" has been deleted.')
+        return redirect('course-list')  # Redirect to a list of courses or another appropriate view
+
+    return render(request, 'products/confirm_delete_course.html', {'course': course})

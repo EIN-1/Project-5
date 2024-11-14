@@ -3,6 +3,7 @@ from . import views
 #/workspace/Project-5/products/urls.py
 urlpatterns = [
     path('edit/<int:course_id>/', views.edit_course, name='edit_course'),
+    path('delete/<int:course_id>/', views.delete_course, name='delete_course'),
     path('create/', views.create_course, name='create_course'),
     path('complete-payment/', views.complete_payment, name='complete_payment'),
     path('my-orders/', views.my_orders, name='my_orders'),
