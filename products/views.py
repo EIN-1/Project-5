@@ -13,7 +13,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from django.http import JsonResponse
 from .emails import send_checkout_email
-from .forms import ReviewForm, CreateCourseForm
+from .forms import ReviewForm, CreateCourseForm, OrderEditForm
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -342,3 +342,17 @@ def all_orders(request):
 def order_detail(request, id):
     order = get_object_or_404(Order, id=id)
     return render(request, 'products/admin/order_detail.html', {'order': order})
+
+@staff_member_required
+def edit_order(request, id):
+    order = get_object_or_404(Order, id=id)  # Get the order by ID
+    if request.method == 'POST':
+        form = OrderEditForm(request.POST, instance=order)
+        if form.is_valid():
+            form.save()  # Save the updated order
+            return redirect('order_detail', id=order.id)  # Redirect to order detail page
+    else:
+        form = OrderEditForm(instance=order)  # Pre-populate form with existing order data
+
+    return render(request, 'products/admin/edit_order.html', {'form': form, 'order': order})
+

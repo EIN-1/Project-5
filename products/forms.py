@@ -39,3 +39,16 @@ class EditCourseForm(forms.ModelForm):
         # Add custom placeholders or CSS classes if necessary
         for field in self.fields.values():
             field.widget.attrs.update({'class': 'form-control'})
+
+class OrderEditForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ['status']  # We will allow the admin to edit the status of the order
+        widgets = {
+            'status': forms.Select(choices=[
+                ('Pending', 'Pending'),
+                ('Completed', 'Completed'),
+                ('Shipped', 'Shipped'),
+                ('Cancelled', 'Cancelled'),
+            ])
+        }
