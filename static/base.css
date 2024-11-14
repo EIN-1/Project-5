@@ -4,12 +4,14 @@ html {
 }
 
 body {
-    background: rgb(33, 99, 139);
+    background: #d2c9ff;
     height: calc(100vh - 164px);
     color: black;
     font-family: 'Lato';
 }
 
+
+/* below is not responsive, I will delete it later*/
 .icon {
     align-items: center;
     display: inline-flex;
