@@ -3,7 +3,7 @@ import stripe
 from django.conf import settings
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Product, Cart, CartItem, Order, OrderItems, Category
+from .models import Product, Cart, CartItem, Order, OrderItems, Category, Review
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -13,6 +13,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from django.http import JsonResponse
 from .emails import send_checkout_email
+from .forms import ReviewForm
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -69,8 +70,9 @@ def list_all_products(request):
 
 def retrieve_product(request, id):
     product = Product.objects.get(id=id)
+    reviews = product.product_reviews.all()
 
-    return render(request, 'products/product.html', {'product':product})
+    return render(request, 'products/product.html', {'product':product, 'reviews':reviews})
 
 
 def add_to_cart(request, product_id):
@@ -273,3 +275,19 @@ def complete_payment(request):
             return JsonResponse({"success": False, "error": str(e)}, status=400)
 
     return JsonResponse({"success": False, "error": "Invalid request method."}, status=400)
+
+
+@login_required
+def add_review(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.product = product
+            review.save()
+            return redirect('product-detail', id=product_id)
+    else:
+        form = ReviewForm()
+    return render(request, 'products/add_review.html', {'form': form, 'product': product})
