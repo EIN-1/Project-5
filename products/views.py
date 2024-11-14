@@ -13,7 +13,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from django.http import JsonResponse
 from .emails import send_checkout_email
-from .forms import ReviewForm
+from .forms import ReviewForm, CreateCourseForm
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -291,3 +291,18 @@ def add_review(request, product_id):
     else:
         form = ReviewForm()
     return render(request, 'products/add_review.html', {'form': form, 'product': product})
+
+
+@login_required
+def create_course(request):
+    if request.method == 'POST':
+        form = CreateCourseForm(request.POST)
+        if form.is_valid():
+            course = form.save(commit=False)
+            # You can add additional logic, like associating the course with the current user
+            course.save()
+            return redirect('product_list')  # Redirect to the product list after saving
+    else:
+        form = CreateCourseForm()
+
+    return render(request, 'products/admin/create_course.html', {'form': form})
