@@ -36,6 +36,11 @@ class Product(models.Model):
     def get_absolute_url(self):
         return reverse('product-detail', args=[str(self.id)])
 
+    def average_rating(self):
+        if self.reviews.exists():
+            return self.reviews.aggregate(models.Avg('rating'))['rating__avg']
+        return None
+
     class Meta:
         ordering = ['-students']
 
