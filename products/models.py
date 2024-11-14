@@ -41,6 +41,12 @@ class Product(models.Model):
             return self.product_reviews.aggregate(models.Avg('rating'))['rating__avg']
         return None
 
+    def get_purchase_count(self):
+        from django.db.models import Count
+        return OrderItems.objects.filter(
+            product=self
+        ).aggregate(Count('order__user', distinct=True))['order__user__count']
+
     class Meta:
         ordering = ['-students']
 
