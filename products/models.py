@@ -37,8 +37,8 @@ class Product(models.Model):
         return reverse('product-detail', args=[str(self.id)])
 
     def average_rating(self):
-        if self.reviews.exists():
-            return self.reviews.aggregate(models.Avg('rating'))['rating__avg']
+        if self.product_reviews.exists():
+            return self.product_reviews.aggregate(models.Avg('rating'))['rating__avg']
         return None
 
     class Meta:
