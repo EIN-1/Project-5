@@ -103,6 +103,38 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
+    
+    {% comment %} Review section {% endcomment %}
+    <div class="product-reviews container mt-5">
+        <div class="card shadow border-0">
+            <div class="card-body">
+                <!-- Average Rating -->
+                <h5 class="card-title text-primary">
+                    Average Rating: {{ product.average_rating|default:"No rating" }}
+                </h5>
+                <hr class="mb-4">
+    
+                <!-- Reviews Section -->
+                <h4 class="card-subtitle mb-4">Reviews</h4>
+                {% for review in product.reviews.all %}
+                    <div class="review mb-3 p-3 border rounded bg-light">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <!-- Reviewer's Username and Rating -->
+                            <span class="fw-bold">{{ review.user.username }}</span>
+                            <span class="badge bg-warning text-dark">{{ review.rating }}/5</span>
+                        </div>
+                        <!-- Review Comment -->
+                        <p class="mb-1">{{ review.comment }}</p>
+                        <!-- Review Date -->
+                        <small class="text-muted">{{ review.created_at|date:"F j, Y" }}</small>
+                    </div>
+                {% empty %}
+                    <p class="text-muted">No reviews yet. Be the first to review!</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
 {% endblock %}
 

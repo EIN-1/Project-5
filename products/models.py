@@ -73,9 +73,9 @@ class OrderItems(models.Model):
     price = models.IntegerField()
 
 class Review(models.Model):
-    product = models.ForeignKey(Product, related_name='reviews', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name='product_reviews', on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name='user_reviews', on_delete=models.CASCADE)
-    rating = models.DecimalField(max_digits=2, decimal_places=1, min=1, max=5, default=1)  # e.g., 4.5 out of 5
+    rating = models.DecimalField(max_digits=2, decimal_places=1,default=1)  # e.g., 4.5 out of 5
     comment = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
