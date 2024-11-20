@@ -7,6 +7,7 @@ from .models import Product, Cart, CartItem, Order, OrderItems, Category, Review
 from django.shortcuts import redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 from django.db import transaction
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
@@ -294,6 +295,7 @@ def add_review(request, product_id):
 
 
 @login_required
+@staff_member_required
 def create_course(request):
     if request.method == 'POST':
         form = CreateCourseForm(request.POST)
@@ -308,6 +310,7 @@ def create_course(request):
     return render(request, 'products/admin/create_course.html', {'form': form})
 
 @login_required
+@staff_member_required
 def edit_course(request, course_id):
     course = get_object_or_404(Product, id=course_id)
 
@@ -322,6 +325,7 @@ def edit_course(request, course_id):
     return render(request, 'products/admin/edit_course.html', {'form': form, 'course': course})
 
 @login_required
+@staff_member_required
 def delete_course(request, course_id):
     course = get_object_or_404(Product, id=course_id)
     
