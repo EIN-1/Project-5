@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
+{% load bootstrap5 %}
 
 {% block content %}
 <div class="container">
     <h2>Create a New Course</h2>
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }} <!-- Renders the form fields with <p> tags for each -->
-        <button type="submit" class="btn btn-primary">Create Course</button>
+        {% bootstrap_form form %}
+        
+       
+        <button type="submit" class="btn btn-primary mt-3">Create Course</button>
     </form>
 </div>
 {% endblock %}

@@ -14,7 +14,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from django.http import JsonResponse
 from .emails import send_checkout_email
-from .forms import ReviewForm, CreateCourseForm, OrderEditForm
+from .forms import ReviewForm, CreateCourseForm, OrderEditForm, EditCourseForm
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
