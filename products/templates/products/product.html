@@ -49,6 +49,11 @@
                 <h5 class="card-title">${{ product.price }}</h5>
                 <p class="card-text">Take this course.</p>
                 <a href="{% url 'add_to_cart' product.id %}?next={{ request.get_full_path }}" class="btn btn-outline-primary fw-bold">Add to Cart</a>
+                {% if user.is_superuser %}
+                    <a href="{% url 'admin_delete_course' product.id %}" class="btn btn-outline-danger fw-bold">
+                        Delete Course
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -99,6 +104,11 @@
                         <a href="{% url 'add_to_cart' product.id %}?next={{ request.get_full_path }}" class="btn btn-outline-primary fw-bold">
                             Add to Cart
                         </a>
+                        {% if user.is_superuser %}
+                            <a href="{% url 'admin_delete_course' product.id %}" class="btn btn-outline-danger fw-bold">
+                                Delete Course
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

@@ -331,11 +331,14 @@ def delete_course(request, course_id):
     
     if request.method == 'POST':
         # Delete the course if the form is submitted (confirmation action)
-        course.delete()
-        messages.success(request, f'Course "{course.courseName}" has been deleted.')
-        return redirect('course-list')  # Redirect to a list of courses or another appropriate view
+        try:
+            course.delete()
+            messages.success(request, f'Course "{course.courseName}" has been deleted.')
+        except:
+            messages.error(request,"Can not delete item right now.")
+        return redirect('products')  # Redirect to a list of courses or another appropriate view
 
-    return render(request, 'products/confirm_delete_course.html', {'course': course})
+    return render(request, 'products/admin/confirm_delete_course.html', {'course': course})
 
 @staff_member_required  # This ensures only admin users can access this view
 def all_orders(request):
