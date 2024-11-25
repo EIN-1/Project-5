@@ -46,7 +46,7 @@
         <div class="card border-0 shadow rounded">
             <img src="{{ product.imageUrl }}" class="card-img-top" alt="{{ product.courseName }}">
             <div class="card-body text-center">
-                <h5 class="card-title">${{ product.price }}</h5>
+                <h5 class="card-title">${{ product.price|floatformat:2 }}</h5>
                 <p class="card-text">Take this course.</p>
                 {% if product.has_user_purchased %}
                     <a href="{% url 'add-review' product.id %}" class="btn btn-outline-warning btn-sm mb-2 ms-2 text-dark">

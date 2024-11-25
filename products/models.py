@@ -38,7 +38,7 @@ class Product(models.Model):
 
     def average_rating(self):
         if self.product_reviews.exists():
-            return self.product_reviews.aggregate(models.Avg('rating'))['rating__avg']
+            return int(self.product_reviews.aggregate(models.Avg('rating'))['rating__avg'])
         return None
 
     def has_user_purchased(self, user):
