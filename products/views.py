@@ -12,6 +12,7 @@ from django.db import transaction
 from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
 import json
+from django.db.models import Exists, OuterRef
 from django.http import JsonResponse
 from .emails import send_checkout_email
 from .forms import ReviewForm, CreateCourseForm, OrderEditForm, EditCourseForm
@@ -37,6 +38,12 @@ def list_all_products(request):
     categories = Category.objects.all()
     # Filter products based on the search query across multiple fields
     products = Product.objects.all()
+    if request.user.is_authenticated:
+        products = products.annotate(
+            has_purchased=Exists(
+                OrderItems.objects.filter(product=OuterRef('pk'), order__user=request.user)
+            )
+        )
 
     if category_query:
         products = products.filter(

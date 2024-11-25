@@ -41,6 +41,12 @@ class Product(models.Model):
             return self.product_reviews.aggregate(models.Avg('rating'))['rating__avg']
         return None
 
+    def has_user_purchased(self, user):
+        """Check if a specific user has purchased this product."""
+        if user.is_authenticated:
+            return OrderItems.objects.filter(order__user=user, product=self).exists()
+        return False
+
     def get_purchase_count(self):
         from django.db.models import Count
         return OrderItems.objects.filter(

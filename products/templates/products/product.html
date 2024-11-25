@@ -48,9 +48,17 @@
             <div class="card-body text-center">
                 <h5 class="card-title">${{ product.price }}</h5>
                 <p class="card-text">Take this course.</p>
-                <a href="{% url 'add_to_cart' product.id %}?next={{ request.get_full_path }}" class="btn btn-outline-primary fw-bold">Add to Cart</a>
+                {% if product.has_user_purchased %}
+                    <a href="{% url 'add-review' product.id %}" class="btn btn-outline-warning btn-sm mb-2 ms-2 text-dark">
+                        Add Review
+                    </a>
+                {% else %}
+                    <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mb-2 ms-2 text-dark">
+                        Add to Cart
+                    </a>
+                {% endif %}
                 {% if user.is_superuser %}
-                    <a href="{% url 'admin_delete_course' product.id %}" class="btn btn-outline-danger fw-bold">
+                    <a href="{% url 'admin_delete_course' product.id %}" class="btn btn-outline-danger btn-sm mb-2 ms-2 fw-bold">
                         Delete Course
                     </a>
                 {% endif %}

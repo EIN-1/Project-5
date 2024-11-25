@@ -16,9 +16,15 @@
                     <p class="card-text">{{product.description}}</p>
                     <div class="d-flex flex-column mt-4">
                         <a href="/products/{{product.id}}/" class="btn btn-outline-primary btn-sm">Details</a>
-                        <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mt-2 text-dark">
-                            Add to Cart
-                        </a>
+                        {% if product.has_purchased %}
+                            <a href="/products/add-review/{{product.id}}" class="btn btn-outline-warning btn-sm mt-2 text-dark">
+                                Add Review
+                            </a>
+                        {% else %}
+                            <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mt-2 text-dark">
+                                Add to Cart
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -72,9 +78,15 @@
 
         <div class="d-flex d-sm-none justify-content-around align-items-center mt-2 mb-2">
             <a href="/products/{{product.id}}/" class="btn btn-outline-primary btn-sm mb-2 me-2">Details</a>
-            <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mb-2 ms-2 text-dark">
-                Add to Cart
-            </a>
+            {% if product.has_user_purchased %}
+                <a href="{% url 'add-review' product.id %}" class="btn btn-outline-warning btn-sm mb-2 ms-2 text-dark">
+                    Add Review
+                </a>
+            {% else %}
+                <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mb-2 ms-2 text-dark">
+                    Add to Cart
+                </a>
+            {% endif %}
         </div>
     </div>
 </div>
