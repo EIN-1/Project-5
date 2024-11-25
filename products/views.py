@@ -348,13 +348,14 @@ def order_detail(request, order_id):
     return render(request, 'products/admin/order_detail.html', {'order': order})
 
 @staff_member_required
-def edit_order(request, id):
-    order = get_object_or_404(Order, id=id)  # Get the order by ID
+def edit_order(request, order_id):
+    order = get_object_or_404(Order, id=order_id)  # Get the order by ID
     if request.method == 'POST':
         form = OrderEditForm(request.POST, instance=order)
         if form.is_valid():
             form.save()  # Save the updated order
-            return redirect('order_detail', id=order.id)  # Redirect to order detail page
+            messages.success(request, "Order updated Successfully!")
+            return redirect('admin_order', order_id=order.id)  # Redirect to order detail page
     else:
         form = OrderEditForm(instance=order)  # Pre-populate form with existing order data
 
