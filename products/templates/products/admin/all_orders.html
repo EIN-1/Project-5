@@ -23,7 +23,7 @@
             <td>{{ order.status }}</td>
             <td>{{ order.date }}</td>
             <td>
-              <a href="{% url 'order_detail' order.id %}" class="btn btn-primary btn-sm">View</a>
+              <a href="{% url 'admin_order' order.id %}" class="btn btn-primary btn-sm">View</a>
             </td>
           </tr>
         {% empty %}

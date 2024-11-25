@@ -343,8 +343,8 @@ def all_orders(request):
     return render(request, 'products/admin/all_orders.html', {'orders': orders})
 
 @staff_member_required
-def order_detail(request, id):
-    order = get_object_or_404(Order, id=id)
+def order_detail(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
     return render(request, 'products/admin/order_detail.html', {'order': order})
 
 @staff_member_required
