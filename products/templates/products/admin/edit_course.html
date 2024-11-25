@@ -2,12 +2,31 @@
 {% load bootstrap5 %}
 
 {% block content %}
-<div class="container">
-    <h2>Edit Course: {{ course.courseName }}</h2>
-    <form method="POST">
-        {% csrf_token %}
-        {% bootstrap_form form %} <!-- Renders the form fields with <p> tags for each -->
-        <button type="submit" class="btn btn-primary">Save Changes</button>
-    </form>
+<div class="container py-5">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-12">
+            <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                <div class="card-body p-0">
+                    <div class="row g-0">
+                        <div class="col">
+                            <div class="p-5">
+                                <div class="d-flex justify-content-between align-items-center mb-5">
+                                    <h1 class="fw-bold mb-0">Edit Course: {{ course.courseName }}</h1>
+                                </div>
+                                <hr class="my-4">
+                                <div class="container">
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        {% bootstrap_form form %} <!-- Renders the form fields with <p> tags for each -->
+                                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
