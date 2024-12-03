@@ -58,7 +58,8 @@
                             <li><a class="dropdown-item" href="{% url 'my_profile' %}">Profile</a></li>
                             <li><a class="dropdown-item" href="{% url 'my_orders' %}">Orders</a></li>
                             {% if user.is_superuser %}
-                                <li><a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a></li>
+                                <li><a class="dropdown-item" href="{% url 'management_dashboard' %}">Manage Courses</a></li>
+                                <li><a class="dropdown-item" href="{% url 'admin_orders' %}">Manage Orders</a></li>
                             {% endif %}
                             <li><a type="button" class="dropdown-item btn btn-outline-danger" href="{% url 'account_logout' %}">Logout</a></li>
                         </ul>

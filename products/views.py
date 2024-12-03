@@ -387,3 +387,19 @@ def management_dashboard(request):
     }
     return render(request,"products/admin/products_dashboard.html", context)
 
+@staff_member_required
+def order_management_dashboard(request):
+    order_count = Order.objects.all().count()
+    product_count = Product.objects.all().count()
+    total_sales = Order.objects.aggregate(Sum('amount'))['amount__sum'] or 0
+    potential_sales = Product.objects.aggregate(Sum('price'))['price__sum'] or 0
+    orders = Order.objects.all()
+    context = {
+        "order_count": order_count,
+        "product_count": product_count,
+        "total_sales": total_sales,
+        "orders": orders,
+        "potential_sales": potential_sales
+    }
+    return render(request,"products/admin/orders_dashboard.html", context)
+
