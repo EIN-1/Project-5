@@ -1,0 +1,38 @@
+{% extends 'products/admin/index.html' %}
+{% block list_area %}
+    <div class="col">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Products</h6>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Isnstructor</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                            <tr onclick="window.location.href='{% url "edit_course" product.id %}';" style="cursor: pointer;">
+                                <td>{{product.id}}</td>
+                                <td>{{product.courseName}}</td>
+                                <td>{{product.instructor}}</td>
+                                <td>{{product.category}}</td>
+                                <td>{{product.price}}</td>
+                                <td>{{product.rating}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
