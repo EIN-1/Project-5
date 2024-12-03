@@ -2,6 +2,8 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 
 User = get_user_model()
@@ -56,6 +58,7 @@ class Product(models.Model):
     class Meta:
         ordering = ['-students']
 
+
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, related_name='cart')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -96,3 +99,17 @@ class Review(models.Model):
 
     class Meta:
         ordering = ['-created_at']
+
+# Signal to update product rating and review count
+@receiver(post_save, sender=Review)
+def update_product_reviews(sender, instance, **kwargs):
+    product = instance.product
+
+    # Count total reviews and calculate average rating
+    reviews_count = product.reviews
+    average_rating = product.rating
+
+    # Update product fields
+    product.reviews = int(reviews_count) + 1
+    product.rating = round(average_rating/(product.students+1), 2)  # Round to 2 decimal places for consistency
+    product.save()

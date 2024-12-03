@@ -5,6 +5,30 @@ class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
         fields = ['rating', 'comment']
+        widgets = {
+            'rating': forms.NumberInput(
+                attrs={
+                    'class': 'form-control',
+                    'min': 1,
+                    'max': 5,
+                    'step': 0.1,
+                    'placeholder': 'Enter a rating (1 to 5)',
+                }
+            ),
+            'comment': forms.Textarea(
+                attrs={
+                    'class': 'form-control',
+                    'rows': 4,
+                    'placeholder': 'Write your review here...',
+                }
+            ),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Add custom Bootstrap classes to all fields dynamically
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = field.widget.attrs.get('class', '') + ' mb-3'
 
 class CreateCourseForm(forms.ModelForm):
     class Meta:
