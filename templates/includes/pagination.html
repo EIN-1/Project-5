@@ -1,30 +1,58 @@
 <div class="d-flex justify-content-center">
     <nav aria-label="Page navigation">
         {% with request.GET.urlencode as query_params %}
-    <ul class="pagination">
-        {% if page_obj.has_previous %}
-            <li class="page-item">
-                <a class="page-link" href="?page=1{% if query_params %}&{{ query_params }}{% endif %}">&laquo; First</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if query_params %}&{{ query_params }}{% endif %}">Previous</a>
-            </li>
-        {% endif %}
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+                <!-- Link to the first page -->
+                <li class="page-item">
+                    <a class="page-link" href="?page=1{% if query_params %}&{{ query_params }}{% endif %}" aria-label="First">
+                        <span aria-hidden="true">&laquo; First</span>
+                    </a>
+                </li>
+                <!-- Link to the previous page -->
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if query_params %}&{{ query_params }}{% endif %}" aria-label="Previous">
+                        <span aria-hidden="true">Previous</span>
+                    </a>
+                </li>
+            {% else %}
+                <!-- Disable links if there's no previous page -->
+                <li class="page-item disabled">
+                    <span class="page-link" aria-hidden="true">&laquo; First</span>
+                </li>
+                <li class="page-item disabled">
+                    <span class="page-link" aria-hidden="true">Previous</span>
+                </li>
+            {% endif %}
 
-        <li class="page-item disabled">
-            <span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
-        </li>
-
-        {% if page_obj.has_next %}
-            <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if query_params %}&{{ query_params }}{% endif %}">Next</a>
+            <!-- Current page indicator -->
+            <li class="page-item disabled">
+                <span class="page-link">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
             </li>
-            <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if query_params %}&{{ query_params }}{% endif %}">Last &raquo;</a>
-            </li>
-        {% endif %}
-    </ul>
-{% endwith %}
 
+            {% if page_obj.has_next %}
+                <!-- Link to the next page -->
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if query_params %}&{{ query_params }}{% endif %}" aria-label="Next">
+                        <span aria-hidden="true">Next</span>
+                    </a>
+                </li>
+                <!-- Link to the last page -->
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}{% if query_params %}&{{ query_params }}{% endif %}" aria-label="Last">
+                        <span aria-hidden="true">Last &raquo;</span>
+                    </a>
+                </li>
+            {% else %}
+                <!-- Disable links if there's no next page -->
+                <li class="page-item disabled">
+                    <span class="page-link" aria-hidden="true">Next</span>
+                </li>
+                <li class="page-item disabled">
+                    <span class="page-link" aria-hidden="true">Last &raquo;</span>
+                </li>
+            {% endif %}
+        </ul>
+        {% endwith %}
     </nav>
 </div>
