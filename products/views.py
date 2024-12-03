@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 from django.db import transaction
-from django.db.models import Q
+from django.db.models import Q, Sum
 from django.views.decorators.csrf import csrf_exempt
 import json
 from django.db.models import Exists, OuterRef
@@ -370,4 +370,18 @@ def edit_order(request, order_id):
         form = OrderEditForm(instance=order)  # Pre-populate form with existing order data
 
     return render(request, 'products/admin/edit_order.html', {'form': form, 'order': order})
+
+@staff_member_required
+def management_dashboard(request):
+    order_count = Order.objects.all().count()
+    product_count = Product.objects.all().count()
+    total_sales = Order.objects.aggregate(Sum('amount'))['amount__sum'] or 0
+    products = Product.objects.all()
+    context = {
+        "order_count": order_count,
+        "product_count": product_count,
+        "total_sales": total_sales,
+        "products": products
+    }
+    return render(request,"products/admin/index.html", context)
 
