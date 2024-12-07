@@ -25,6 +25,26 @@
                         </ul>
                     </li>
                 </ul>
+
+                <!-- Sort Dropdown -->
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-primary" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-sort me-1"></i>Sort
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                            <li><a class="dropdown-item" href="?sort=courseName&order=asc">Sort by Course Name (Ascending)</a></li>
+                            <li><a class="dropdown-item" href="?sort=courseName&order=desc">Sort by Course Name (Descending)</a></li>
+                            <li><a class="dropdown-item" href="?sort=rating&order=asc">Sort by Rating (Ascending)</a></li>
+                            <li><a class="dropdown-item" href="?sort=rating&order=desc">Sort by Rating (Descending)</a></li>
+                            <li><a class="dropdown-item" href="?sort=reviews&order=asc">Sort by Reviews (Ascending)</a></li>
+                            <li><a class="dropdown-item" href="?sort=reviews&order=desc">Sort by Reviews (Descending)</a></li>
+                            <li><a class="dropdown-item" href="?sort=price&order=asc">Sort by Price (Ascending)</a></li>
+                            <li><a class="dropdown-item" href="?sort=price&order=desc">Sort by Price (Descending)</a></li>
+                            <li><a href="?" class="dropdown-item">Reset</a></li>
+                        </ul>
+                    </li>
+                </ul>
             {% endif %}
 
             <!-- Search Bar -->
