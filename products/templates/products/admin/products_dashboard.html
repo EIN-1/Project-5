@@ -12,11 +12,36 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name</th>
-                            <th>Isnstructor</th>
-                            <th>Category</th>
-                            <th>Price</th>
-                            <th>Rating</th>
+                            <th>
+                                <a href="?sort=courseName">
+                                    Name
+                                    
+                                </a>
+                            </th>
+                            <th>
+                                <a href="?sort=instructor">
+                                    Instructor
+                                   
+                                </a>
+                            </th>
+                            <th>
+                                <a href="?sort=category">
+                                    Category
+                                    
+                                </a>
+                            </th>
+                            <th>
+                                <a href="?sort=price">
+                                    Price
+                                    
+                                </a>
+                            </th>
+                            <th>
+                                <a href="?sort=rating">
+                                    Rating
+        
+                                </a>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,5 +59,6 @@
                 </table>
             </div>
         </div>
+        {% include 'includes/pagination.html' with page_obj=products query_params=query_params %}
     </div>
 {% endblock %}

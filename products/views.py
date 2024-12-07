@@ -366,7 +366,18 @@ def delete_course(request, course_id):
 @staff_member_required  # This ensures only admin users can access this view
 def all_orders(request):
     orders = Order.objects.all().order_by('-date')  # Get all orders, ordered by date
-    return render(request, 'products/admin/all_orders.html', {'orders': orders})
+    cancelled = orders.filter(status='Cancelled').count()
+    completed = orders.filter(status='Completed').count()
+    total = Order.objects.all().count()
+    pending = orders.filter(status='Pending').count()
+    context = {
+        'orders': orders, 
+        'cancelled':cancelled,
+        'completed':completed,
+        'total':total,
+        'pending':pending
+    }
+    return render(request, 'products/admin/all_orders.html', context)
 
 @staff_member_required
 def order_detail(request, order_id):
@@ -389,17 +400,51 @@ def edit_order(request, order_id):
 
 @staff_member_required
 def management_dashboard(request):
+    sort_field = request.GET.get('sort', 'courseName')  # Default sort field
+    order = request.GET.get('order', 'asc')  # Default order is ascending
+    search_query = request.GET.get('search', '')
+
+    # Ensure valid sort fields to prevent SQL injection
+    valid_fields = ['courseName', 'instructor', 'category', 'price', 'rating']
+    if sort_field not in valid_fields:
+        sort_field = 'courseName'
+
+    # Determine sort direction
+    sort_option = f"{'' if order == 'asc' else '-'}{sort_field}"
+
     order_count = Order.objects.all().count()
     product_count = Product.objects.all().count()
     total_sales = Order.objects.aggregate(Sum('amount'))['amount__sum'] or 0
     potential_sales = Product.objects.aggregate(Sum('price'))['price__sum'] or 0
-    products = Product.objects.all()
+    products = Product.objects.all().order_by(sort_option)
+
+    if search_query:
+        products = products.filter(
+            Q(courseName__icontains=search_query) |
+            Q(category__name__icontains=search_query) |
+            Q(level__icontains=search_query) |
+            Q(description__icontains=search_query) |
+            Q(flag__icontains=search_query) |
+            Q(instructor__icontains=search_query)
+        )
+
+    # Prepare query parameters for template
+    query_params = request.GET.copy()
+    query_params.pop('page', None)  # Exclude 'page' parameter
+
+    paginator = Paginator(products, 6)  # Show 10 courses per page
+
+    # Get the page number from the request
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)  # This gets the current page’s data
+
     context = {
         "order_count": order_count,
         "product_count": product_count,
         "total_sales": total_sales,
-        "products": products,
-        "potential_sales": potential_sales
+        "products": page_obj,
+        "potential_sales": potential_sales,
+        "query_params": query_params.urlencode()
     }
     return render(request,"products/admin/products_dashboard.html", context)
 
