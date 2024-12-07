@@ -54,8 +54,6 @@ def index(request):
     categories = Category.objects.all()
     carousel = Carousel.objects.filter(active=True)
 
-    print(query_params_string)
-
     # Add "-" for descending order
     sort_option = f"{'' if order == 'asc' else '-'}{sort_field}"
     # Validate the sort field to prevent SQL injection

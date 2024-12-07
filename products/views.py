@@ -31,6 +31,10 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 
 def list_all_products(request):
+    query_params = request.GET.copy()  # Create a mutable copy of the query parameters
+    query_params.pop('page', None)  # Remove any existing 'page' parameter
+    query_params_string = query_params.urlencode()  # Convert to query string
+
     # Get the search query from the request
     category_query = request.GET.get('category', None)
     search_query = request.GET.get('search', '')
@@ -78,7 +82,7 @@ def list_all_products(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)  # This gets the current page’s data
 
-    return render(request, 'products/products.html', {'page_obj': page_obj, 'search_query': search_query, 'categories': categories })
+    return render(request, 'products/products.html', {'page_obj': page_obj, 'query_params': query_params_string, 'search_query': search_query, 'categories': categories })
     
     # print("products in database =",products)
     # total_products = products.count()  # Count total products
