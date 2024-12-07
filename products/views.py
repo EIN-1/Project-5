@@ -191,35 +191,7 @@ def checkout(request):
         messages.error(request, f"Stripe error: {e}")
         return redirect('cart_detail')
 
-    # Save order to the database (status initially set to "Pending")
-    # try:
-    #     with transaction.atomic():
-    #         # Create the order
-    #         order = Order.objects.create(
-    #             user=request.user,
-    #             amount=total_price,
-    #             stripe_id=payment_intent['id'],  # Store Stripe PaymentIntent ID
-    #             status="Pending"
-    #         )
-
-    #         # Add each cart item to the OrderItems table
-    #         for cart_item in cart_items:
-    #             OrderItems.objects.create(
-    #                 order=order,
-    #                 product=cart_item.product,
-    #                 price=cart_item.product.price,
-    #             )
-
-    #         # Save the order and prepare for payment confirmation
-    #         # Clear the user's cart
-    #         cart_items.delete()
-
-    # except Exception as e:
-    #     messages.error(request, f"An error occurred during checkout: {e}")
-    #     return redirect('cart_detail')
-
-
-     # Pass the PaymentIntent client_secret to the template
+    # Pass the PaymentIntent client_secret to the template
     context = {
         'total_price': total_price,
         'stripe_publishable_key': settings.STRIPE_PUBLISHABLE_KEY,
@@ -326,7 +298,7 @@ def create_course(request):
             course = form.save(commit=False)
             # You can add additional logic, like associating the course with the current user
             course.save()
-            return redirect('product_list')  # Redirect to the product list after saving
+            return redirect('management_dashboard')  # Redirect to the product list after saving
     else:
         form = CreateCourseForm()
 
@@ -340,8 +312,9 @@ def edit_course(request, course_id):
     if request.method == 'POST':
         form = EditCourseForm(request.POST, instance=course)
         if form.is_valid():
+            messages.success(request, 'Course Updated Successfully')
             form.save()  # Save the updated course
-            return redirect('product-detail', id=course.id)  # Redirect to course detail page or elsewhere
+            return redirect('management_dashboard')  # Redirect to course detail page or elsewhere
     else:
         form = EditCourseForm(instance=course)  # Pre-populate form with existing course data
 
@@ -424,7 +397,7 @@ def edit_order(request, order_id):
         if form.is_valid():
             form.save()  # Save the updated order
             messages.success(request, "Order updated Successfully!")
-            return redirect('admin_order', order_id=order.id)  # Redirect to order detail page
+            return redirect('admin_orders')  # Redirect to order detail page
     else:
         form = OrderEditForm(instance=order)  # Pre-populate form with existing order data
 
