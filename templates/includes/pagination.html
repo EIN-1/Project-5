@@ -1,6 +1,5 @@
 <div class="d-flex justify-content-center">
     <nav aria-label="Page navigation">
-        {% with request.GET.urlencode as query_params %}
         <ul class="pagination">
             {% if page_obj.has_previous %}
                 <!-- Link to the first page -->
@@ -53,6 +52,5 @@
                 </li>
             {% endif %}
         </ul>
-        {% endwith %}
     </nav>
 </div>

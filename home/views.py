@@ -40,6 +40,9 @@ def subscribe_newsletter(request):
 
 def index(request):
     """ A view to return the index page """
+    query_params = request.GET.copy()  # Create a mutable copy of the query parameters
+    query_params.pop('page', None)  # Remove any existing 'page' parameter
+    query_params_string = query_params.urlencode()  # Convert to query string
     # Get the category filter
     category_query = request.GET.get('category', None)
     # Get the search query from the request
@@ -50,6 +53,8 @@ def index(request):
     products = Product.objects.all()  # Fetch all products
     categories = Category.objects.all()
     carousel = Carousel.objects.filter(active=True)
+
+    print(query_params_string)
 
     # Add "-" for descending order
     sort_option = f"{'' if order == 'asc' else '-'}{sort_field}"
@@ -81,7 +86,7 @@ def index(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)  # This gets the current page’s data
 
-    return render(request, 'home/index.html', {'page_obj': page_obj, 'categories':categories, 'carousel':carousel})
+    return render(request, 'home/index.html', {'page_obj': page_obj, 'query_params': query_params_string, 'categories':categories, 'carousel':carousel})
 
 
 @login_required
