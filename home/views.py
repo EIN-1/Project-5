@@ -44,9 +44,21 @@ def index(request):
     category_query = request.GET.get('category', None)
     # Get the search query from the request
     search_query = request.GET.get('search', '')
+    sort_field = request.GET.get('sort', 'courseName')  # Default field
+    order = request.GET.get('order', 'asc')  # Default order
+    
     products = Product.objects.all()  # Fetch all products
     categories = Category.objects.all()
     carousel = Carousel.objects.filter(active=True)
+
+    # Add "-" for descending order
+    sort_option = f"{'' if order == 'asc' else '-'}{sort_field}"
+    # Validate the sort field to prevent SQL injection
+    valid_fields = ['courseName', 'rating', 'reviews', 'price']
+    if sort_field not in valid_fields:
+        sort_option = 'courseName'  # Fallback to default
+    
+    products = Product.objects.all().order_by(sort_option)
 
     if category_query:
         products = products.filter(
