@@ -92,7 +92,7 @@
                         
                     {% endblock %}    
                 </div>   
-
+                {% include 'includes/pagination.html' with page_obj=orders query_params=query_params %}
         </div>
         <!-- End of Main Content -->
 
