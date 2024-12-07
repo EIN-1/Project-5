@@ -111,5 +111,5 @@ def update_product_reviews(sender, instance, **kwargs):
 
     # Update product fields
     product.reviews = int(reviews_count) + 1
-    product.rating = round(average_rating/(product.students+1), 2)  # Round to 2 decimal places for consistency
+    product.rating = average_rating  # Round to 2 decimal places for consistency
     product.save()
