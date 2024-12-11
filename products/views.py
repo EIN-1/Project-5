@@ -96,7 +96,7 @@ def retrieve_product(request, id):
     product = Product.objects.get(id=id)
     reviews = product.product_reviews.all()
 
-    return render(request, 'products/product.html', {'product':product, 'reviews':reviews})
+    return render(request, 'products/product.html', {'product':product, 'reviews':reviews, 'purchased': product.has_user_purchased(request.user) })
 
 
 def add_to_cart(request, product_id):

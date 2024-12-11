@@ -150,6 +150,9 @@
                 {% empty %}
                     <p class="text-muted">No reviews yet. Be the first to review!</p>
                 {% endfor %}
+                {% if purchased %}
+                    <a href="{% url 'add-review' product.id %}" type="button" class="btn btn-outline-warning">Add Review</a>
+                {% endif %}
             </div>
         </div>
     </div>
