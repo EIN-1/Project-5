@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from products.models import Product, Category
+from products.models import Product, Category, OrderItems
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.db.models import Q
@@ -9,6 +9,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.views.generic import TemplateView
 from .models import Carousel
+from django.db.models import Exists, OuterRef
 
 mailchimp = Client()
 mailchimp.set_config({
@@ -62,6 +63,13 @@ def index(request):
         sort_option = 'courseName'  # Fallback to default
     
     products = Product.objects.all().order_by(sort_option)
+
+    if request.user.is_authenticated:
+        products = products.annotate(
+            has_purchased=Exists(
+                OrderItems.objects.filter(product=OuterRef('pk'), order__user=request.user)
+            )
+        )
 
     if category_query:
         products = products.filter(
