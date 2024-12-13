@@ -419,7 +419,7 @@ def management_dashboard(request):
 
     order_count = Order.objects.all().count()
     product_count = Product.objects.all().count()
-    total_sales = Order.objects.aggregate(Sum('amount'))['amount__sum'] or 0
+    total_sales = Order.objects.filter(status="Completed").aggregate(Sum('amount'))['amount__sum'] or 0
     potential_sales = Product.objects.aggregate(Sum('price'))['price__sum'] or 0
     products = Product.objects.all().order_by(sort_option)
 
