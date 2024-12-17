@@ -16,15 +16,9 @@
                     <p class="card-text">{{product.description}}</p>
                     <div class="d-flex flex-column mt-4">
                         <a href="/products/{{product.id}}/" class="btn btn-outline-primary btn-sm">Details</a>
-                        {% if product.has_purchased %}
-                            <a href="/products/add-review/{{product.id}}" class="btn btn-outline-warning btn-sm mt-2 text-dark">
-                                Add Review
-                            </a>
-                        {% else %}
-                            <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mt-2 text-dark">
-                                Add to Cart
-                            </a>
-                        {% endif %}
+                        <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mt-2 text-dark">
+                            Add to Cart
+                        </a>
                     </div>
                 </div>
             </div>
@@ -78,15 +72,9 @@
 
         <div class="d-flex d-sm-none justify-content-around align-items-center mt-2 mb-2">
             <a href="/products/{{product.id}}/" class="btn btn-outline-primary btn-sm mb-2 me-2">Details</a>
-            {% if product.has_user_purchased %}
-                <a href="{% url 'add-review' product.id %}" class="btn btn-outline-warning btn-sm mb-2 ms-2 text-dark">
-                    Add Review
-                </a>
-            {% else %}
-                <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mb-2 ms-2 text-dark">
-                    Add to Cart
-                </a>
-            {% endif %}
+            <a href="/products/add-to-cart/{{product.id}}/?next={{request.get_full_path}}" class="btn btn-outline-warning btn-sm mb-2 ms-2 text-dark">
+                Add to Cart
+            </a>
         </div>
     </div>
 </div>
@@ -100,41 +88,38 @@
     }) {% endcomment %}
 
     document.addEventListener('DOMContentLoaded', function() {
-        // Check if the screen width is larger than 768px (e.g., md and larger)
-        if (window.innerWidth >= 768) {
-            var popoverTriggerList = [].slice.call(document.querySelectorAll('.product-card'));
-            var currentPopover = null;
-    
-            popoverTriggerList.forEach(function(card) {
-                // Initialize popover for each card
-                var popover = new bootstrap.Popover(card, {
-                    trigger: 'manual' // Use manual trigger to control show/hide behavior
-                });
-    
-                card.addEventListener('click', function() {
-                    // Toggle the current popover and hide any previous one
-                    if (currentPopover && currentPopover !== popover) {
-                        currentPopover.hide();
-                    }
-    
-                    // Toggle current popover visibility
-                    if (currentPopover === popover) {
-                        popover.hide();
-                        currentPopover = null;
-                    } else {
-                        popover.show();
-                        currentPopover = popover;
-                    }
-                });
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('.product-card'));
+        var currentPopover = null;
+
+        popoverTriggerList.forEach(function(card) {
+            // Initialize popover for each card
+            var popover = new bootstrap.Popover(card, {
+                trigger: 'manual' // Use manual trigger to control show/hide behavior
             });
-    
-            // Hide popover when clicking outside any product card
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.product-card') && currentPopover) {
+
+            card.addEventListener('click', function() {
+                // Toggle the current popover and hide any previous one
+                if (currentPopover && currentPopover !== popover) {
                     currentPopover.hide();
+                }
+
+                // Toggle current popover visibility
+                if (currentPopover === popover) {
+                    popover.hide();
                     currentPopover = null;
+                } else {
+                    popover.show();
+                    currentPopover = popover;
                 }
             });
-        }
-    });    
+        });
+
+        // Hide popover when clicking outside any product card
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.product-card') && currentPopover) {
+                currentPopover.hide();
+                currentPopover = null;
+            }
+        });
+    });
 </script>
