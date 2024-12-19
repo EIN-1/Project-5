@@ -12,14 +12,14 @@ class ReviewForm(forms.ModelForm):
                     'min': 1,
                     'max': 5,
                     'step': 0.1,
-                    'placeholder': 'Enter a rating (1 to 5)',
+                    'placeholder': 'Please rate us (1 to 5)',
                 }
             ),
             'comment': forms.Textarea(
                 attrs={
                     'class': 'form-control',
                     'rows': 4,
-                    'placeholder': 'Write your review here...',
+                    'placeholder': 'Please comment here...',
                 }
             ),
         }
@@ -72,7 +72,6 @@ class OrderEditForm(forms.ModelForm):
             'status': forms.Select(choices=[
                 ('Pending', 'Pending'),
                 ('Completed', 'Completed'),
-                ('Shipped', 'Shipped'),
                 ('Cancelled', 'Cancelled'),
             ])
         }
