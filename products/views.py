@@ -489,8 +489,10 @@ def my_classes(request):
 @login_required
 def my_class(request, course_id):
     course = Product.objects.get(id=course_id)
+    form = ReviewForm()
     if course.has_user_purchased(request.user):
-        return render(request, "courses/content.html", { 'course':course })
+        reviews = course.product_reviews.all()
+        return render(request, "courses/content.html", { 'course':course, 'form':form, 'reviews': reviews })
     else:
         messages.error(request, "You don't own this course!")
         return redirect('my_classes')

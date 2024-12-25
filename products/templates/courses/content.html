@@ -32,6 +32,63 @@
             </div>
         </div>
     </div>
+
+    <div class="row d-flex justify-content-center align-items-center mt-5 mb-5">
+		<div class="col-md-6 col-12">
+			<div class="card card-registration card-registration-2" style="border-radius: 15px;">
+				<div class="card-body p-0">
+					<div class="row g-0">
+						<div class="col">
+							<div class="p-5">
+								<div class="d-flex justify-content-between align-items-center mb-5">
+								  <h1 class="fw-bold mb-0">Submit a Review for {{ course.courseName }}</h1>
+								</div>
+								<hr class="my-4"> 
+                                <div class="container">
+                                    
+                                    <a type="button" class="btn btn-outline-primary" href="{% url 'add-review' course.id %}">Add a review</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+				<div class="card-body p-0">
+					<div class="row g-0">
+						<div class="col">
+							<div class="p-5">
+								<div class="d-flex justify-content-between align-items-center mb-5">
+								  <h1 class="fw-bold mb-0">What Others Say</h1>
+								</div>
+								<hr class="my-4"> 
+                                <div class="container">
+                                    {% for review in reviews %}
+                                        <div class="review mb-3 p-3 border rounded bg-light">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <!-- Reviewer's Username and Rating -->
+                                                <span class="fw-bold">{{ review.user.username }}</span>
+                                                <span class="badge bg-warning text-dark">{{ review.rating }}/5</span>
+                                            </div>
+                                            <!-- Review Comment -->
+                                            <p class="mb-1">{{ review.comment }}</p>
+                                            <!-- Review Date -->
+                                            <small class="text-muted">{{ review.created_at|date:"F j, Y" }}</small>
+                                        </div>
+                                    {% empty %}
+                                        <p class="text-muted">No reviews yet. Be the first to review!</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 {% endblock %}
