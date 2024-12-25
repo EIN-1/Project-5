@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <!-- Video Section -->
+        <div class="col-md-8">
+            <div class="ratio ratio-16x9">
+                <iframe 
+                    class="embed-responsive-item" 
+                    src="https://www.youtube.com/embed/{{product.content}}" 
+                    title="{{ course.courseName }}" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Details Section -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ course.courseName }}</h5>
+                    <p class="text-muted">By {{ course.instructor }}</p>
+                    <p><strong>Category:</strong> {{ course.category.name }}</p>
+                    <p><strong>Duration:</strong> {{ course.duration }} hours</p>
+                    <p><strong>Level:</strong> {{ course.level }}</p>
+                    <p><strong>Lectures:</strong> {{ course.lectures }}</p>
+                    <p><strong>Rating:</strong> {{ course.rating }} ({{ course.reviews }} reviews)</p>
+                    <p><strong>Students:</strong> {{ course.students|intcomma }}</p>
+                    <p><strong>Price:</strong> ${{ course.price }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

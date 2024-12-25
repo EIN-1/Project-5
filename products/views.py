@@ -469,3 +469,29 @@ def order_management_dashboard(request):
     }
     return render(request,"products/admin/orders_dashboard.html", context)
 
+@login_required
+def my_classes(request):
+    courses = Product.objects.filter(
+        order_item__order__user=request.user,
+        order_item__order__status='Completed'
+    ).distinct()
+    paginator = Paginator(courses, 4)  # Show 10 courses per page
+
+    # Get the page number from the request
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)  # This gets the current page’s data
+
+    context = {
+        "page_obj": page_obj,
+    }
+    return render(request,"courses/list.html", context)
+
+@login_required
+def my_class(request, course_id):
+    course = Product.objects.get(id=course_id)
+    if course.has_user_purchased(request.user):
+        return render(request, "courses/content.html", { 'course':course })
+    else:
+        messages.error(request, "You don't own this course!")
+        return redirect('my_classes')
+

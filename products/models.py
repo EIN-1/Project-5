@@ -31,6 +31,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     flag = models.BooleanField(default=False)
     students = models.IntegerField(null=True, blank=True)
+    content = models.CharField(max_length=255, default='Rp5vd34d-z4')
 
     def __str__(self):
         return self.courseName

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="col" style="width: 100%; max-width: 800px;">
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Courses</h6>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <table class="table table-hover text-center">
+                    <tbody>
+                        {% for product in page_obj %}
+                            <tr onclick="window.location.href='{% url "my_class" product.id %}';" style="cursor: pointer; height:100px;">
+                                <td>
+                                    <img src="{{ product.imageUrl }}" alt="{{ product.courseName }}" style="max-width: 100px; height: auto;">
+                                </td>
+                                <td>
+                                    <p class="card-title h5">{{ product.courseName }}</p>
+                                    <div class="mb-2 text-muted small">
+                                        <span>By {{ product.instructor }}</span>                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mb-2 text-muted small">
+                                        <span>{{ product.students|intcomma }} students</span>                        
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mb-2 text-muted small">
+                                        <span>{{ product.duration|intcomma }} total hours</span>
+                                        <span class="text-primary"> • </span>
+                                        <span>{{ product.level }}</span>
+                                        <span class="text-primary"> • </span>
+                                        <span>{{ product.lectures }} lectures<br></span>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% include 'includes/pagination.html' with page_obj=page_obj %}
+    </div>
+</div>
+
+{% endblock %}
