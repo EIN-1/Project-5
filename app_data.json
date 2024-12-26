@@ -1,1 +1,1167 @@
-[{"model": "admin.logentry", "pk": 1, "fields": {"action_time": "2024-11-12T12:54:36.091Z", "user": 2, "content_type": 7, "object_id": "2", "object_repr": "technical-skills", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 2, "fields": {"action_time": "2024-11-12T12:54:46.228Z", "user": 2, "content_type": 7, "object_id": "1", "object_repr": "example.com", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 3, "fields": {"action_time": "2024-11-12T13:02:31.632Z", "user": 2, "content_type": 10, "object_id": "8", "object_repr": "The Complete JavaScript course 2023: From Zero to Expert!", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Rating\"]}}]"}}, {"model": "admin.logentry", "pk": 4, "fields": {"action_time": "2024-11-12T13:03:10.832Z", "user": 2, "content_type": 4, "object_id": "1", "object_repr": "eddie11", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 5, "fields": {"action_time": "2024-11-12T13:03:10.836Z", "user": 2, "content_type": 4, "object_id": "3", "object_repr": "edwin", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 6, "fields": {"action_time": "2024-11-14T04:54:29.691Z", "user": 2, "content_type": 16, "object_id": "1", "object_repr": "Carousel object (1)", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 7, "fields": {"action_time": "2024-11-14T04:55:03.268Z", "user": 2, "content_type": 16, "object_id": "2", "object_repr": "Carousel object (2)", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 8, "fields": {"action_time": "2024-11-14T04:55:37.263Z", "user": 2, "content_type": 16, "object_id": "3", "object_repr": "Carousel object (3)", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 9, "fields": {"action_time": "2024-11-14T04:55:41.300Z", "user": 2, "content_type": 16, "object_id": "3", "object_repr": "Carousel object (3)", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"}}, {"model": "admin.logentry", "pk": 10, "fields": {"action_time": "2024-11-14T04:55:41.303Z", "user": 2, "content_type": 16, "object_id": "2", "object_repr": "Carousel object (2)", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"}}, {"model": "admin.logentry", "pk": 11, "fields": {"action_time": "2024-11-14T13:28:40.764Z", "user": 2, "content_type": 4, "object_id": "5", "object_repr": "janedoe", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\"]}}]"}}, {"model": "admin.logentry", "pk": 34, "fields": {"action_time": "2024-12-19T06:14:07.025Z", "user": 2, "content_type": 4, "object_id": "67", "object_repr": "Admin", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 35, "fields": {"action_time": "2024-12-19T06:14:21.376Z", "user": 2, "content_type": 4, "object_id": "67", "object_repr": "Admin", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\"]}}]"}}, {"model": "admin.logentry", "pk": 36, "fields": {"action_time": "2024-12-19T12:08:21.109Z", "user": 67, "content_type": 7, "object_id": "2", "object_repr": "technical-skills.com", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Domain name\"]}}]"}}, {"model": "auth.permission", "pk": 1, "fields": {"name": "Can add log entry", "content_type": 1, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change log entry", "content_type": 1, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete log entry", "content_type": 1, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can view log entry", "content_type": 1, "codename": "view_logentry"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can add permission", "content_type": 2, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can change permission", "content_type": 2, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can delete permission", "content_type": 2, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can view permission", "content_type": 2, "codename": "view_permission"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can add group", "content_type": 3, "codename": "add_group"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can change group", "content_type": 3, "codename": "change_group"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can delete group", "content_type": 3, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can view group", "content_type": 3, "codename": "view_group"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add user", "content_type": 4, "codename": "add_user"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change user", "content_type": 4, "codename": "change_user"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete user", "content_type": 4, "codename": "delete_user"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can view user", "content_type": 4, "codename": "view_user"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can add content type", "content_type": 5, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can change content type", "content_type": 5, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can delete content type", "content_type": 5, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can view content type", "content_type": 5, "codename": "view_contenttype"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can add session", "content_type": 6, "codename": "add_session"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can change session", "content_type": 6, "codename": "change_session"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can delete session", "content_type": 6, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can view session", "content_type": 6, "codename": "view_session"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add site", "content_type": 7, "codename": "add_site"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change site", "content_type": 7, "codename": "change_site"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete site", "content_type": 7, "codename": "delete_site"}}, {"model": "auth.permission", "pk": 28, "fields": {"name": "Can view site", "content_type": 7, "codename": "view_site"}}, {"model": "auth.permission", "pk": 29, "fields": {"name": "Can add email address", "content_type": 8, "codename": "add_emailaddress"}}, {"model": "auth.permission", "pk": 30, "fields": {"name": "Can change email address", "content_type": 8, "codename": "change_emailaddress"}}, {"model": "auth.permission", "pk": 31, "fields": {"name": "Can delete email address", "content_type": 8, "codename": "delete_emailaddress"}}, {"model": "auth.permission", "pk": 32, "fields": {"name": "Can view email address", "content_type": 8, "codename": "view_emailaddress"}}, {"model": "auth.permission", "pk": 33, "fields": {"name": "Can add email confirmation", "content_type": 9, "codename": "add_emailconfirmation"}}, {"model": "auth.permission", "pk": 34, "fields": {"name": "Can change email confirmation", "content_type": 9, "codename": "change_emailconfirmation"}}, {"model": "auth.permission", "pk": 35, "fields": {"name": "Can delete email confirmation", "content_type": 9, "codename": "delete_emailconfirmation"}}, {"model": "auth.permission", "pk": 36, "fields": {"name": "Can view email confirmation", "content_type": 9, "codename": "view_emailconfirmation"}}, {"model": "auth.permission", "pk": 37, "fields": {"name": "Can add product", "content_type": 10, "codename": "add_product"}}, {"model": "auth.permission", "pk": 38, "fields": {"name": "Can change product", "content_type": 10, "codename": "change_product"}}, {"model": "auth.permission", "pk": 39, "fields": {"name": "Can delete product", "content_type": 10, "codename": "delete_product"}}, {"model": "auth.permission", "pk": 40, "fields": {"name": "Can view product", "content_type": 10, "codename": "view_product"}}, {"model": "auth.permission", "pk": 41, "fields": {"name": "Can add category", "content_type": 11, "codename": "add_category"}}, {"model": "auth.permission", "pk": 42, "fields": {"name": "Can change category", "content_type": 11, "codename": "change_category"}}, {"model": "auth.permission", "pk": 43, "fields": {"name": "Can delete category", "content_type": 11, "codename": "delete_category"}}, {"model": "auth.permission", "pk": 44, "fields": {"name": "Can view category", "content_type": 11, "codename": "view_category"}}, {"model": "auth.permission", "pk": 45, "fields": {"name": "Can add cart", "content_type": 12, "codename": "add_cart"}}, {"model": "auth.permission", "pk": 46, "fields": {"name": "Can change cart", "content_type": 12, "codename": "change_cart"}}, {"model": "auth.permission", "pk": 47, "fields": {"name": "Can delete cart", "content_type": 12, "codename": "delete_cart"}}, {"model": "auth.permission", "pk": 48, "fields": {"name": "Can view cart", "content_type": 12, "codename": "view_cart"}}, {"model": "auth.permission", "pk": 49, "fields": {"name": "Can add cart item", "content_type": 13, "codename": "add_cartitem"}}, {"model": "auth.permission", "pk": 50, "fields": {"name": "Can change cart item", "content_type": 13, "codename": "change_cartitem"}}, {"model": "auth.permission", "pk": 51, "fields": {"name": "Can delete cart item", "content_type": 13, "codename": "delete_cartitem"}}, {"model": "auth.permission", "pk": 52, "fields": {"name": "Can view cart item", "content_type": 13, "codename": "view_cartitem"}}, {"model": "auth.permission", "pk": 53, "fields": {"name": "Can add order", "content_type": 14, "codename": "add_order"}}, {"model": "auth.permission", "pk": 54, "fields": {"name": "Can change order", "content_type": 14, "codename": "change_order"}}, {"model": "auth.permission", "pk": 55, "fields": {"name": "Can delete order", "content_type": 14, "codename": "delete_order"}}, {"model": "auth.permission", "pk": 56, "fields": {"name": "Can view order", "content_type": 14, "codename": "view_order"}}, {"model": "auth.permission", "pk": 57, "fields": {"name": "Can add order items", "content_type": 15, "codename": "add_orderitems"}}, {"model": "auth.permission", "pk": 58, "fields": {"name": "Can change order items", "content_type": 15, "codename": "change_orderitems"}}, {"model": "auth.permission", "pk": 59, "fields": {"name": "Can delete order items", "content_type": 15, "codename": "delete_orderitems"}}, {"model": "auth.permission", "pk": 60, "fields": {"name": "Can view order items", "content_type": 15, "codename": "view_orderitems"}}, {"model": "auth.permission", "pk": 61, "fields": {"name": "Can add carousel", "content_type": 16, "codename": "add_carousel"}}, {"model": "auth.permission", "pk": 62, "fields": {"name": "Can change carousel", "content_type": 16, "codename": "change_carousel"}}, {"model": "auth.permission", "pk": 63, "fields": {"name": "Can delete carousel", "content_type": 16, "codename": "delete_carousel"}}, {"model": "auth.permission", "pk": 64, "fields": {"name": "Can view carousel", "content_type": 16, "codename": "view_carousel"}}, {"model": "auth.permission", "pk": 67, "fields": {"name": "Can add review", "content_type": 34, "codename": "add_review"}}, {"model": "auth.permission", "pk": 68, "fields": {"name": "Can change review", "content_type": 34, "codename": "change_review"}}, {"model": "auth.permission", "pk": 69, "fields": {"name": "Can delete review", "content_type": 34, "codename": "delete_review"}}, {"model": "auth.permission", "pk": 70, "fields": {"name": "Can view review", "content_type": 34, "codename": "view_review"}}, {"model": "auth.user", "pk": 2, "fields": {"password": "pbkdf2_sha256$600000$OI1k9oXy3MKP8B5CKvvEGJ$baHBqM9vHbgv0LQlkzRCslmhPPxGypBAd+otAM7gMkg=", "last_login": "2024-12-19T06:13:17.511Z", "is_superuser": true, "username": "eddie", "first_name": "", "last_name": "", "email": "edwinkiyimba@gmail.com", "is_staff": true, "is_active": true, "date_joined": "2024-11-12T12:53:13.107Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 4, "fields": {"password": "pbkdf2_sha256$600000$nwULvV9MWgWncJRthujbW5$0aZPi/H7fGDU1je7UrPKVU/17sgFRVsm9DdJcNvg4KE=", "last_login": "2024-12-19T06:12:52.187Z", "is_superuser": false, "username": "caps", "first_name": "", "last_name": "", "email": "sanakacaps@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2024-11-12T13:04:12.289Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 5, "fields": {"password": "pbkdf2_sha256$600000$ycmBp18Qf9idRq7JxwoEoM$BPhpfwp4kne6c65uqd2xpX2OIRH3tWiX/0M8nA8Dlmk=", "last_login": "2024-11-14T13:31:04.397Z", "is_superuser": true, "username": "janedoe", "first_name": "", "last_name": "", "email": "1jane1doe11@gmail.com", "is_staff": true, "is_active": true, "date_joined": "2024-11-13T10:33:40Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 34, "fields": {"password": "pbkdf2_sha256$600000$pCEXrIJ8v6IG2XMDOb20sn$f+NIQABqkFNxn3RxUVw8OBrppk2wuj3Qfd3uQ4i7aA4=", "last_login": "2024-12-19T13:20:06.118Z", "is_superuser": false, "username": "Elsie", "first_name": "", "last_name": "", "email": "198elsie@gmail.com", "is_staff": false, "is_active": true, "date_joined": "2024-12-11T04:11:01.546Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 67, "fields": {"password": "pbkdf2_sha256$600000$bOVu8yRRxkrYvIrOosrrxT$TDrR8RcbRA2M1q395lNRSgS9lRijnxrTPzcrD7IWGpY=", "last_login": "2024-12-19T13:45:41.653Z", "is_superuser": true, "username": "Admin", "first_name": "", "last_name": "", "email": "", "is_staff": true, "is_active": true, "date_joined": "2024-12-19T06:14:06Z", "groups": [], "user_permissions": []}}, {"model": "contenttypes.contenttype", "pk": 1, "fields": {"app_label": "admin", "model": "logentry"}}, {"model": "contenttypes.contenttype", "pk": 2, "fields": {"app_label": "auth", "model": "permission"}}, {"model": "contenttypes.contenttype", "pk": 3, "fields": {"app_label": "auth", "model": "group"}}, {"model": "contenttypes.contenttype", "pk": 4, "fields": {"app_label": "auth", "model": "user"}}, {"model": "contenttypes.contenttype", "pk": 5, "fields": {"app_label": "contenttypes", "model": "contenttype"}}, {"model": "contenttypes.contenttype", "pk": 6, "fields": {"app_label": "sessions", "model": "session"}}, {"model": "contenttypes.contenttype", "pk": 7, "fields": {"app_label": "sites", "model": "site"}}, {"model": "contenttypes.contenttype", "pk": 8, "fields": {"app_label": "account", "model": "emailaddress"}}, {"model": "contenttypes.contenttype", "pk": 9, "fields": {"app_label": "account", "model": "emailconfirmation"}}, {"model": "contenttypes.contenttype", "pk": 10, "fields": {"app_label": "products", "model": "product"}}, {"model": "contenttypes.contenttype", "pk": 11, "fields": {"app_label": "products", "model": "category"}}, {"model": "contenttypes.contenttype", "pk": 12, "fields": {"app_label": "products", "model": "cart"}}, {"model": "contenttypes.contenttype", "pk": 13, "fields": {"app_label": "products", "model": "cartitem"}}, {"model": "contenttypes.contenttype", "pk": 14, "fields": {"app_label": "products", "model": "order"}}, {"model": "contenttypes.contenttype", "pk": 15, "fields": {"app_label": "products", "model": "orderitems"}}, {"model": "contenttypes.contenttype", "pk": 16, "fields": {"app_label": "home", "model": "carousel"}}, {"model": "contenttypes.contenttype", "pk": 34, "fields": {"app_label": "products", "model": "review"}}, {"model": "sessions.session", "pk": "1c2e0iu12jpjfwfyftc6fc5r8z3ejwyt", "fields": {"session_data": ".eJyFUEFuwyAQ_MueXQsMNpBT229UFVpgHaPEdmSw0ijK32va9JCqUm-r2ZnZnbmCPWFK53kJdqFE2R7oAjvw-_26pifNjOo63eoenRchGE_aYcsRnUKPCipA7-d1yhbXPNCUo8cc58mOlIc5JNi9XeF73lx_ThVZhh1XouFMiEbXUmrFVQVromXCkTYyhRAJbtW_etk2tWgMU9JUQCPG45f6HKdDvMTR4fO-gLWfR_h14U_O7b0CmyilkoM-TnHZGmEbViLaorexfNPAA-bQH2gqCzweC1zfq6m_OPd1ql8einq9qx6sBkzD5mOU65FJ7oUmRowbQ6YLQQvThy2w71zoGkYtk8SVC60UTejb3pBXXjiu4fYJjT-fVQ:1tDjES:Gniue4F-8XnAYdxPfWYrBDUDkJT0TJiHTE5givuvIRY", "expire_date": "2024-12-04T11:50:52.352Z"}}, {"model": "sessions.session", "pk": "3zd8m6wqrsw081mqlpicw1uk9qzhnfrp", "fields": {"session_data": "eyJfcGFzc3dvcmRfcmVzZXRfa2V5IjoiY2doaXY3LTM4YjY2ZGRlYzQ3NzY2ZmRmZjUxNjRjZTYwY2E1ZDRhIn0:1tBaNr:x-7K1KhJPjv8uTGovU7SH1VRjAFeZsvtdciYPkIf2jg", "expire_date": "2024-11-28T13:59:43.483Z"}}, {"model": "sessions.session", "pk": "68ewt3f6zcrpx1lg597adkt1ow9krfom", "fields": {"session_data": ".eJxVj8tOxDAMRf_F6ypK2zy7ZM8XIFS5iUMDTFI1qQCN5t9pYDazsSzf4yPdK6Bz-Uh1xqOulGp0WGNO84Xqmn2B6eUK_ztMsGEpX3n30AFWmHo9jsMgleXM2H4wfQdHoT3hhU7Y4Vbg9trBn3puyRybRcDDbUH3QakF_h3TW2Yup7rHhTWE3dPCnrOnz6c7-yBYsaznt3LGadJcGoHehjEopUVAPmphJQ1SqJGbYC2XfLGo6RwojOqNcoHLBZu0UCmtPX1vcf-Bid9-AXEqXxU:1tIRB4:cwAx8ziikDbs4npwRL-Mg50ifNbxrQWioDfTtse_3c4", "expire_date": "2024-12-17T11:34:50.912Z"}}, {"model": "sessions.session", "pk": "9bcitnt2u6cbtrvo0la9hrr92c5bnu5d", "fields": {"session_data": "eyJfcGFzc3dvcmRfcmVzZXRfa2V5IjoiY2dndXVzLTgwOTc2Njg1OGZhYmMzZGQ5Y2U4YmE1MWFhYjdhY2E3In0:1tBSI5:l1Jhtev4kdYKt0XYIemZDlEkEmm94txoHuVrykRRf3Y", "expire_date": "2024-11-28T05:21:13.416Z"}}, {"model": "sessions.session", "pk": "bkcd97g0271t9618rwxiu3nulh3ezgef", "fields": {"session_data": "eyJjYXJ0IjpbOV19:1tJzDh:wKQQDptjRwU_3CH8ECSjbf01CREFW5F87IfBqG1hwxE", "expire_date": "2024-12-21T18:07:57.175Z"}}, {"model": "sessions.session", "pk": "kpfw7qwlyz2uv5aus0enc9ufg7vdxt2s", "fields": {"session_data": ".eJxVjMsOwiAQRf-FtSG8YVy69xsIMINUDU1KuzL-uzbpQrf3nHNfLKZtbXEbtMQJ2ZkpdvrdcioP6jvAe-q3mZe5r8uU-a7wgw5-nZGel8P9O2hptG8NPtckjCw6kCAhAQgcYtBQUSsoLqNTgqwwJH1Ga7TCaitQ8UVnGdj7A-XfOBM:1tBRqb:TzGaDBAneBJFE-tBbwbEGBGLTLBx9fILNCz47k2_Qiw", "expire_date": "2024-11-28T04:52:49.018Z"}}, {"model": "sessions.session", "pk": "lo7r2cb7h7zkxmxxffo9k280j527ns49", "fields": {"session_data": ".eJxVj8tqwzAQRf9l1sYo1tvL7vsFpZixNKrVNpKxZJoQ8u-12myyGYa5Zw7cG6BzeU91wr0ulGp0WGNO05nqkn2B8e0G_zuMsGIpP3nz0AFWGE-acztIJobeCs4s0x3shbaEZzpoh2uB-3sHf-6pJVNsGgFPtxndF6UW-E9MH7l3OdUtzn1D-kda-tfs6fvlwT4JFizL8a2ccZo0k0agt4EHpbQIyLgWVtIgheLMBGuZZLNFTcdAYdTJKBeYnLFJC5XS6tNljdsVRnb_BbOlX0Y:1tLN6w:f0jqm6rhJaCjsSSjkhQxWiRrHWyZ8Myz53WHTwrAcR0", "expire_date": "2024-12-25T13:50:42.963Z"}}, {"model": "sessions.session", "pk": "mx06txug260nslytwtxw5i8za90rxkgb", "fields": {"session_data": "eyJfcGFzc3dvcmRfcmVzZXRfa2V5IjoiY2dndXVzLTgwOTc2Njg1OGZhYmMzZGQ5Y2U4YmE1MWFhYjdhY2E3In0:1tBSI5:l1Jhtev4kdYKt0XYIemZDlEkEmm94txoHuVrykRRf3Y", "expire_date": "2024-11-28T05:21:13.459Z"}}, {"model": "sessions.session", "pk": "pbpbk9m83h1uhtyy1dguu6suonk83b8m", "fields": {"session_data": ".eJxVj8tqxDAMRf9F6xDsxo84y-77BaUExZYbt4kdYqcPhvn3xu1QmI0QOvce0AXQ2nTEMn7QHnwgN9KKYYEhHsvS_FM8ykyxBIslpDiuVObkMgzPF_jbYYANc_5Mu4OzVmDguuOCK81V20lpOG_gyLRHXOkMW9wyXF8a-FWPlYyhWgTc3Sa07xQrcG8YX1NrUyx7mNoaaW80t0_J0fJ4y94JZszz2Va2t5o0k71AZ3znldLCI-u0MJIepFAd670xTLLJoKZzoOgV75X1TE5YpZlyrt_T1xb2bxjY9QcBxWp1:1tAqa4:Lo8uwiFaOEnSbqthJ8mRY4OR2i38z31k3AX50jrjf3I", "expire_date": "2024-11-26T13:05:16.391Z"}}, {"model": "sessions.session", "pk": "svw8mbo3dfab13i7ywl4uvkqb3dh8n49", "fields": {"session_data": ".eJxVjMsOwiAQRf-FtSG8YVy69xsIMINUDU1KuzL-uzbpQrf3nHNfLKZtbXEbtMQJ2ZkpdvrdcioP6jvAe-q3mZe5r8uU-a7wgw5-nZGel8P9O2hptG8NPtckjCw6kCAhAQgcYtBQUSsoLqNTgqwwJH1Ga7TCaitQ8UVnGdj7A-XfOBM:1tO9mf:J6e8XHpX2EuXSAkkAf2R2BEflZZYMvd4d-grfQ0IDjk", "expire_date": "2025-01-02T06:13:17.516Z"}}, {"model": "sessions.session", "pk": "u5nnas929k1uwsqgsqz2rhhtoubxh62f", "fields": {"session_data": ".eJxtkU1u4zAMhe-itWFYjv_iXWc_JxgMBJqibTWyFEhy2yDI3Ut7PC0CdCWK7xMfSd0FIPrVJQVrmsklg5CMd2qhNHsdRf_nLv7FohdXiPHdBy0yAUn0sj1VjazP8pS3VX0-NU0m1kjBwUJMv-jFOPH4m315WD9xpr_vlLpeGJJvXIwWMFa9UTDj4c_KAk5D8uHGQDSTW6-iH8FGykQgbQJhUmuwonertUeN_5eNB6su7xCm-JVMkGhz52CiuEV7Q2q4KfR6l9gR-HxkYmZ7Szx1Civxfe_upg6bb5IlXEPg1XHPT9AmGWeSYVutflhYWZWMqEgxbiunj6vhafuCc9tvqH1LZlt804qn5AB4Ibcp-hXc5HP0LgUz5BuSH2rMf_NU9tfBPhWYIc78ejzVNdUl8gdJjQPoDrHDcsS6roq20k3XDpJGKispz9i1KKE517rTRVFgg1I8PgEo38Qd:1tOGqT:aon9au0qbvIFmJY6EiJ1fG4iqzFXOlNqNdk72lgLiAw", "expire_date": "2025-01-02T13:45:41.657Z"}}, {"model": "sessions.session", "pk": "zeharkj23ewlgai499k81pplsksormlj", "fields": {"session_data": "eyJjYXJ0IjpbMl0sImFjY291bnRfbG9naW4iOiJ2ZXJpZnlfZW1haWwifQ:1tBSGh:ktPWbzNcDZfmbAInIzZJZXRcDrWp1Xyt3-x2oUaJ33g", "expire_date": "2024-11-28T05:19:47.664Z"}}, {"model": "sites.site", "pk": 2, "fields": {"domain": "technical-skills.com", "name": "Technical Skills"}}, {"model": "account.emailaddress", "pk": 3, "fields": {"user": 2, "email": "edwinkiyimba@gmail.com", "verified": true, "primary": true}}, {"model": "account.emailaddress", "pk": 4, "fields": {"user": 4, "email": "sanakacaps@gmail.com", "verified": true, "primary": true}}, {"model": "account.emailaddress", "pk": 5, "fields": {"user": 5, "email": "1jane1doe11@gmail.com", "verified": true, "primary": true}}, {"model": "account.emailaddress", "pk": 34, "fields": {"user": 34, "email": "198elsie@gmail.com", "verified": true, "primary": true}}, {"model": "home.carousel", "pk": 1, "fields": {"imageUrl": "https://images.pexels.com/photos/7983584/pexels-photo-7983584.jpeg", "label": "All Age Round Education", "text": "We help you gain the skills you need no matter the background.", "active": true}}, {"model": "home.carousel", "pk": 2, "fields": {"imageUrl": "https://images.pexels.com/photos/7983584/pexels-photo-7983584.jpeg", "label": "Best Education for All", "text": "Get the skills you need to win", "active": true}}, {"model": "home.carousel", "pk": 3, "fields": {"imageUrl": "https://images.pexels.com/photos/5306431/pexels-photo-5306431.jpeg", "label": "Beginer Friendly", "text": "Choose from our carefully crafted courses for all levels.", "active": true}}, {"model": "products.category", "pk": 1, "fields": {"name": "Web developement", "description": "Creating websites, and stuff"}}, {"model": "products.category", "pk": 2, "fields": {"name": "Finance", "description": "Managing money"}}, {"model": "products.category", "pk": 3, "fields": {"name": "Artificial Intelligence", "description": "Making machines learn"}}, {"model": "products.category", "pk": 4, "fields": {"name": "Machine Learning", "description": "Learn about machines"}}, {"model": "products.category", "pk": 5, "fields": {"name": "Data Science", "description": "Create Data For good"}}, {"model": "products.category", "pk": 6, "fields": {"name": "Programming", "description": "Write machine code"}}, {"model": "products.product", "pk": 1, "fields": {"courseName": "2022 Complete Python Bootcamp From Zero to Hero in Python", "instructor": "Jose Portilla", "courseUrl": "https://www.udemy.com/course/complete-python-bootcamp/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/567828_67d0.jpg", "description": "Learn Python like a Professional  Start from the basics and go all the way to creating your own applications and games", "category": 1, "rating": "0.00", "reviews": 35769, "duration": "22.00", "lectures": 155, "level": "All Levels", "price": "319.99", "flag": false, "students": 1629692, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 2, "fields": {"courseName": "The Web Developer Bootcamp 2022", "instructor": "Colt Steele", "courseUrl": "https://www.udemy.com/course/the-web-developer-bootcamp/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/625204_436a_3.jpg", "description": "COMPLETELY REDONE - The only course you need to learn web development - HTML, CSS, JS, Node, and More!", "category": 1, "rating": "4.70", "reviews": 248508, "duration": "64.00", "lectures": 615, "level": "All Levels", "price": "269.99", "flag": false, "students": 830559, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 3, "fields": {"courseName": "The Complete 2022 Web Development Bootcamp", "instructor": "Dr. Angela Yu", "courseUrl": "https://www.udemy.com/course/the-complete-web-development-bootcamp/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/1565838_e54e_16.jpg", "description": "Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, MongoDB, Web3 and DApps", "category": 1, "rating": "4.70", "reviews": 234837, "duration": "65.50", "lectures": 490, "level": "All Levels", "price": "349.99", "flag": true, "students": 794897, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 4, "fields": {"courseName": "Angular - The Complete Guide (2023 Edition)", "instructor": "Maximilian Schwarzmüller", "courseUrl": "https://www.udemy.com/course/the-complete-guide-to-angular-2/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/756150_c033_2.jpg", "description": "Master Angular 14 (formerly \"Angular 2\") and build awesome, reactive web apps with the successor of Angular.js", "category": 1, "rating": "4.50", "reviews": 35769, "duration": "34.50", "lectures": 472, "level": "All Levels", "price": "319.99", "flag": true, "students": 634196, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 5, "fields": {"courseName": "Java Programming Masterclass covering Java 11 & Java 17", "instructor": "Tim Buchalka, Tim Buchalka's Learn Programming Academy", "courseUrl": "https://www.udemy.com/course/java-the-complete-java-developer-course/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/533682_c10c_4.jpg", "description": "Learn Java In This course And Become a Computer Programmer. Obtain valuable Core Java Skills And Java Certification", "category": 6, "rating": "4.50", "reviews": 171838, "duration": "80.50", "lectures": 401, "level": "All Levels", "price": "349.99", "flag": true, "students": 727934, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 6, "fields": {"courseName": "React - The Complete Guide (incl Hooks, React Router, Redux)", "instructor": "Academind by Maximilian Schwarzmüller, Maximilian Schwarzmüller", "courseUrl": "https://www.udemy.com/course/react-the-complete-guide-incl-redux/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/1362070_b9a1_2.jpg", "description": "Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and way more!", "category": 1, "rating": "4.50", "reviews": 35768, "duration": "49.50", "lectures": 495, "level": "All Levels", "price": "319.99", "flag": true, "students": 649985, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 7, "fields": {"courseName": "Machine Learning A-Z™: Hands-On Python & R In Data Science", "instructor": "Kirill Eremenko, Hadelin de Ponteves, Ligency I Team, Ligency Team", "courseUrl": "https://www.udemy.com/course/machinelearning/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/950390_270f_3.jpg", "description": "Learn to create Machine Learning Algorithms in Python and R from two Data Science experts. Code templates included.", "category": 4, "rating": "4.50", "reviews": 163106, "duration": "42.50", "lectures": 287, "level": "All Levels", "price": "269.99", "flag": false, "students": 900823, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 8, "fields": {"courseName": "The Complete JavaScript course 2023: From Zero to Expert!", "instructor": "Jonas Schmedtmann", "courseUrl": "https://www.udemy.com/course/the-complete-javascript-course/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/851712_fc61_6.jpg", "description": "The modern JavaScript course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!", "category": 6, "rating": "3.25", "reviews": 156031, "duration": "69.00", "lectures": 320, "level": "All Levels", "price": "349.99", "flag": true, "students": 699335, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 9, "fields": {"courseName": "100 Days of Code: The Complete Python Pro Bootcamp for 2022", "instructor": "Dr. Angela Yu", "courseUrl": "https://www.udemy.com/course/100-days-of-code/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/2776760_f176_10.jpg", "description": "Master Python by building 100 projects in 100 days. Learn data science, automation, build websites, games and apps!", "category": 6, "rating": "4.70", "reviews": 150024, "duration": "64.00", "lectures": 676, "level": "All Levels", "price": "319.99", "flag": true, "students": 662275, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 10, "fields": {"courseName": "Python for Data Science and Machine Learning Bootcamp", "instructor": "Jose Portilla", "courseUrl": "https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/903744_8eb2.jpg", "description": "Learn how to use NumPy, Pandas, Seaborn , Matplotlib , Plotly , Scikit-Learn , Machine Learning, Tensorflow , and more!", "category": 5, "rating": "4.50", "reviews": 35768, "duration": "25.00", "lectures": 165, "level": "All Levels", "price": "319.99", "flag": true, "students": 588524, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 11, "fields": {"courseName": "The Data Science course 2022: Complete Data Science Bootcamp", "instructor": "365 Careers, 365 Careers Team", "courseUrl": "https://www.udemy.com/course/the-data-science-course-complete-data-science-bootcamp/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/1754098_e0df_3.jpg", "description": "Complete Data Science Training: Mathematics, Statistics, Python, Advanced Statistics in Python, Machine & Deep Learning", "category": 5, "rating": "4.50", "reviews": 35768, "duration": "32.00", "lectures": 517, "level": "All Levels", "price": "319.99", "flag": true, "students": 539202, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 12, "fields": {"courseName": "Automate the Boring Stuff with Python Programming", "instructor": "Al Sweigart", "courseUrl": "https://www.udemy.com/course/automate/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/543600_64d1_4.jpg", "description": "A practical programming course for office workers, academics, and administrators who want to improve their productivity.", "category": 6, "rating": "4.70", "reviews": 103366, "duration": "9.50", "lectures": 51, "level": "All Levels", "price": "319.99", "flag": false, "students": 1060445, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 13, "fields": {"courseName": "Complete C# Unity Game Developer 2D", "instructor": "GameDev.tv Team, Rick Davidson, Gary Pettie", "courseUrl": "https://www.udemy.com/course/unitycourse/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/258316_55e9_12.jpg", "description": "Learn Unity in C# & Code Your First Five 2D Video Games for Web, Mac & PC. The Tutorials Cover Tilemap", "category": 6, "rating": "4.70", "reviews": 96126, "duration": "18.50", "lectures": 140, "level": "All Levels", "price": "349.99", "flag": false, "students": 433485, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 14, "fields": {"courseName": "Learn Python Programming Masterclass", "instructor": "Tim Buchalka, Jean-Paul Roberts, Tim Buchalka's Learn Programming Academy", "courseUrl": "https://www.udemy.com/course/python-the-complete-python-developer-course/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/629302_8a2d_2.jpg", "description": "This Python For Beginners course Teaches You The Python Language  Fast.  Includes Python Online Training With Python 3", "category": 6, "rating": "4.70", "reviews": null, "duration": "72.50", "lectures": 534, "level": "All Levels", "price": "269.99", "flag": false, "students": 394722, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 15, "fields": {"courseName": "Selenium WebDriver with Java -Basics to Advanced+Frameworks", "instructor": "Rahul Shetty", "courseUrl": "https://www.udemy.com/course/selenium-real-time-examplesinterview-questions/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/354176_fe73_5.jpg", "description": "TOP RATED  #1 Master SELENIUM java 4.0 (Latest) course\" -5 Million students learning worldWide with great collaboration", "category": 1, "rating": "4.70", "reviews": null, "duration": "53.50", "lectures": 327, "level": "All Levels", "price": "319.99", "flag": true, "students": 280503, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 16, "fields": {"courseName": "Build Responsive Real-World Websites with HTML and CSS", "instructor": "Jonas Schmedtmann", "courseUrl": "https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/437398_46c3_10.jpg", "description": "Learn modern HTML5, CSS3 and web design by building a stunning website for your portfolio! Includes flexbox and CSS Grid", "category": 1, "rating": "4.80", "reviews": 85094, "duration": "37.50", "lectures": 151, "level": "All Levels", "price": "349.99", "flag": true, "students": 341962, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 17, "fields": {"courseName": "iOS & Swift - The Complete iOS App Development Bootcamp", "instructor": "Dr. Angela Yu", "courseUrl": "https://www.udemy.com/course/ios-13-app-development-bootcamp/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/1778502_f4b9_12.jpg", "description": "From Beginner to iOS App Developer with Just One course! Fully Updated with a Comprehensive Module Dedicated to SwiftUI!", "category": 6, "rating": "4.80", "reviews": 80067, "duration": "50.50", "lectures": 542, "level": "All Levels", "price": "349.99", "flag": true, "students": 311592, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 18, "fields": {"courseName": "Modern React with Redux", "instructor": "Stephen Grider", "courseUrl": "https://www.udemy.com/course/react-redux/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/705264_caa9_13.jpg", "description": "Master React and Redux with React Router, Webpack, and Create-React-App.  Includes Hooks!", "category": 1, "rating": "4.70", "reviews": 77591, "duration": "52.50", "lectures": 574, "level": "All Levels", "price": "379.99", "flag": true, "students": 275832, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 19, "fields": {"courseName": "The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert", "instructor": "Colt Steele, Ian Schoonover", "courseUrl": "https://www.udemy.com/course/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/1187016_51b3.jpg", "description": "JUST COMPLETELY REDONE!  Master SQL, Work With Complex Databases, Build Reports, and More!", "category": 6, "rating": "4.70", "reviews": 76126, "duration": "37.50", "lectures": 650, "level": "Beginner", "price": "359.99", "flag": true, "students": 344881, "content": "Rp5vd34d-z4"}}, {"model": "products.product", "pk": 20, "fields": {"courseName": "The Complete Web Developer course 2.0", "instructor": "Rob Percival, Codestars • over 2 million students worldwide!", "courseUrl": "https://www.udemy.com/course/the-complete-web-developer-course-2/", "imageUrl": "https://img-b.udemycdn.com/course/240x135/764164_de03_2.jpg", "description": "Learn Web Development by building 25 websites and mobile apps using HTML, CSS, Javascript, PHP, Python, MySQL & more!", "category": 1, "rating": "4.70", "reviews": 6126, "duration": "28.50", "lectures": 288, "level": "All Levels", "price": "269.99", "flag": false, "students": 304994, "content": "Rp5vd34d-z4"}}, {"model": "products.cart", "pk": 1, "fields": {"user": 2, "created_at": "2024-11-12T12:53:44.911Z"}}, {"model": "products.cart", "pk": 2, "fields": {"user": 4, "created_at": "2024-11-12T13:05:16.381Z"}}, {"model": "products.cart", "pk": 3, "fields": {"user": 5, "created_at": "2024-11-13T10:35:03.471Z"}}, {"model": "products.cart", "pk": 34, "fields": {"user": 34, "created_at": "2024-12-11T05:34:56.080Z"}}, {"model": "products.cart", "pk": 67, "fields": {"user": 67, "created_at": "2024-12-19T06:39:01.102Z"}}, {"model": "products.order", "pk": 1, "fields": {"user": 5, "amount": 639, "stripe_id": "pi_3QKdvvJPghJt2bsl1XdyjqMA", "status": "Completed", "date": "2024-11-13T10:37:44.193Z"}}, {"model": "products.order", "pk": 2, "fields": {"user": 5, "amount": 619, "stripe_id": "pi_3QL2owJPghJt2bsl0FcpKYUT", "status": "Completed", "date": "2024-11-14T13:11:23.808Z"}}, {"model": "products.order", "pk": 34, "fields": {"user": 4, "amount": 319, "stripe_id": "pi_3QRu2tJPghJt2bsl2ygelrpo", "status": "Completed", "date": "2024-12-03T11:13:52.709Z"}}, {"model": "products.order", "pk": 35, "fields": {"user": 4, "amount": 319, "stripe_id": "pi_3QRuA5JPghJt2bsl0LSxoabq", "status": "Completed", "date": "2024-12-03T11:21:17.219Z"}}, {"model": "products.order", "pk": 36, "fields": {"user": 4, "amount": 319, "stripe_id": "pi_3QRuNiJPghJt2bsl0o8e29mr", "status": "Completed", "date": "2024-12-03T11:35:20.083Z"}}, {"model": "products.order", "pk": 67, "fields": {"user": 34, "amount": 589, "stripe_id": "pi_3QUiaoJPghJt2bsl2mtiYXN7", "status": "Completed", "date": "2024-12-11T05:37:18.893Z"}}, {"model": "products.order", "pk": 100, "fields": {"user": 34, "amount": 319, "stripe_id": "pi_3QXjrWJPghJt2bsl2GEkVBtR", "status": "Completed", "date": "2024-12-19T13:34:44.371Z"}}, {"model": "products.orderitems", "pk": 1, "fields": {"order": 1, "product": 1, "price": 319}}, {"model": "products.orderitems", "pk": 2, "fields": {"order": 1, "product": 12, "price": 319}}, {"model": "products.orderitems", "pk": 3, "fields": {"order": 2, "product": 13, "price": 349}}, {"model": "products.orderitems", "pk": 4, "fields": {"order": 2, "product": 7, "price": 269}}, {"model": "products.orderitems", "pk": 34, "fields": {"order": 34, "product": 1, "price": 319}}, {"model": "products.orderitems", "pk": 35, "fields": {"order": 35, "product": 1, "price": 319}}, {"model": "products.orderitems", "pk": 36, "fields": {"order": 36, "product": 1, "price": 319}}, {"model": "products.orderitems", "pk": 67, "fields": {"order": 67, "product": 11, "price": 319}}, {"model": "products.orderitems", "pk": 68, "fields": {"order": 67, "product": 7, "price": 269}}, {"model": "products.orderitems", "pk": 100, "fields": {"order": 100, "product": 4, "price": 319}}, {"model": "products.review", "pk": 1, "fields": {"product": 1, "user": 4, "rating": "3.6", "comment": "I like this course", "created_at": "2024-12-03T11:53:12.958Z"}}, {"model": "products.review", "pk": 34, "fields": {"product": 7, "user": 34, "rating": "5.0", "comment": "super good", "created_at": "2024-12-11T15:33:53.596Z"}}, {"model": "products.review", "pk": 35, "fields": {"product": 7, "user": 34, "rating": "3.0", "comment": "good", "created_at": "2024-12-11T15:34:22.006Z"}}, {"model": "products.review", "pk": 67, "fields": {"product": 4, "user": 34, "rating": "4.0", "comment": "good", "created_at": "2024-12-19T13:38:45.834Z"}}]
+[
+    {
+      "model": "admin.logentry",
+      "pk": 1,
+      "fields": {
+        "action_time": "2024-11-12T12:54:36.091Z",
+        "user": 2,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "technical-skills",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 2,
+      "fields": {
+        "action_time": "2024-11-12T12:54:46.228Z",
+        "user": 2,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "example.com",
+        "action_flag": 3,
+        "change_message": ""
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 3,
+      "fields": {
+        "action_time": "2024-11-12T13:02:31.632Z",
+        "user": 2,
+        "content_type": 10,
+        "object_id": "8",
+        "object_repr": "The Complete JavaScript course 2023: From Zero to Expert!",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Rating\"]}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 4,
+      "fields": {
+        "action_time": "2024-11-12T13:03:10.832Z",
+        "user": 2,
+        "content_type": 4,
+        "object_id": "1",
+        "object_repr": "eddie11",
+        "action_flag": 3,
+        "change_message": ""
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 5,
+      "fields": {
+        "action_time": "2024-11-12T13:03:10.836Z",
+        "user": 2,
+        "content_type": 4,
+        "object_id": "3",
+        "object_repr": "edwin",
+        "action_flag": 3,
+        "change_message": ""
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 6,
+      "fields": {
+        "action_time": "2024-11-14T04:54:29.691Z",
+        "user": 2,
+        "content_type": 16,
+        "object_id": "1",
+        "object_repr": "Carousel object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 7,
+      "fields": {
+        "action_time": "2024-11-14T04:55:03.268Z",
+        "user": 2,
+        "content_type": 16,
+        "object_id": "2",
+        "object_repr": "Carousel object (2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 8,
+      "fields": {
+        "action_time": "2024-11-14T04:55:37.263Z",
+        "user": 2,
+        "content_type": 16,
+        "object_id": "3",
+        "object_repr": "Carousel object (3)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 9,
+      "fields": {
+        "action_time": "2024-11-14T04:55:41.300Z",
+        "user": 2,
+        "content_type": 16,
+        "object_id": "3",
+        "object_repr": "Carousel object (3)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 10,
+      "fields": {
+        "action_time": "2024-11-14T04:55:41.303Z",
+        "user": 2,
+        "content_type": 16,
+        "object_id": "2",
+        "object_repr": "Carousel object (2)",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 11,
+      "fields": {
+        "action_time": "2024-11-14T13:28:40.764Z",
+        "user": 2,
+        "content_type": 4,
+        "object_id": "5",
+        "object_repr": "janedoe",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\"]}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 34,
+      "fields": {
+        "action_time": "2024-12-19T06:14:07.025Z",
+        "user": 2,
+        "content_type": 4,
+        "object_id": "67",
+        "object_repr": "Admin",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 35,
+      "fields": {
+        "action_time": "2024-12-19T06:14:21.376Z",
+        "user": 2,
+        "content_type": 4,
+        "object_id": "67",
+        "object_repr": "Admin",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Superuser status\"]}}]"
+      }
+    },
+    {
+      "model": "admin.logentry",
+      "pk": 36,
+      "fields": {
+        "action_time": "2024-12-19T12:08:21.109Z",
+        "user": 67,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "technical-skills.com",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Domain name\"]}}]"
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 2,
+      "fields": {
+        "password": "pbkdf2_sha256$600000$OI1k9oXy3MKP8B5CKvvEGJ$baHBqM9vHbgv0LQlkzRCslmhPPxGypBAd+otAM7gMkg=",
+        "last_login": "2024-12-19T06:13:17.511Z",
+        "is_superuser": true,
+        "username": "eddie",
+        "first_name": "",
+        "last_name": "",
+        "email": "edwinkiyimba@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-11-12T12:53:13.107Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 4,
+      "fields": {
+        "password": "pbkdf2_sha256$600000$nwULvV9MWgWncJRthujbW5$0aZPi/H7fGDU1je7UrPKVU/17sgFRVsm9DdJcNvg4KE=",
+        "last_login": "2024-12-19T06:12:52.187Z",
+        "is_superuser": false,
+        "username": "caps",
+        "first_name": "",
+        "last_name": "",
+        "email": "sanakacaps@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-11-12T13:04:12.289Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 5,
+      "fields": {
+        "password": "pbkdf2_sha256$600000$ycmBp18Qf9idRq7JxwoEoM$BPhpfwp4kne6c65uqd2xpX2OIRH3tWiX/0M8nA8Dlmk=",
+        "last_login": "2024-11-14T13:31:04.397Z",
+        "is_superuser": true,
+        "username": "janedoe",
+        "first_name": "",
+        "last_name": "",
+        "email": "1jane1doe11@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-11-13T10:33:40Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 34,
+      "fields": {
+        "password": "pbkdf2_sha256$600000$pCEXrIJ8v6IG2XMDOb20sn$f+NIQABqkFNxn3RxUVw8OBrppk2wuj3Qfd3uQ4i7aA4=",
+        "last_login": "2024-12-19T13:20:06.118Z",
+        "is_superuser": false,
+        "username": "Elsie",
+        "first_name": "",
+        "last_name": "",
+        "email": "198elsie@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-12-11T04:11:01.546Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "auth.user",
+      "pk": 67,
+      "fields": {
+        "password": "pbkdf2_sha256$600000$bOVu8yRRxkrYvIrOosrrxT$TDrR8RcbRA2M1q395lNRSgS9lRijnxrTPzcrD7IWGpY=",
+        "last_login": "2024-12-19T13:45:41.653Z",
+        "is_superuser": true,
+        "username": "Admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-12-19T06:14:06Z",
+        "groups": [],
+        "user_permissions": []
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "1c2e0iu12jpjfwfyftc6fc5r8z3ejwyt",
+      "fields": {
+        "session_data": ".eJyFUEFuwyAQ_MueXQsMNpBT229UFVpgHaPEdmSw0ijK32va9JCqUm-r2ZnZnbmCPWFK53kJdqFE2R7oAjvw-_26pifNjOo63eoenRchGE_aYcsRnUKPCipA7-d1yhbXPNCUo8cc58mOlIc5JNi9XeF73lx_ThVZhh1XouFMiEbXUmrFVQVromXCkTYyhRAJbtW_etk2tWgMU9JUQCPG45f6HKdDvMTR4fO-gLWfR_h14U_O7b0CmyilkoM-TnHZGmEbViLaorexfNPAA-bQH2gqCzweC1zfq6m_OPd1ql8einq9qx6sBkzD5mOU65FJ7oUmRowbQ6YLQQvThy2w71zoGkYtk8SVC60UTejb3pBXXjiu4fYJjT-fVQ:1tDjES:Gniue4F-8XnAYdxPfWYrBDUDkJT0TJiHTE5givuvIRY",
+        "expire_date": "2024-12-04T11:50:52.352Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "3zd8m6wqrsw081mqlpicw1uk9qzhnfrp",
+      "fields": {
+        "session_data": "eyJfcGFzc3dvcmRfcmVzZXRfa2V5IjoiY2doaXY3LTM4YjY2ZGRlYzQ3NzY2ZmRmZjUxNjRjZTYwY2E1ZDRhIn0:1tBaNr:x-7K1KhJPjv8uTGovU7SH1VRjAFeZsvtdciYPkIf2jg",
+        "expire_date": "2024-11-28T13:59:43.483Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "68ewt3f6zcrpx1lg597adkt1ow9krfom",
+      "fields": {
+        "session_data": ".eJxVj8tOxDAMRf_F6ypK2zy7ZM8XIFS5iUMDTFI1qQCN5t9pYDazsSzf4yPdK6Bz-Uh1xqOulGp0WGNO84Xqmn2B6eUK_ztMsGEpX3n30AFWmHo9jsMgleXM2H4wfQdHoT3hhU7Y4Vbg9trBn3puyRybRcDDbUH3QakF_h3TW2Yup7rHhTWE3dPCnrOnz6c7-yBYsaznt3LGadJcGoHehjEopUVAPmphJQ1SqJGbYC2XfLGo6RwojOqNcoHLBZu0UCmtPX1vcf-Bid9-AXEqXxU:1tIRB4:cwAx8ziikDbs4npwRL-Mg50ifNbxrQWioDfTtse_3c4",
+        "expire_date": "2024-12-17T11:34:50.912Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "9bcitnt2u6cbtrvo0la9hrr92c5bnu5d",
+      "fields": {
+        "session_data": "eyJfcGFzc3dvcmRfcmVzZXRfa2V5IjoiY2dndXVzLTgwOTc2Njg1OGZhYmMzZGQ5Y2U4YmE1MWFhYjdhY2E3In0:1tBSI5:l1Jhtev4kdYKt0XYIemZDlEkEmm94txoHuVrykRRf3Y",
+        "expire_date": "2024-11-28T05:21:13.416Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "bkcd97g0271t9618rwxiu3nulh3ezgef",
+      "fields": {
+        "session_data": "eyJjYXJ0IjpbOV19:1tJzDh:wKQQDptjRwU_3CH8ECSjbf01CREFW5F87IfBqG1hwxE",
+        "expire_date": "2024-12-21T18:07:57.175Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "kpfw7qwlyz2uv5aus0enc9ufg7vdxt2s",
+      "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSG8YVy69xsIMINUDU1KuzL-uzbpQrf3nHNfLKZtbXEbtMQJ2ZkpdvrdcioP6jvAe-q3mZe5r8uU-a7wgw5-nZGel8P9O2hptG8NPtckjCw6kCAhAQgcYtBQUSsoLqNTgqwwJH1Ga7TCaitQ8UVnGdj7A-XfOBM:1tBRqb:TzGaDBAneBJFE-tBbwbEGBGLTLBx9fILNCz47k2_Qiw",
+        "expire_date": "2024-11-28T04:52:49.018Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "lo7r2cb7h7zkxmxxffo9k280j527ns49",
+      "fields": {
+        "session_data": ".eJxVj8tqwzAQRf9l1sYo1tvL7vsFpZixNKrVNpKxZJoQ8u-12myyGYa5Zw7cG6BzeU91wr0ulGp0WGNO05nqkn2B8e0G_zuMsGIpP3nz0AFWGE-acztIJobeCs4s0x3shbaEZzpoh2uB-3sHf-6pJVNsGgFPtxndF6UW-E9MH7l3OdUtzn1D-kda-tfs6fvlwT4JFizL8a2ccZo0k0agt4EHpbQIyLgWVtIgheLMBGuZZLNFTcdAYdTJKBeYnLFJC5XS6tNljdsVRnb_BbOlX0Y:1tLN6w:f0jqm6rhJaCjsSSjkhQxWiRrHWyZ8Myz53WHTwrAcR0",
+        "expire_date": "2024-12-25T13:50:42.963Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "mx06txug260nslytwtxw5i8za90rxkgb",
+      "fields": {
+        "session_data": "eyJfcGFzc3dvcmRfcmVzZXRfa2V5IjoiY2dndXVzLTgwOTc2Njg1OGZhYmMzZGQ5Y2U4YmE1MWFhYjdhY2E3In0:1tBSI5:l1Jhtev4kdYKt0XYIemZDlEkEmm94txoHuVrykRRf3Y",
+        "expire_date": "2024-11-28T05:21:13.459Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "pbpbk9m83h1uhtyy1dguu6suonk83b8m",
+      "fields": {
+        "session_data": ".eJxVj8tqxDAMRf9F6xDsxo84y-77BaUExZYbt4kdYqcPhvn3xu1QmI0QOvce0AXQ2nTEMn7QHnwgN9KKYYEhHsvS_FM8ykyxBIslpDiuVObkMgzPF_jbYYANc_5Mu4OzVmDguuOCK81V20lpOG_gyLRHXOkMW9wyXF8a-FWPlYyhWgTc3Sa07xQrcG8YX1NrUyx7mNoaaW80t0_J0fJ4y94JZszz2Va2t5o0k71AZ3znldLCI-u0MJIepFAd670xTLLJoKZzoOgV75X1TE5YpZlyrt_T1xb2bxjY9QcBxWp1:1tAqa4:Lo8uwiFaOEnSbqthJ8mRY4OR2i38z31k3AX50jrjf3I",
+        "expire_date": "2024-11-26T13:05:16.391Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "svw8mbo3dfab13i7ywl4uvkqb3dh8n49",
+      "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSG8YVy69xsIMINUDU1KuzL-uzbpQrf3nHNfLKZtbXEbtMQJ2ZkpdvrdcioP6jvAe-q3mZe5r8uU-a7wgw5-nZGel8P9O2hptG8NPtckjCw6kCAhAQgcYtBQUSsoLqNTgqwwJH1Ga7TCaitQ8UVnGdj7A-XfOBM:1tO9mf:J6e8XHpX2EuXSAkkAf2R2BEflZZYMvd4d-grfQ0IDjk",
+        "expire_date": "2025-01-02T06:13:17.516Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "u5nnas929k1uwsqgsqz2rhhtoubxh62f",
+      "fields": {
+        "session_data": ".eJxtkU1u4zAMhe-itWFYjv_iXWc_JxgMBJqibTWyFEhy2yDI3Ut7PC0CdCWK7xMfSd0FIPrVJQVrmsklg5CMd2qhNHsdRf_nLv7FohdXiPHdBy0yAUn0sj1VjazP8pS3VX0-NU0m1kjBwUJMv-jFOPH4m315WD9xpr_vlLpeGJJvXIwWMFa9UTDj4c_KAk5D8uHGQDSTW6-iH8FGykQgbQJhUmuwonertUeN_5eNB6su7xCm-JVMkGhz52CiuEV7Q2q4KfR6l9gR-HxkYmZ7Szx1Civxfe_upg6bb5IlXEPg1XHPT9AmGWeSYVutflhYWZWMqEgxbiunj6vhafuCc9tvqH1LZlt804qn5AB4Ibcp-hXc5HP0LgUz5BuSH2rMf_NU9tfBPhWYIc78ejzVNdUl8gdJjQPoDrHDcsS6roq20k3XDpJGKispz9i1KKE517rTRVFgg1I8PgEo38Qd:1tOGqT:aon9au0qbvIFmJY6EiJ1fG4iqzFXOlNqNdk72lgLiAw",
+        "expire_date": "2025-01-02T13:45:41.657Z"
+      }
+    },
+    {
+      "model": "sessions.session",
+      "pk": "zeharkj23ewlgai499k81pplsksormlj",
+      "fields": {
+        "session_data": "eyJjYXJ0IjpbMl0sImFjY291bnRfbG9naW4iOiJ2ZXJpZnlfZW1haWwifQ:1tBSGh:ktPWbzNcDZfmbAInIzZJZXRcDrWp1Xyt3-x2oUaJ33g",
+        "expire_date": "2024-11-28T05:19:47.664Z"
+      }
+    },
+    {
+      "model": "sites.site",
+      "pk": 2,
+      "fields": {
+        "domain": "technical-skills.com",
+        "name": "Technical Skills"
+      }
+    },
+    {
+      "model": "account.emailaddress",
+      "pk": 3,
+      "fields": {
+        "user": 2,
+        "email": "edwinkiyimba@gmail.com",
+        "verified": true,
+        "primary": true
+      }
+    },
+    {
+      "model": "account.emailaddress",
+      "pk": 4,
+      "fields": {
+        "user": 4,
+        "email": "sanakacaps@gmail.com",
+        "verified": true,
+        "primary": true
+      }
+    },
+    {
+      "model": "account.emailaddress",
+      "pk": 5,
+      "fields": {
+        "user": 5,
+        "email": "1jane1doe11@gmail.com",
+        "verified": true,
+        "primary": true
+      }
+    },
+    {
+      "model": "account.emailaddress",
+      "pk": 34,
+      "fields": {
+        "user": 34,
+        "email": "198elsie@gmail.com",
+        "verified": true,
+        "primary": true
+      }
+    },
+    {
+      "model": "home.carousel",
+      "pk": 1,
+      "fields": {
+        "imageUrl": "https://images.pexels.com/photos/7983584/pexels-photo-7983584.jpeg",
+        "label": "All Age Round Education",
+        "text": "We help you gain the skills you need no matter the background.",
+        "active": true
+      }
+    },
+    {
+      "model": "home.carousel",
+      "pk": 2,
+      "fields": {
+        "imageUrl": "https://images.pexels.com/photos/7983584/pexels-photo-7983584.jpeg",
+        "label": "Best Education for All",
+        "text": "Get the skills you need to win",
+        "active": true
+      }
+    },
+    {
+      "model": "home.carousel",
+      "pk": 3,
+      "fields": {
+        "imageUrl": "https://images.pexels.com/photos/5306431/pexels-photo-5306431.jpeg",
+        "label": "Beginer Friendly",
+        "text": "Choose from our carefully crafted courses for all levels.",
+        "active": true
+      }
+    },
+    {
+      "model": "products.category",
+      "pk": 1,
+      "fields": {
+        "name": "Web developement",
+        "description": "Creating websites, and stuff"
+      }
+    },
+    {
+      "model": "products.category",
+      "pk": 2,
+      "fields": {
+        "name": "Finance",
+        "description": "Managing money"
+      }
+    },
+    {
+      "model": "products.category",
+      "pk": 3,
+      "fields": {
+        "name": "Artificial Intelligence",
+        "description": "Making machines learn"
+      }
+    },
+    {
+      "model": "products.category",
+      "pk": 4,
+      "fields": {
+        "name": "Machine Learning",
+        "description": "Learn about machines"
+      }
+    },
+    {
+      "model": "products.category",
+      "pk": 5,
+      "fields": {
+        "name": "Data Science",
+        "description": "Create Data For good"
+      }
+    },
+    {
+      "model": "products.category",
+      "pk": 6,
+      "fields": {
+        "name": "Programming",
+        "description": "Write machine code"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 1,
+      "fields": {
+        "courseName": "2022 Complete Python Bootcamp From Zero to Hero in Python",
+        "instructor": "Jose Portilla",
+        "courseUrl": "https://www.udemy.com/course/complete-python-bootcamp/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/567828_67d0.jpg",
+        "description": "Learn Python like a Professional  Start from the basics and go all the way to creating your own applications and games",
+        "category": 1,
+        "rating": "0.00",
+        "reviews": 35769,
+        "duration": "22.00",
+        "lectures": 155,
+        "level": "All Levels",
+        "price": "319.99",
+        "flag": false,
+        "students": 1629692,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 2,
+      "fields": {
+        "courseName": "The Web Developer Bootcamp 2022",
+        "instructor": "Colt Steele",
+        "courseUrl": "https://www.udemy.com/course/the-web-developer-bootcamp/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/625204_436a_3.jpg",
+        "description": "COMPLETELY REDONE - The only course you need to learn web development - HTML, CSS, JS, Node, and More!",
+        "category": 1,
+        "rating": "4.70",
+        "reviews": 248508,
+        "duration": "64.00",
+        "lectures": 615,
+        "level": "All Levels",
+        "price": "269.99",
+        "flag": false,
+        "students": 830559,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 3,
+      "fields": {
+        "courseName": "The Complete 2022 Web Development Bootcamp",
+        "instructor": "Dr. Angela Yu",
+        "courseUrl": "https://www.udemy.com/course/the-complete-web-development-bootcamp/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/1565838_e54e_16.jpg",
+        "description": "Become a Full-Stack Web Developer with just ONE course. HTML, CSS, Javascript, Node, React, MongoDB, Web3 and DApps",
+        "category": 1,
+        "rating": "4.70",
+        "reviews": 234837,
+        "duration": "65.50",
+        "lectures": 490,
+        "level": "All Levels",
+        "price": "349.99",
+        "flag": true,
+        "students": 794897,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 4,
+      "fields": {
+        "courseName": "Angular - The Complete Guide (2023 Edition)",
+        "instructor": "Maximilian Schwarzmüller",
+        "courseUrl": "https://www.udemy.com/course/the-complete-guide-to-angular-2/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/756150_c033_2.jpg",
+        "description": "Master Angular 14 (formerly \"Angular 2\") and build awesome, reactive web apps with the successor of Angular.js",
+        "category": 1,
+        "rating": "4.50",
+        "reviews": 35769,
+        "duration": "34.50",
+        "lectures": 472,
+        "level": "All Levels",
+        "price": "319.99",
+        "flag": true,
+        "students": 634196,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 5,
+      "fields": {
+        "courseName": "Java Programming Masterclass covering Java 11 & Java 17",
+        "instructor": "Tim Buchalka, Tim Buchalka's Learn Programming Academy",
+        "courseUrl": "https://www.udemy.com/course/java-the-complete-java-developer-course/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/533682_c10c_4.jpg",
+        "description": "Learn Java In This course And Become a Computer Programmer. Obtain valuable Core Java Skills And Java Certification",
+        "category": 6,
+        "rating": "4.50",
+        "reviews": 171838,
+        "duration": "80.50",
+        "lectures": 401,
+        "level": "All Levels",
+        "price": "349.99",
+        "flag": true,
+        "students": 727934,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 6,
+      "fields": {
+        "courseName": "React - The Complete Guide (incl Hooks, React Router, Redux)",
+        "instructor": "Academind by Maximilian Schwarzmüller, Maximilian Schwarzmüller",
+        "courseUrl": "https://www.udemy.com/course/react-the-complete-guide-incl-redux/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/1362070_b9a1_2.jpg",
+        "description": "Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and way more!",
+        "category": 1,
+        "rating": "4.50",
+        "reviews": 35768,
+        "duration": "49.50",
+        "lectures": 495,
+        "level": "All Levels",
+        "price": "319.99",
+        "flag": true,
+        "students": 649985,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 7,
+      "fields": {
+        "courseName": "Machine Learning A-Z™: Hands-On Python & R In Data Science",
+        "instructor": "Kirill Eremenko, Hadelin de Ponteves, Ligency I Team, Ligency Team",
+        "courseUrl": "https://www.udemy.com/course/machinelearning/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/950390_270f_3.jpg",
+        "description": "Learn to create Machine Learning Algorithms in Python and R from two Data Science experts. Code templates included.",
+        "category": 4,
+        "rating": "4.50",
+        "reviews": 163106,
+        "duration": "42.50",
+        "lectures": 287,
+        "level": "All Levels",
+        "price": "269.99",
+        "flag": false,
+        "students": 900823,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 8,
+      "fields": {
+        "courseName": "The Complete JavaScript course 2023: From Zero to Expert!",
+        "instructor": "Jonas Schmedtmann",
+        "courseUrl": "https://www.udemy.com/course/the-complete-javascript-course/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/851712_fc61_6.jpg",
+        "description": "The modern JavaScript course for everyone! Master JavaScript with projects, challenges and theory. Many courses in one!",
+        "category": 6,
+        "rating": "3.25",
+        "reviews": 156031,
+        "duration": "69.00",
+        "lectures": 320,
+        "level": "All Levels",
+        "price": "349.99",
+        "flag": true,
+        "students": 699335,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 9,
+      "fields": {
+        "courseName": "100 Days of Code: The Complete Python Pro Bootcamp for 2022",
+        "instructor": "Dr. Angela Yu",
+        "courseUrl": "https://www.udemy.com/course/100-days-of-code/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/2776760_f176_10.jpg",
+        "description": "Master Python by building 100 projects in 100 days. Learn data science, automation, build websites, games and apps!",
+        "category": 6,
+        "rating": "4.70",
+        "reviews": 150024,
+        "duration": "64.00",
+        "lectures": 676,
+        "level": "All Levels",
+        "price": "319.99",
+        "flag": true,
+        "students": 662275,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 10,
+      "fields": {
+        "courseName": "Python for Data Science and Machine Learning Bootcamp",
+        "instructor": "Jose Portilla",
+        "courseUrl": "https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/903744_8eb2.jpg",
+        "description": "Learn how to use NumPy, Pandas, Seaborn , Matplotlib , Plotly , Scikit-Learn , Machine Learning, Tensorflow , and more!",
+        "category": 5,
+        "rating": "4.50",
+        "reviews": 35768,
+        "duration": "25.00",
+        "lectures": 165,
+        "level": "All Levels",
+        "price": "319.99",
+        "flag": true,
+        "students": 588524,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 11,
+      "fields": {
+        "courseName": "The Data Science course 2022: Complete Data Science Bootcamp",
+        "instructor": "365 Careers, 365 Careers Team",
+        "courseUrl": "https://www.udemy.com/course/the-data-science-course-complete-data-science-bootcamp/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/1754098_e0df_3.jpg",
+        "description": "Complete Data Science Training: Mathematics, Statistics, Python, Advanced Statistics in Python, Machine & Deep Learning",
+        "category": 5,
+        "rating": "4.50",
+        "reviews": 35768,
+        "duration": "32.00",
+        "lectures": 517,
+        "level": "All Levels",
+        "price": "319.99",
+        "flag": true,
+        "students": 539202,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 12,
+      "fields": {
+        "courseName": "Automate the Boring Stuff with Python Programming",
+        "instructor": "Al Sweigart",
+        "courseUrl": "https://www.udemy.com/course/automate/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/543600_64d1_4.jpg",
+        "description": "A practical programming course for office workers, academics, and administrators who want to improve their productivity.",
+        "category": 6,
+        "rating": "4.70",
+        "reviews": 103366,
+        "duration": "9.50",
+        "lectures": 51,
+        "level": "All Levels",
+        "price": "319.99",
+        "flag": false,
+        "students": 1060445,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 13,
+      "fields": {
+        "courseName": "Complete C# Unity Game Developer 2D",
+        "instructor": "GameDev.tv Team, Rick Davidson, Gary Pettie",
+        "courseUrl": "https://www.udemy.com/course/unitycourse/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/258316_55e9_12.jpg",
+        "description": "Learn Unity in C# & Code Your First Five 2D Video Games for Web, Mac & PC. The Tutorials Cover Tilemap",
+        "category": 6,
+        "rating": "4.70",
+        "reviews": 96126,
+        "duration": "18.50",
+        "lectures": 140,
+        "level": "All Levels",
+        "price": "349.99",
+        "flag": false,
+        "students": 433485,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 14,
+      "fields": {
+        "courseName": "Learn Python Programming Masterclass",
+        "instructor": "Tim Buchalka, Jean-Paul Roberts, Tim Buchalka's Learn Programming Academy",
+        "courseUrl": "https://www.udemy.com/course/python-the-complete-python-developer-course/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/629302_8a2d_2.jpg",
+        "description": "This Python For Beginners course Teaches You The Python Language  Fast.  Includes Python Online Training With Python 3",
+        "category": 6,
+        "rating": "4.70",
+        "reviews": null,
+        "duration": "72.50",
+        "lectures": 534,
+        "level": "All Levels",
+        "price": "269.99",
+        "flag": false,
+        "students": 394722,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 15,
+      "fields": {
+        "courseName": "Selenium WebDriver with Java -Basics to Advanced+Frameworks",
+        "instructor": "Rahul Shetty",
+        "courseUrl": "https://www.udemy.com/course/selenium-real-time-examplesinterview-questions/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/354176_fe73_5.jpg",
+        "description": "TOP RATED  #1 Master SELENIUM java 4.0 (Latest) course\" -5 Million students learning worldWide with great collaboration",
+        "category": 1,
+        "rating": "4.70",
+        "reviews": null,
+        "duration": "53.50",
+        "lectures": 327,
+        "level": "All Levels",
+        "price": "319.99",
+        "flag": true,
+        "students": 280503,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 16,
+      "fields": {
+        "courseName": "Build Responsive Real-World Websites with HTML and CSS",
+        "instructor": "Jonas Schmedtmann",
+        "courseUrl": "https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/437398_46c3_10.jpg",
+        "description": "Learn modern HTML5, CSS3 and web design by building a stunning website for your portfolio! Includes flexbox and CSS Grid",
+        "category": 1,
+        "rating": "4.80",
+        "reviews": 85094,
+        "duration": "37.50",
+        "lectures": 151,
+        "level": "All Levels",
+        "price": "349.99",
+        "flag": true,
+        "students": 341962,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 17,
+      "fields": {
+        "courseName": "iOS & Swift - The Complete iOS App Development Bootcamp",
+        "instructor": "Dr. Angela Yu",
+        "courseUrl": "https://www.udemy.com/course/ios-13-app-development-bootcamp/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/1778502_f4b9_12.jpg",
+        "description": "From Beginner to iOS App Developer with Just One course! Fully Updated with a Comprehensive Module Dedicated to SwiftUI!",
+        "category": 6,
+        "rating": "4.80",
+        "reviews": 80067,
+        "duration": "50.50",
+        "lectures": 542,
+        "level": "All Levels",
+        "price": "349.99",
+        "flag": true,
+        "students": 311592,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 18,
+      "fields": {
+        "courseName": "Modern React with Redux",
+        "instructor": "Stephen Grider",
+        "courseUrl": "https://www.udemy.com/course/react-redux/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/705264_caa9_13.jpg",
+        "description": "Master React and Redux with React Router, Webpack, and Create-React-App.  Includes Hooks!",
+        "category": 1,
+        "rating": "4.70",
+        "reviews": 77591,
+        "duration": "52.50",
+        "lectures": 574,
+        "level": "All Levels",
+        "price": "379.99",
+        "flag": true,
+        "students": 275832,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 19,
+      "fields": {
+        "courseName": "The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert",
+        "instructor": "Colt Steele, Ian Schoonover",
+        "courseUrl": "https://www.udemy.com/course/the-ultimate-mysql-bootcamp-go-from-sql-beginner-to-expert/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/1187016_51b3.jpg",
+        "description": "JUST COMPLETELY REDONE!  Master SQL, Work With Complex Databases, Build Reports, and More!",
+        "category": 6,
+        "rating": "4.70",
+        "reviews": 76126,
+        "duration": "37.50",
+        "lectures": 650,
+        "level": "Beginner",
+        "price": "359.99",
+        "flag": true,
+        "students": 344881,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.product",
+      "pk": 20,
+      "fields": {
+        "courseName": "The Complete Web Developer course 2.0",
+        "instructor": "Rob Percival, Codestars • over 2 million students worldwide!",
+        "courseUrl": "https://www.udemy.com/course/the-complete-web-developer-course-2/",
+        "imageUrl": "https://img-b.udemycdn.com/course/240x135/764164_de03_2.jpg",
+        "description": "Learn Web Development by building 25 websites and mobile apps using HTML, CSS, Javascript, PHP, Python, MySQL & more!",
+        "category": 1,
+        "rating": "4.70",
+        "reviews": 6126,
+        "duration": "28.50",
+        "lectures": 288,
+        "level": "All Levels",
+        "price": "269.99",
+        "flag": false,
+        "students": 304994,
+        "content": "Rp5vd34d-z4"
+      }
+    },
+    {
+      "model": "products.cart",
+      "pk": 1,
+      "fields": {
+        "user": 2,
+        "created_at": "2024-11-12T12:53:44.911Z"
+      }
+    },
+    {
+      "model": "products.cart",
+      "pk": 2,
+      "fields": {
+        "user": 4,
+        "created_at": "2024-11-12T13:05:16.381Z"
+      }
+    },
+    {
+      "model": "products.cart",
+      "pk": 3,
+      "fields": {
+        "user": 5,
+        "created_at": "2024-11-13T10:35:03.471Z"
+      }
+    },
+    {
+      "model": "products.cart",
+      "pk": 34,
+      "fields": {
+        "user": 34,
+        "created_at": "2024-12-11T05:34:56.080Z"
+      }
+    },
+    {
+      "model": "products.cart",
+      "pk": 67,
+      "fields": {
+        "user": 67,
+        "created_at": "2024-12-19T06:39:01.102Z"
+      }
+    },
+    {
+      "model": "products.order",
+      "pk": 1,
+      "fields": {
+        "user": 5,
+        "amount": 639,
+        "stripe_id": "pi_3QKdvvJPghJt2bsl1XdyjqMA",
+        "status": "Completed",
+        "date": "2024-11-13T10:37:44.193Z"
+      }
+    },
+    {
+      "model": "products.order",
+      "pk": 2,
+      "fields": {
+        "user": 5,
+        "amount": 619,
+        "stripe_id": "pi_3QL2owJPghJt2bsl0FcpKYUT",
+        "status": "Completed",
+        "date": "2024-11-14T13:11:23.808Z"
+      }
+    },
+    {
+      "model": "products.order",
+      "pk": 34,
+      "fields": {
+        "user": 4,
+        "amount": 319,
+        "stripe_id": "pi_3QRu2tJPghJt2bsl2ygelrpo",
+        "status": "Completed",
+        "date": "2024-12-03T11:13:52.709Z"
+      }
+    },
+    {
+      "model": "products.order",
+      "pk": 35,
+      "fields": {
+        "user": 4,
+        "amount": 319,
+        "stripe_id": "pi_3QRuA5JPghJt2bsl0LSxoabq",
+        "status": "Completed",
+        "date": "2024-12-03T11:21:17.219Z"
+      }
+    },
+    {
+      "model": "products.order",
+      "pk": 36,
+      "fields": {
+        "user": 4,
+        "amount": 319,
+        "stripe_id": "pi_3QRuNiJPghJt2bsl0o8e29mr",
+        "status": "Completed",
+        "date": "2024-12-03T11:35:20.083Z"
+      }
+    },
+    {
+      "model": "products.order",
+      "pk": 67,
+      "fields": {
+        "user": 34,
+        "amount": 589,
+        "stripe_id": "pi_3QUiaoJPghJt2bsl2mtiYXN7",
+        "status": "Completed",
+        "date": "2024-12-11T05:37:18.893Z"
+      }
+    },
+    {
+      "model": "products.order",
+      "pk": 100,
+      "fields": {
+        "user": 34,
+        "amount": 319,
+        "stripe_id": "pi_3QXjrWJPghJt2bsl2GEkVBtR",
+        "status": "Completed",
+        "date": "2024-12-19T13:34:44.371Z"
+      }
+    },
+    {
+      "model": "products.orderitems",
+      "pk": 1,
+      "fields": {
+        "order": 1,
+        "product": 1,
+        "price": 319
+      }
+    },
+    {
+      "model": "products.orderitems",
+      "pk": 2,
+      "fields": {
+        "order": 1,
+        "product": 12,
+        "price": 319
+      }
+    },
+    {
+      "model": "products.orderitems",
+      "pk": 3,
+      "fields": {
+        "order": 2,
+        "product": 13,
+        "price": 349
+      }
+    },
+    {
+      "model": "products.orderitems",
+      "pk": 4,
+      "fields": {
+        "order": 2,
+        "product": 7,
+        "price": 269
+      }
+    },
+    {
+      "model": "products.orderitems",
+      "pk": 34,
+      "fields": {
+        "order": 34,
+        "product": 1,
+        "price": 319
+      }
+    },
+    {
+      "model": "products.orderitems",
+      "pk": 35,
+      "fields": {
+        "order": 35,
+        "product": 1,
+        "price": 319
+      }
+    },
+    {
+      "model": "products.orderitems",
+      "pk": 36,
+      "fields": {
+        "order": 36,
+        "product": 1,
+        "price": 319
+      }
+    },
+    {
+      "model": "products.orderitems",
+      "pk": 67,
+      "fields": {
+        "order": 67,
+        "product": 11,
+        "price": 319
+      }
+    },
+    {
+      "model": "products.orderitems",
+      "pk": 68,
+      "fields": {
+        "order": 67,
+        "product": 7,
+        "price": 269
+      }
+    },
+    {
+      "model": "products.orderitems",
+      "pk": 100,
+      "fields": {
+        "order": 100,
+        "product": 4,
+        "price": 319
+      }
+    },
+    {
+      "model": "products.review",
+      "pk": 1,
+      "fields": {
+        "product": 1,
+        "user": 4,
+        "rating": "3.6",
+        "comment": "I like this course",
+        "created_at": "2024-12-03T11:53:12.958Z"
+      }
+    },
+    {
+      "model": "products.review",
+      "pk": 34,
+      "fields": {
+        "product": 7,
+        "user": 34,
+        "rating": "5.0",
+        "comment": "super good",
+        "created_at": "2024-12-11T15:33:53.596Z"
+      }
+    },
+    {
+      "model": "products.review",
+      "pk": 35,
+      "fields": {
+        "product": 7,
+        "user": 34,
+        "rating": "3.0",
+        "comment": "good",
+        "created_at": "2024-12-11T15:34:22.006Z"
+      }
+    },
+    {
+      "model": "products.review",
+      "pk": 67,
+      "fields": {
+        "product": 4,
+        "user": 34,
+        "rating": "4.0",
+        "comment": "good",
+        "created_at": "2024-12-19T13:38:45.834Z"
+      }
+    }
+  ]
