@@ -4,37 +4,37 @@ from products.models import Product, Category, OrderItems
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.db.models import Q
-from mailchimp_marketing import Client
 from django.conf import settings
 from django.contrib import messages
 from django.views.generic import TemplateView
 from .models import Carousel
 from django.db.models import Exists, OuterRef
 from mailchimp_marketing.api_client import ApiClientError
+import mailchimp_marketing as MailChimpMarketing
 
-mailchimp = Client()
+mailchimp = MailChimpMarketing.Client()
 mailchimp.set_config({
-  'api_key': settings.MAILCHIMP_API_KEY,
-  'server': settings.MAILCHIMP_REGION,
+    'api_key': settings.MAILCHIMP_API_KEY,
+    'server': settings.MAILCHIMP_REGION,
 })
+list_id = settings.MAILCHIMP_AUDIENCE_ID
+
 
 
 def subscribe_newsletter(request):
     next_url = request.POST.get('next', '/')
     if request.method == 'POST':
         email = request.POST.get('email')
-        # try:
+        print(email)
         member_info = {
-            'email_address': email,
-            'status': 'subscribed'
+            "email_address": email,
+            "status":"subscribed",
         }
-        response = mailchimp.lists.add_list_member(
-            settings.MAILCHIMP_AUDIENCE_ID,
-            member_info,
-        )
-        messages.success(request, "You've successfully subscribed to our newsletter!")
-        # except ApiClientError as error:
-        #     messages.error(request, "There was an error subscribing. Please try again.")
+        try:
+            response = mailchimp.lists.add_list_member(list_id, member_info)
+            messages.success(request, "You've successfully subscribed to our newsletter!")
+        except ApiClientError as error:
+            messages.error(request, "There was an error subscribing. Please try again.")
     return redirect(next_url)
 
 
