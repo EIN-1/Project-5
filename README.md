@@ -303,10 +303,12 @@ Our platform is a simple and efficient e-learning marketplace built with Django,
 The platform allows users to register, browse, purchase, and enroll in courses. Below are step-by-step instructions for using the main features:
 
 ## 1. Registering a New Account
+# ![register](readmeImages/registerForm.png)
   - Go to the Register page.
   - Fill out the required details (username, email, password) and submit the form.
   - Check your email for a verification link (if email verification is enabled) and complete the verification to activate your account.
 ## 2. Logging In
+# ![login](readmeImages/login.png)
   - Navigate to the Login page.
   - Enter your registered email and password.
   - Upon successful login, you will be redirected to the homepage.
