@@ -96,7 +96,7 @@ This project was managed using GitHub's project management tools to ensure organ
 
 Using GitHub’s tools allowed for seamless version control and communication within the team, ensuring that every change was documented and linked to the relevant tasks, fostering transparency and accountability across the project.
 
-![Screenshot of the github project Kanban board.](screenshots/Kanban.png)
+![Kanban board.](readmeImages/Kanban.png)
 
 # Database Schema
 
@@ -205,13 +205,13 @@ This document outlines the database schema used in the e-learning Django project
 
 This schema provides a scalable, relational data structure suited for an e-learning platform with courses, shopping carts, and an integrated payment system.
 
-![Models](screenshots/tech_skills_model_diagram.png)
+![Models](readmeImages/tech_skills_model_diagram.png)
 
 # User Experience (UX)
 ## Wireframes
 The wireframes for the site were created in the software Balsamiq. The wireframes have been created for desktop, tablet and mobile devices. The text content wasn't finalized during the wireframe process. It's also worth mentioning that there are some visual differences in the deployed version compared to the original wireframes, the reason being design choices that was made during the creation process.
 
-![Wireframes](screenshots/homepage_wireframe.png)
+![Wireframes](readmeImages/homepage_wireframe.png)
 
 # User Stories
 Below the user stories for the project are listed to clarify why particular feature matters. These will then be tested and confirmed in the Testing section.

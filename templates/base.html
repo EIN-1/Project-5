@@ -22,7 +22,7 @@
     {% endblock %}
 
     {% block corejs %}
-        <!-- font awesome script -->
+     
         <script src="https://kit.fontawesome.com/d5664282ad.js" crossorigin="anonymous"></script>
 
     {% endblock %}
@@ -31,19 +31,19 @@
     {% endblock %}
 
     <title>Technical Skills {% block extra_title %}{% endblock %}</title>
-     <!-- Favicon -->
-     <link rel="apple-touch-icon" type="image/x-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
-     <link rel="icon" type="image/x-icon" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-     <link rel="icon" type="image/x-icon" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
-     <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
-     <link rel="icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
-     <link rel="stylesheet" href="{% static 'base.css' %}"
+   
+     <link rel="apple-touch-icon" type="image/x-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}"/>
+     <link rel="icon" type="image/x-icon" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}"/>
+     <link rel="icon" type="image/x-icon" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}"/>
+     <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}"/>
+     <link rel="icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}"/>
+     <link rel="stylesheet" href="{% static 'base.css' %}"/>
   </head>
   <body class="d-flex flex-column min-vh-100" style="background-color: #d2c9ff;">
     {% include 'includes/navbar.html' %}    
-    {% comment %} Messages toast {% endcomment %}
+  
     <div aria-live="polite" aria-atomic="true" class="position-relative">
-        <!-- Position it in the top right corner -->
+      
         <div class="toast-container position-fixed top-0 end-0 p-3">
             {% if messages %}
                 {% for message in messages %}
@@ -74,13 +74,13 @@
     {% bootstrap_javascript %}
 
     <script>
-        // Initialize all toasts on the page automatically when the page loads
+        
         document.addEventListener('DOMContentLoaded', function () {
             var toastElList = [].slice.call(document.querySelectorAll('.toast'))
             var toastList = toastElList.map(function (toastEl) {
-                return new bootstrap.Toast(toastEl, { delay: 3000 }); // Adjust delay as needed
+                return new bootstrap.Toast(toastEl, { delay: 3000 });
             });
-            toastList.forEach(toast => toast.show()); // Show each toast
+            toastList.forEach(toast => toast.show());
         });
     </script>
   
