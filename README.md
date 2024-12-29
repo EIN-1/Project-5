@@ -13,7 +13,7 @@ Why Choose **Technical Skills?**
 
 View Live Site [Technical Skills](https://technical-skills-12c3cb7561cc.herokuapp.com/).
 
-# Project
+# ![am i responsive](readmeImages/responsive.png)
 
 ## Objective
 To provide users with a clear path to begin or strengthen their technical skills by offering guidance on relevant courses and learning opportunities, especially for those unsure of where to start or which skills to pursue. This has been done to demonstrate my knowledge of the Django Framework, Python, JavaScript, CSS and HTML.
@@ -25,6 +25,7 @@ To find tailored learning paths and relevant courses that support the users' tec
 To provide a well-organized and user-friendly platform that connects users with high-quality technical courses, boosting engagement and satisfaction while driving course enrollments and fostering a community of lifelong learners.
 
 # Business Model
+# ![main](readmeImages/main.png)
 1. ## Target Audience
 	- **Primary Users**: Individuals seeking to learn or reinforce technical skills but unsure of where to begin or which courses to take.
 	- **Secondary Users**: Employers or organizations looking to upskill employees through curated courses.
