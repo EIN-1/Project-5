@@ -479,4 +479,16 @@ Follow these steps to deploy the Technical Skills course platform on **Heroku**.
   heroku logs --tail
   ```
 
+## Credits
 
+- [Dave Gray's](https://youtu.be/Rp5vd34d-z4?si=Iau1px_g565k1H3y)
+- [Code Institute](https://codeinstitute.net/)
+- [iloveimg](https://www.iloveimg.com/) for image compression
+- [Django](https://www.djangoproject.com/)
+- [Pexels](https://www.pexels.com/) for images
+- [Stack Overflow](https://stackoverflow.com/) for coding solutions
+- [Mentor: Precious Ijege](#)
+
+## Developed
+- Elsie Nagawa
+- 29.12.2024
