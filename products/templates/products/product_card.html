@@ -25,9 +25,14 @@
         '>
         <!-- Product Image -->
         <img src="{{product.imageUrl}}" class="card-img-top" alt="{{ product.courseName }}"
-            srcset="{{ product.imageUrl }} 320w, 
-            {{ product.imageUrl }} 640w, 
+            srcset="
+            {{ product.imageUrl }} 320w,
+            {{ product.imageUrl }} 640w,
             {{ product.imageUrl }} 1024w"
+            sizes="(max-width: 320px) 320px, 
+            (max-width: 640px) 640px, 
+            (max-width: 1024px) 1024px, 
+            100vw"
         >
         
         <div class="card-body">
