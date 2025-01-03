@@ -6,16 +6,13 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-8 col-lg-8 mb-4">  
-          <!-- Checkout -->
           <div class="card shadow-0 border">
-            <!-- Stripe payment form -->
             <form id="payment-form">
-              <div id="card-element"></div> <!-- Stripe will embed the card form here -->
+              <div id="card-element"></div> 
               <button id="submit">Pay</button>
             </form>
           </div>
           <div id="payment-message" class="hidden"></div>
-          <!-- Checkout -->
         </div>
         <div class="col-xl-4 col-lg-4 d-flex justify-content-center justify-content-lg-end">
           <div class="ms-lg-4 mt-4 mt-lg-0" style="max-width: 320px;">
@@ -75,9 +72,8 @@
         });
 
         if (error) {
-            alert(error.message); // Handle errors
+            alert(error.message); 
         } else {
-            // Send payment confirmation to the server
             fetch("{% url 'complete_payment' %}", {
                 method: "POST",
                 headers: {

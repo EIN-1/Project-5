@@ -31,6 +31,6 @@ urlpatterns = [
     path('account/', include('allauth.urls')),
     path('', include('home.urls')),
     path('products/', include('products.urls')),
-    path('profile/', profile_view, name='my_profile'),  # Link to profile view
+    path('profile/', profile_view, name='my_profile'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

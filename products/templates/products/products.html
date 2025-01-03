@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 {% load humanize %}
-
-<!-- /workspace/Project-5/products/templates/products.html -->
 {% block page_header %}
     <div class="container header-container">
     <div class="row">
@@ -36,29 +34,19 @@
 
 
     <script>
-        // Initialize Bootstrap tooltips
-        {% comment %} var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        }) {% endcomment %}
-
         document.addEventListener('DOMContentLoaded', function() {
             var popoverTriggerList = [].slice.call(document.querySelectorAll('.product-card'));
             var currentPopover = null;
     
             popoverTriggerList.forEach(function(card) {
-                // Initialize popover for each card
                 var popover = new bootstrap.Popover(card, {
-                    trigger: 'manual' // Use manual trigger to control show/hide behavior
+                    trigger: 'manual'
                 });
     
                 card.addEventListener('click', function() {
-                    // Toggle the current popover and hide any previous one
                     if (currentPopover && currentPopover !== popover) {
                         currentPopover.hide();
                     }
-    
-                    // Toggle current popover visibility
                     if (currentPopover === popover) {
                         popover.hide();
                         currentPopover = null;
@@ -68,8 +56,6 @@
                     }
                 });
             });
-    
-            // Hide popover when clicking outside any product card
             document.addEventListener('click', function(e) {
                 if (!e.target.closest('.product-card') && currentPopover) {
                     currentPopover.hide();

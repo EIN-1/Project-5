@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-#/workspace/Project-5/products/urls.py
+
 urlpatterns = [
     path('manage/', views.management_dashboard, name="management_dashboard"),    
     path('orders/', views.all_orders, name="admin_orders"),

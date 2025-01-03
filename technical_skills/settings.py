@@ -13,23 +13,11 @@ import environ
 import os
 from pathlib import Path
 
-#Environment initialization
 env = environ.Env()
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-# Take environment variables from .env file
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', default=False)
 
 ALLOWED_HOSTS = [
@@ -38,8 +26,6 @@ ALLOWED_HOSTS = [
     'technical-skills-12c3cb7561cc.herokuapp.com',
 ]
 
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -102,17 +88,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'products.context_processors.cart_count', #This enable cart_count to be accessed globally
+                'products.context_processors.cart_count',
             ],
         },
     },
 ]
 
 AUTHENTICATION_BACKENDS = [
-    # Needed to login by username in Django admin, regardless of `allauth`
     'django.contrib.auth.backends.ModelBackend',
-
-    # `allauth` specific authentication methods, such as login by email
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
@@ -127,7 +110,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4 
 LOGIN_URL = '/account/login/'
-LOGIN_REDIRECT_URL = '/' # i will come back here later
+LOGIN_REDIRECT_URL = '/' 
 ACCOUNT_EMAIL_CONFIRMATION_HTML_TEMPLATE = 'account/email/email_confirmation_message.html'
 
 WSGI_APPLICATION = 'technical_skills.wsgi.application'
@@ -136,16 +119,10 @@ WSGI_APPLICATION = 'technical_skills.wsgi.application'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {    
     'default': env.db(),
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -163,9 +140,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -177,40 +151,34 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
 STATIC_URL = '/static/'
-# Set the STATIC_ROOT
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Set to a directory for collecting static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Additional static file directories (where Django will look for static files)
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),  # If you have additional static files to include
+    os.path.join(BASE_DIR, "static"), 
 ]
 
-# Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField' 
 
-# Media files configuration (for file uploads)
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-#Crispy forms
+
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
-#Stripe
+
 STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
 STRIPE_PUBLISHABLE_KEY = env('STRIPE_PUBLISHABLE_KEY')
 
-#MAILCHIMP
+
 MAILCHIMP_API_KEY=env('MAILCHIMP_API_KEY')
 MAILCHIMP_REGION=env('MAILCHIMP_REGION')
 MAILCHIMP_AUDIENCE_ID=env('MAILCHIMP_AUDIENCE_ID')
 
-# Email configuration
 DEFAULT_FROM_EMAIL = 'Technical Skills'
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

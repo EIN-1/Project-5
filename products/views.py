@@ -1,4 +1,4 @@
-#/workspace/Project-5/products/views.py
+
 import stripe
 from django.conf import settings
 from django.core.paginator import Paginator
@@ -20,37 +20,23 @@ from .forms import ReviewForm, CreateCourseForm, OrderEditForm, EditCourseForm
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
-# Create your views here.
-""" A view to all products including sorting and search queries """
-# def list_all_products(request):
-#     products = Product.objects.all()
-
-#     print("products in database =",products)
-   
-#     return render(request, 'products/products.html', {'products': products})
-
 
 def list_all_products(request):
-    query_params = request.GET.copy()  # Create a mutable copy of the query parameters
-    query_params.pop('page', None)  # Remove any existing 'page' parameter
-    query_params_string = query_params.urlencode()  # Convert to query string
-
-    # Get the search query from the request
+    query_params = request.GET.copy() 
+    query_params.pop('page', None) 
+    query_params_string = query_params.urlencode()
     category_query = request.GET.get('category', None)
     search_query = request.GET.get('search', '')
-    sort_field = request.GET.get('sort', 'courseName')  # Default field
-    order = request.GET.get('order', 'asc')  # Default order
+    sort_field = request.GET.get('sort', 'courseName') 
+    order = request.GET.get('order', 'asc')
 
-    products = Product.objects.all()  # Fetch all products
+    products = Product.objects.all()
     categories = Category.objects.all()
-    # Filter products based on the search query across multiple fields
-
-    # Add "-" for descending order
+    
     sort_option = f"{'' if order == 'asc' else '-'}{sort_field}"
-    # Validate the sort field to prevent SQL injection
     valid_fields = ['courseName', 'rating', 'reviews', 'price']
     if sort_field not in valid_fields:
-        sort_option = 'courseName'  # Fallback to default
+        sort_option = 'courseName' 
     
     products = Product.objects.all().order_by(sort_option)
 
@@ -76,21 +62,10 @@ def list_all_products(request):
             Q(instructor__icontains=search_query)
         )
 
-    paginator = Paginator(products, 6)  # Show 10 courses per page
-
-    # Get the page number from the request
+    paginator = Paginator(products, 6) 
     page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)  # This gets the current page’s data
-
+    page_obj = paginator.get_page(page_number)
     return render(request, 'products/products.html', {'page_obj': page_obj, 'query_params': query_params_string, 'search_query': search_query, 'categories': categories })
-    
-    # print("products in database =",products)
-    # total_products = products.count()  # Count total products
-    # context = {
-    #     'total_products': total_products,
-    #     'products': products,
-    # }
-    # return render(request, 'home/index.html', context)
 
 def retrieve_product(request, id):
     product = Product.objects.get(id=id)
@@ -101,38 +76,31 @@ def retrieve_product(request, id):
 
 def add_to_cart(request, product_id):
     product = get_object_or_404(Product, id=product_id)
-    # Get the 'next' parameter from the query string
     next_url = request.GET.get('next', '/')
 
     if request.user.is_authenticated:
-        # For logged-in users, add to the Cart model in the database
         cart, created = Cart.objects.get_or_create(user=request.user)
-        # Check if the product is already in the cart
         cart_item, created = CartItem.objects.get_or_create(cart=cart, product=product)
     else:
-        # For anonymous users, store cart items in the session
         cart = request.session.get('cart', set())
-        cart = set(cart)  # Convert to set for unique items
-        cart.add(product_id)  # Add the product ID if not already present
-        request.session['cart'] = list(cart)  # Save the cart back to session
+        cart = set(cart)
+        cart.add(product_id)
+        request.session['cart'] = list(cart)
     messages.success(request, message='Item successfully added to cart')
 
-    return redirect(next_url)  # Redirect to the cart detail page or any page of your choice
-
+    return redirect(next_url)
 def cart_detail(request):
     cart_items = []
-    cart_count = 0  # Variable to store the number of items in the cart
+    cart_count = 0 
 
     if request.user.is_authenticated:
-        # Retrieve cart items from the database for logged-in users
         cart, created = Cart.objects.get_or_create(user=request.user)
         cart_items = cart.items.all()
-        cart_count = cart_items.count()  # Count the number of cart items
+        cart_count = cart_items.count() 
     else:
-        # Retrieve cart items from the session for anonymous users
         cart_ids = request.session.get('cart', [])
         cart_items = [get_object_or_404(Product, id=product_id) for product_id in cart_ids]
-        cart_count = len(cart_items)  # Count the number of products in the session cart
+        cart_count = len(cart_items)
 
     return render(request, 'cart/details.html', {'cart_items': cart_items, 'cart_count':cart_count})
 
@@ -140,47 +108,27 @@ def remove_from_cart(request, product_id):
     product = get_object_or_404(Product, id=product_id)
 
     if request.user.is_authenticated:
-        # For logged-in users, find and delete the CartItem
         cart, created = Cart.objects.get_or_create(user=request.user)
         CartItem.objects.filter(cart=cart, product=product).delete()
     else:
-        # For anonymous users, remove the product ID from the session
         cart = request.session.get('cart', set())
         if product_id in cart:
             cart.remove(product_id)
-            request.session['cart'] = list(cart)  # Save the updated cart back to the session
+            request.session['cart'] = list(cart)  
 
-    messages.success(request, f"{product.courseName} was removed from your cart.") #Messages for success
+    messages.success(request, f"{product.courseName} was removed from your cart.") 
 
-    return redirect('cart_detail')  # Redirect to the cart detail page or another desired page
-
-
-# @login_required
-# def checkout(request):
-#     # Retrieve the user's cart items
-#     cart = Cart.objects.get(user=request.user)
-#     cart_items = cart.items.all()
-#     if not cart_items:
-#         messages.error(request, "Your cart is empty.")
-#         return redirect('cart_detail')
-#     return render(request, 'checkout/checkout.html', {'cart_items':cart_items})
-
+    return redirect('cart_detail')  
 
 @login_required
 def checkout(request):
-    # Retrieve the user's cart items
     cart = Cart.objects.get(user=request.user)
     cart_items = cart.items.all()
     if not cart_items:
         messages.error(request, "Your cart is empty.")
         return redirect('cart_detail')
-
-    # Calculate total cost
     total_price = sum(item.product.price for item in cart_items)
     stripe_total = int(total_price * 100)
-
-    # Payment processing logic here using Stripe
-    # Create Stripe PaymentIntent
     try:
         payment_intent = stripe.PaymentIntent.create(
             amount=stripe_total,
@@ -190,8 +138,6 @@ def checkout(request):
     except Exception as e:
         messages.error(request, f"Stripe error: {e}")
         return redirect('cart_detail')
-
-    # Pass the PaymentIntent client_secret to the template
     context = {
         'total_price': total_price,
         'stripe_publishable_key': settings.STRIPE_PUBLISHABLE_KEY,
@@ -208,11 +154,9 @@ def order_confirmation(request):
 @login_required
 def my_orders(request):
     orders = Order.objects.filter(user=request.user)
-    paginator = Paginator(orders, 4)  # Show 10 courses per page
-
-    # Get the page number from the request
+    paginator = Paginator(orders, 4)
     page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)  # This gets the current page’s data
+    page_obj = paginator.get_page(page_number)
     return render(request, 'orders/orders.html', {'page_obj':page_obj, 'orders':orders})
 
 
@@ -231,13 +175,11 @@ def complete_payment(request):
         payment_intent_id = data.get('paymentIntentId')
         if not payment_intent_id:
             return JsonResponse({"success": False, "error": "Invalid payment."}, status=400)
-        # Verify the payment with Stripe
         try:
             payment_intent = stripe.PaymentIntent.retrieve(payment_intent_id)
             order = None
             if payment_intent.status == 'succeeded':
                 with transaction.atomic():
-                    # Create the order
                     cart = Cart.objects.get(user=request.user)
                     cart_items = cart.items.all()
                     total_price = sum(item.product.price for item in cart_items)
@@ -248,16 +190,12 @@ def complete_payment(request):
                         stripe_id=payment_intent_id,
                         status="Completed"
                     )
-
-                    # Add each cart item to the OrderItems table
                     for cart_item in cart_items:
                         OrderItems.objects.create(
                             order=order,
                             product=cart_item.product,
                             price=cart_item.product.price,
                         )
-                    
-                    # Clear the user's cart
                     cart_items.delete()
                 send_checkout_email(request.user.email, order)
                     
@@ -296,9 +234,8 @@ def create_course(request):
         form = CreateCourseForm(request.POST)
         if form.is_valid():
             course = form.save(commit=False)
-            # You can add additional logic, like associating the course with the current user
             course.save()
-            return redirect('management_dashboard')  # Redirect to the product list after saving
+            return redirect('management_dashboard') 
     else:
         form = CreateCourseForm()
 
@@ -313,10 +250,10 @@ def edit_course(request, course_id):
         form = EditCourseForm(request.POST, instance=course)
         if form.is_valid():
             messages.success(request, 'Course Updated Successfully')
-            form.save()  # Save the updated course
-            return redirect('management_dashboard')  # Redirect to course detail page or elsewhere
+            form.save() 
+            return redirect('management_dashboard') 
     else:
-        form = EditCourseForm(instance=course)  # Pre-populate form with existing course data
+        form = EditCourseForm(instance=course) 
 
     return render(request, 'products/admin/edit_course.html', {'form': form, 'course': course})
 
@@ -326,30 +263,26 @@ def delete_course(request, course_id):
     course = get_object_or_404(Product, id=course_id)
     
     if request.method == 'POST':
-        # Delete the course if the form is submitted (confirmation action)
         try:
             course.delete()
             messages.success(request, f'Course "{course.courseName}" has been deleted.')
         except:
             messages.error(request,"Can not delete item right now.")
-        return redirect('products')  # Redirect to a list of courses or another appropriate view
+        return redirect('products')  
 
     return render(request, 'products/admin/confirm_delete_course.html', {'course': course})
 
-@staff_member_required  # This ensures only admin users can access this view
+@staff_member_required  
 def all_orders(request):
-    sort_field = request.GET.get('sort', 'user__name')  # Default sort field
-    order = request.GET.get('order', 'asc')  # Default order is ascending
+    sort_field = request.GET.get('sort', 'user__name') 
+    order = request.GET.get('order', 'asc')
     search_query = request.GET.get('search', '')
 
-    orders = Order.objects.all().order_by('-date')  # Get all orders, ordered by date
-
-     # Ensure valid sort fields to prevent SQL injection
+    orders = Order.objects.all().order_by('-date') 
     valid_fields = ['user__name', 'amount', 'status', 'date']
     if sort_field not in valid_fields:
         sort_field = 'user__name'
 
-    # Determine sort direction
     sort_option = f"{'' if order == 'asc' else '-'}{sort_field}"
 
     if search_query:
@@ -360,15 +293,14 @@ def all_orders(request):
             Q(date__icontains=search_query) 
         )
 
-    # Prepare query parameters for template
+   
     query_params = request.GET.copy()
-    query_params.pop('page', None)  # Exclude 'page' parameter
+    query_params.pop('page', None)
 
-    paginator = Paginator(orders, 6)  # Show 10 courses per page
-
-    # Get the page number from the request
+    paginator = Paginator(orders, 6)  
+   
     page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)  # This gets the current page’s data
+    page_obj = paginator.get_page(page_number)  
 
 
     cancelled = orders.filter(status='Cancelled').count()
@@ -391,30 +323,27 @@ def order_detail(request, order_id):
 
 @staff_member_required
 def edit_order(request, order_id):
-    order = get_object_or_404(Order, id=order_id)  # Get the order by ID
+    order = get_object_or_404(Order, id=order_id)  
     if request.method == 'POST':
         form = OrderEditForm(request.POST, instance=order)
         if form.is_valid():
-            form.save()  # Save the updated order
+            form.save() 
             messages.success(request, "Order updated Successfully!")
-            return redirect('admin_orders')  # Redirect to order detail page
+            return redirect('admin_orders') 
     else:
-        form = OrderEditForm(instance=order)  # Pre-populate form with existing order data
+        form = OrderEditForm(instance=order) 
 
     return render(request, 'products/admin/edit_order.html', {'form': form, 'order': order})
 
 @staff_member_required
 def management_dashboard(request):
-    sort_field = request.GET.get('sort', 'courseName')  # Default sort field
-    order = request.GET.get('order', 'asc')  # Default order is ascending
+    sort_field = request.GET.get('sort', 'courseName')  
+    order = request.GET.get('order', 'asc')  
     search_query = request.GET.get('search', '')
-
-    # Ensure valid sort fields to prevent SQL injection
     valid_fields = ['courseName', 'instructor', 'category', 'price', 'rating']
     if sort_field not in valid_fields:
         sort_field = 'courseName'
 
-    # Determine sort direction
     sort_option = f"{'' if order == 'asc' else '-'}{sort_field}"
 
     order_count = Order.objects.all().count()
@@ -433,15 +362,12 @@ def management_dashboard(request):
             Q(instructor__icontains=search_query)
         )
 
-    # Prepare query parameters for template
     query_params = request.GET.copy()
-    query_params.pop('page', None)  # Exclude 'page' parameter
+    query_params.pop('page', None) 
 
-    paginator = Paginator(products, 6)  # Show 10 courses per page
-
-    # Get the page number from the request
+    paginator = Paginator(products, 6)  
     page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)  # This gets the current page’s data
+    page_obj = paginator.get_page(page_number) 
 
     context = {
         "order_count": order_count,
@@ -475,11 +401,9 @@ def my_classes(request):
         order_item__order__user=request.user,
         order_item__order__status='Completed'
     ).distinct()
-    paginator = Paginator(courses, 4)  # Show 10 courses per page
-
-    # Get the page number from the request
+    paginator = Paginator(courses, 4)  
     page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)  # This gets the current page’s data
+    page_obj = paginator.get_page(page_number)
 
     context = {
         "page_obj": page_obj,

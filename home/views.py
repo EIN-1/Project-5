@@ -38,30 +38,25 @@ def subscribe_newsletter(request):
     return redirect(next_url)
 
 
-# Create your views here.
-
 def index(request):
     """ A view to return the index page """
-    query_params = request.GET.copy()  # Create a mutable copy of the query parameters
-    query_params.pop('page', None)  # Remove any existing 'page' parameter
-    query_params_string = query_params.urlencode()  # Convert to query string
-    # Get the category filter
+    query_params = request.GET.copy()  
+    query_params.pop('page', None)  
+    query_params_string = query_params.urlencode()    
     category_query = request.GET.get('category', None)
-    # Get the search query from the request
     search_query = request.GET.get('search', '')
-    sort_field = request.GET.get('sort', 'courseName')  # Default field
-    order = request.GET.get('order', 'asc')  # Default order
+    sort_field = request.GET.get('sort', 'courseName') 
+    order = request.GET.get('order', 'asc') 
     
-    products = Product.objects.all()  # Fetch all products
+    products = Product.objects.all() 
     categories = Category.objects.all()
     carousel = Carousel.objects.filter(active=True)
 
-    # Add "-" for descending order
+   
     sort_option = f"{'' if order == 'asc' else '-'}{sort_field}"
-    # Validate the sort field to prevent SQL injection
     valid_fields = ['courseName', 'rating', 'reviews', 'price']
     if sort_field not in valid_fields:
-        sort_option = 'courseName'  # Fallback to default
+        sort_option = 'courseName' 
     
     products = Product.objects.all().order_by(sort_option)
 
@@ -87,11 +82,11 @@ def index(request):
             Q(instructor__icontains=search_query)
         )
 
-    paginator = Paginator(products, 3) #Return 6 items per page
+    paginator = Paginator(products, 3) 
 
-    # Get the page number from the request
+   
     page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)  # This gets the current page’s data
+    page_obj = paginator.get_page(page_number) 
 
     return render(request, 'home/index.html', {'page_obj': page_obj, 'query_params': query_params_string, 'categories':categories, 'carousel':carousel})
 

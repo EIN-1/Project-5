@@ -1,4 +1,3 @@
-#/workspace/Project-5/products/models.py
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
@@ -8,8 +7,6 @@ from django.dispatch import receiver
 
 User = get_user_model()
 
-
-# Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=254)
     description = models.TextField()
@@ -91,7 +88,7 @@ class OrderItems(models.Model):
 class Review(models.Model):
     product = models.ForeignKey(Product, related_name='product_reviews', on_delete=models.CASCADE)
     user = models.ForeignKey(User, related_name='user_reviews', on_delete=models.CASCADE)
-    rating = models.DecimalField(max_digits=2, decimal_places=1,default=1)  # e.g., 4.5 out of 5
+    rating = models.DecimalField(max_digits=2, decimal_places=1,default=1) 
     comment = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -101,16 +98,13 @@ class Review(models.Model):
     class Meta:
         ordering = ['-created_at']
 
-# Signal to update product rating and review count
 @receiver(post_save, sender=Review)
 def update_product_reviews(sender, instance, **kwargs):
     product = instance.product
 
-    # Count total reviews and calculate average rating
     reviews_count = product.reviews
     average_rating = product.rating
 
-    # Update product fields
     product.reviews = int(reviews_count) + 1
-    product.rating = average_rating  # Round to 2 decimal places for consistency
+    product.rating = average_rating 
     product.save()

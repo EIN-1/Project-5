@@ -1,20 +1,16 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container">
-        <!-- Logo on the left -->
         <a class="navbar-brand" href="{% url 'home' %}">
             <img src="{% static 'image/logo2.png' %}" alt="techskills logo" style="width: 100px; height: auto;"> 
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <!-- Navbar Content -->
         <div class="collapse navbar-collapse" id="navbarContent">
             {% url 'products' as products_list_url %}
             {% url 'home' as home_url %}
             {% if request.path == products_list_url or request.path == home_url %}
-                <!-- Categories Dropdown -->
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-primary" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,8 +24,6 @@
                         </ul>
                     </li>
                 </ul>
-
-                <!-- Sort Dropdown -->
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-primary" href="#" id="sortDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,16 +43,11 @@
                     </li>
                 </ul>
             {% endif %}
-
-            <!-- Search Bar -->
             <form class="d-flex mx-auto w-50" method="GET" action=".">
                 <input class="form-control me-2" type="search" name="search" placeholder="Search for courses" aria-label="Search" value="{{ search_query }}">
                 <button class="btn btn-outline-primary" type="submit" aria-label="search"><i class="fas fa-search"></i></button>
             </form>
-
-            <!-- User and Cart Icons -->
             <ul class="navbar-nav ms-auto">
-                <!-- Cart Icon with Item Count Badge -->
                 <li class="nav-item">
                     <a class="nav-link position-relative {% if cart_count > 0 %}text-info{% else %}text-secondary{% endif %}" href="{% url 'cart_detail' %}">
                         <i class="fas fa-shopping-cart fa-lg"></i>
@@ -70,8 +59,6 @@
                         <span class="ms-2">${{ total_price|default:"0.00" }}</span>
                     </a>
                 </li>
-            
-                <!-- User Account Dropdown -->
                 {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-primary" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -89,7 +76,6 @@
                         </ul>
                     </li>
                 {% else %}
-                    <!-- Login/Register Links for Guests -->
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>

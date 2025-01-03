@@ -34,7 +34,5 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ('user', 'amount', 'status', 'stripe_id', 'date',)
     search_fields = ('user',)
     list_filter = ('status','date',)
-
-    # You can customize the display here if needed
     ordering = ('date',)
 

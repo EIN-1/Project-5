@@ -1,14 +1,8 @@
 {% load static %}
-
-<!-- Footer -->
-<footer class="footer-container container-fluid text-center text-lg-center bg-light"> <!--class bg-my-primary has been created in base.css-->
-  <!-- Grid container -->
+<footer class="footer-container container-fluid text-center text-lg-center bg-light">
   <div class="container p-4 pb-0">
-      <!-- Section: Links and Newsletters -->
       <section>
-            <!-- Grid row -->
           <div class="row">
-                <!-- Social Media Links -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h1 class="fw-bold h4">Technical Skills</h1>
                     <p>Let's connect on social media.</p>
@@ -18,8 +12,6 @@
                         
                     </div>
                 </div>
-
-                <!-- Payment Methods -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h1 class="fw-bold h4">Payment Methods</h1>
                     <div class="d-flex justify-content-center">
@@ -29,15 +21,11 @@
                         <a aria-label="paypal" class="text-dark me-2" target="_blank" href="https://paypal.com"><i class="fa-brands fa-cc-paypal h2"></i></a>
                     </div>
                 </div>
-
-                <!-- Contact Information -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h1 class="fw-bold h4">Contact Us</h1>
                     <p><i class="fa-solid fa-envelope me-2"></i> info@gmail.com</p>
                     <p><i class="fa-solid fa-print me-2"></i> +49 123 456 780</p>
                 </div>
-
-                <!-- Newsletter Subscription Form -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h1 class="fw-bold h4">Subscribe to Our Newsletter</h1>
                     <form action="{% url 'subscribe_to_news_letter' %}?next={{request.get_full_path}}" method="POST" class="d-flex flex-column">
@@ -48,11 +36,7 @@
                     </form>
                 </div>
             </div>
-            <!-- Grid row -->
       </section>
-      <!-- Section: Links and Newsletters -->
-
-      <!-- Copyright Section -->
       <div class="py-3 bg-light">
         <div class="container">
             <div class="row">         
@@ -66,6 +50,4 @@
         </div>
     </div>
   </div>
-  <!-- Grid container -->
 </footer>
-<!-- /Footer -->

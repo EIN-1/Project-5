@@ -1,5 +1,3 @@
-<!-- templates/emails/order_confirmation.html -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +8,6 @@
     <p>Order ID: {{ order.id }}</p>
     <p>Items:</p>
     <ul>
-        {% comment %} {% for item in order_items %}
-            <li>{{ item.name }} - Price: ${{ item.price }}</li>
-        {% endfor %} {% endcomment %}
     </ul>
     <p>Total: ${{ order.amount }}</p>
 </body>

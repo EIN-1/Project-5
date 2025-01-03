@@ -1,6 +1,4 @@
 {% load humanize %}
-
-<!-- Course Card -->
 <div class="col-md-4 mb-3">
     <div class="card h-100 shadow border-0 product-card"
         data-bs-toggle="tooltip" data-bs-html="true" 
@@ -23,7 +21,7 @@
                 </div>
             </div>
         '>
-        <!-- Product Image -->
+       
         <img src="{{product.imageUrl}}" class="card-img-top" alt="{{ product.courseName }}"
             srcset="
             {{ product.imageUrl }} 320w,
@@ -50,25 +48,20 @@
                 <span class="text-primary"> • </span>
                 <span>{{ product.lectures }} lectures<br></span>
             </div>
-
-            <!-- Product Info -->
             <div class="d-flex justify-content-between align-items-center">
                 {% if product.flag %}
                     <span class="badge bg-warning text-dark">Best Seller</span>
                 {% endif %}
-                <span class="text-warning">
-                    <!-- Star Rating -->                        
+                <span class="text-warning">                       
                     {% for i in "12345" %}
                         {% if forloop.counter <= product.rating %}
-                            <i class="fas fa-star text-warning"></i>  <!-- Filled star -->
+                            <i class="fas fa-star text-warning"></i>  
                         {% else %}
-                            <i class="far fa-star text-warning"></i>  <!-- Empty star -->
+                            <i class="far fa-star text-warning"></i> 
                         {% endif %}
                     {% endfor %}
                 </span>
             </div>
-
-            <!-- Price & Reviews -->
             <div class="d-flex justify-content-between align-items-center mt-2">
                 <span class="fw-bold">${{product.price}}</span>
                 <span>{{product.reviews|intcomma}} reviews</span>
@@ -86,29 +79,19 @@
 
 
 <script>
-    // Initialize Bootstrap tooltips
-    {% comment %} var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    }) {% endcomment %}
-
     document.addEventListener('DOMContentLoaded', function() {
         var popoverTriggerList = [].slice.call(document.querySelectorAll('.product-card'));
         var currentPopover = null;
 
         popoverTriggerList.forEach(function(card) {
-            // Initialize popover for each card
             var popover = new bootstrap.Popover(card, {
-                trigger: 'manual' // Use manual trigger to control show/hide behavior
+                trigger: 'manual' 
             });
 
             card.addEventListener('click', function() {
-                // Toggle the current popover and hide any previous one
                 if (currentPopover && currentPopover !== popover) {
                     currentPopover.hide();
                 }
-
-                // Toggle current popover visibility
                 if (currentPopover === popover) {
                     popover.hide();
                     currentPopover = null;
@@ -118,8 +101,6 @@
                 }
             });
         });
-
-        // Hide popover when clicking outside any product card
         document.addEventListener('click', function(e) {
             if (!e.target.closest('.product-card') && currentPopover) {
                 currentPopover.hide();

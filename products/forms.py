@@ -26,7 +26,6 @@ class ReviewForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Add custom Bootstrap classes to all fields dynamically
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = field.widget.attrs.get('class', '') + ' mb-3'
 
@@ -34,8 +33,6 @@ class CreateCourseForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ['courseName', 'instructor', 'courseUrl', 'imageUrl', 'description', 'category', 'rating', 'reviews', 'duration', 'lectures', 'level', 'price', 'students']
-        
-        # Optional: Add custom widgets for better UI
         widgets = {
             'description': forms.Textarea(attrs={'rows': 4, 'placeholder': 'Course description'}),
             'price': forms.NumberInput(attrs={'min': 0}),
@@ -43,7 +40,6 @@ class CreateCourseForm(forms.ModelForm):
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Add custom placeholders or CSS classes if necessary
         for field in self.fields.values():
             field.widget.attrs.update({'class': 'form-control'})
 
@@ -51,8 +47,6 @@ class EditCourseForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ['courseName', 'instructor', 'courseUrl', 'imageUrl', 'description', 'category', 'rating', 'reviews', 'duration', 'lectures', 'level', 'price', 'students']
-        
-        # Optional: Add custom widgets for better UI
         widgets = {
             'description': forms.Textarea(attrs={'rows': 4, 'placeholder': 'Course description'}),
             'price': forms.NumberInput(attrs={'min': 0}),
@@ -60,14 +54,13 @@ class EditCourseForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # Add custom placeholders or CSS classes if necessary
         for field in self.fields.values():
             field.widget.attrs.update({'class': 'form-control'})
 
 class OrderEditForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ['status']  # We will allow the admin to edit the status of the order
+        fields = ['status']
         widgets = {
             'status': forms.Select(choices=[
                 ('Pending', 'Pending'),

@@ -27,9 +27,8 @@
                         <div class="text-danger mb-1 me-2">
                             {% for i in "12345" %}
                                 {% if forloop.counter <= item.product.rating %}
-                                    <i class="fas fa-star text-warning"></i>  <!-- Filled star with Bootstrap warning color (gold) -->
-                                {% else %}
-                                    <i class="far fa-star text-warning"></i>  <!-- Empty star with Bootstrap warning color (gold) -->
+                                    <i class="fas fa-star text-warning"></i>  
+                                    <i class="far fa-star text-warning"></i>  
                                 {% endif %}
                             {% endfor %}
                         </div>
@@ -52,7 +51,7 @@
                     <div class="d-flex flex-row align-items-center mb-1">
                         <h4 class="mb-1 me-1">${{item.product.price}}</h4>
                         {% if item.product.flag %}
-                            <span class="badge bg-warning">Best Seller</span>  <!-- Bootstrap badge for true -->
+                            <span class="badge bg-warning">Best Seller</span> 
                         {% endif %}
                 
                     </div>
