@@ -1,11 +1,9 @@
-![KS logo](static/image/logo.png)
+<h1 align="center"> 
 
-# Technical Skills
+![Technical skills logo](static/image/logo.png) </h1>
 Welcome to **Technical Skills!** This project is designed to help users access the most relevant courses for the technical skills they seek to learn. Whether you're a beginner looking to get started or an advanced user seeking specialized knowledge, Technical Skills has comprehensive suite of courses, and expert guidance to support your goals.
 
-Built with Django, JavaScript, and Bootstrap, this platform is highly scalable, easy to navigate and scalable, making it a perfect solution for learners and curious people.
-
-Why Choose **Technical Skills?**
+# Why Choose **Technical Skills?**
 
 > - Simplifies the skill search process with a user-friendly interface.
 > - Provides an intuitive course catalog and a robust search functionality.
@@ -15,14 +13,447 @@ View Live Site [Technical Skills](https://technical-skills-12c3cb7561cc.herokuap
 
 # ![am i responsive](readmeImages/responsive.png)
 
-## Objective
-To provide users with a clear path to begin or strengthen their technical skills by offering guidance on relevant courses and learning opportunities, especially for those unsure of where to start or which skills to pursue. This has been done to demonstrate my knowledge of the Django Framework, Python, JavaScript, CSS and HTML.
+# Table of Contents
+- [User Experience (UX)](#user-experience-ux)
+  - [Project Management](#project-management)
+  - [User Stories](#user-stories)
+  - [Wireframes](#wireframes)
+  - [Site Structure](#site-structure)
+  - [Design Choices](#design-choices)
+    - [Typography](#typography)
+    - [Color Scheme](#color-scheme)
+- [Data Model](#data-model)
+- [Design Development](#design-development)
+- [Features](#features)
+  - [Header](#header)
+  - [User Authentication and Authorization](#1-user-authentication-and-authorization)
+  - [Course Management](#2-course-management)
+  - [Course Category and Search](#3-course-category-and-search)
+  - [Shopping Cart and Checkout](#4-shopping-cart-and-checkout)
+  - [Order History and Enrollment](#5-order-history-and-enrollment)
+  - [Admin Panel for Content and User Management](#6-admin-panel-for-content-and-user-management)
+  - [Security and Privacy](#7-security-and-privacy)
+  - [Registering a New Account](#registering-a-new-account)
+  - [Logging In](#logging-in)
+  - [Browsing Courses](#browsing-courses)
+  - [Viewing Course Details](#viewing-course-details)
+  - [Adding Courses to the Shopping Cart](#adding-courses-to-the-shopping-cart)
+  - [Managing the Shopping Cart](#managing-the-shopping-cart)
+  - [Checking Out and Making a Payment](#checking-out-and-making-a-payment)
+  - [Viewing Order History](#viewing-order-history)
+  - [Admin Features](#admin-features-for-admin-users-only)
+  - [Navigation Bar](#navigation-bar)
+  - [Footer](#footer)
+  - [Error Page](#error-page)
+  - [Social Links](#social-links)
+- [Business Model](#business-model)
+- [Technologies Used](#technologies-used)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
+  - [Content](#content)
+  - [Media](#media)
+  - [Acknowledgment](#acknowledgment)
 
-## Site Users Goal
-To find tailored learning paths and relevant courses that support the users' technical skill development, helping them confidently choose where to start and progress toward their career or personal learning objectives.
+--- 
+# User Experience (UX)
 
-## Site Owner Goal
-To provide a well-organized and user-friendly platform that connects users with high-quality technical courses, boosting engagement and satisfaction while driving course enrollments and fostering a community of lifelong learners.
+## Project Management
+This project was managed using GitHub's project management tools to ensure organized and efficient development. GitHub Projects and Issues were utilized to create a Kanban-style workflow, which allowed the team to track progress and prioritize tasks effectively. Each task or bug was represented as an "Issue," and labeled based on its type (e.g., "feature," "bug," "enhancement") for quick categorization.
+
+### The Kanban board
+provided visibility into the project’s workflow by dividing tasks into stages, such as "To Do," "In Progress," and "Completed." This helped maintain an organized workflow, identify bottlenecks, and keep team members aligned on priorities.
+
+Using GitHub’s tools allowed for seamless version control and communication within the team, ensuring that every change was documented and linked to the relevant tasks, fostering transparency and accountability across the project.
+
+![Kanban board](readmeImages/Kanban.png)
+
+[Back to top](#table-of-contents)
+
+### Database Schema
+
+This document outlines the database schema used in the e-learning Django project, describing each model and the relationships among them.
+![database schema](readmeImages/model_diagram.png)
+
+[Back to top](#table-of-contents)
+
+## User Stories
+
+### General User Stories
+1. As a user, I want to create an account so that I can access my purchased courses and manage my profile.
+2. As a user, I want to securely log in and log out of my account to protect my personal information.
+3. As a user, I want the option to reset my password so that I can regain access if I forget it.
+4. As a user, I want to browse available courses so that I can find one that interests me.
+5. As a user, I want to filter courses by categories so that I can quickly find courses relevant to my interests.
+6. As a user, I want to view a course's details so that I can understand its value before purchasing.
+7. As a user, I want to add a course to my shopping cart so that I can continue browsing without losing my selection.
+8. As a user, I want to proceed to checkout and pay securely so that I can purchase the course.
+9. As a user, I want to access a list of all the courses I’ve purchased so that I can go back to them whenever I want.
+10. As a user, I want my information to be stored securely so that I feel confident my data is protected.
+
+### Admin User Stories
+1. As an admin, I want to create, update, and delete courses so that I can manage the course offerings.
+2. As an admin, I want to categorize courses so that users can easily find courses in specific areas of interest.
+3. As an admin, I want to add and update images for each course so that users have a visual preview of what the course is about.
+4. As an admin, I want to view a list of registered users so that I can monitor and manage user activities.
+5. As an admin, I want to view a list of all orders so that I can track user purchases and sales data.
+6. As an admin, I want to update the status of orders so that I can ensure all orders are correctly tracked.
+7. As an admin, I want to view payment details and history for each order so that I can assist users with payment issues and verify transactions.
+
+[Back to top](#table-of-contents)
+
+---
+
+## Wireframes
+The wireframes for the site were created in the software Balsamiq. The wireframes have been created for desktop, tablet, and mobile devices. The text content wasn't finalized during the wireframe process. It's also worth mentioning that there are some visual differences in the deployed version compared to the original wireframes, the reason being design choices that were made during the creation process.
+
+![Wireframes](readmeImages/homepage_wireframe.png)
+
+[Back to top](#table-of-contents)
+
+## Site Structure
+
+The Technical Skills Website is a project focused on providing users with a structured, user-friendly platform for finding and accessing technical courses tailored to their skill levels. Built with modern web technologies such as Django, JavaScript, and Bootstrap, it is designed to support learners, professionals, and organizations by offering a comprehensive catalog of curated courses.
+
+### **Key Features**
+
+- **Course Discovery:** An intuitive interface for browsing, searching, and filtering courses by categories and user preferences.
+- **Membership Access:** Registered members gain additional privileges like profile management, access to exclusive courses, and subscription management.
+- **Customizable User Profiles:** Members can update their profile details, manage subscriptions, and tailor their learning paths.
+- **Scalable and Responsive Design:** The website accommodates thousands of users and adjusts seamlessly to different devices, from desktops to mobile.
+- **Admin Dashboard:** Tools for content management, user monitoring, and ensuring platform functionality.
+
+### **Site Layout**
+
+The site follows a hierarchical structure with clear navigation, making it easy for users to find courses, access resources, and interact with community features.
+
+- **Non-Registered Users:** Can browse courses, view course details, and read user comments.
+- **Registered Members:** Gain access to the member area and profile page upon successful registration, can pay for a course, and can rate and comment on brought courses.
+
+### **Access for Members**
+
+To gain access to the member area and profile page, users must complete the registration and payment process. This process begins on the 'Sign Up' page, accessible from the dropdown menu or the navigation bar when the site is viewed on smaller screens.
+
+- **Payment System:** This is the sole point for accessing the payment system. If a user navigates away without completing the process, they must restart the procedure.
+- **Post-Payment Access:** Once payment is successfully processed, a Member account receives the purchased course. Members can then access the Member Area and Profile Page.
+
+### **Member Features**
+
+Members can:
+
+- View and update their profile.
+- Modify their email address or password.
+- Manage subscriptions (while this feature is not expected to be heavily used, it adds convenience).
+
+The platform also supports future enhancements such as multilingual content, event registration, and gamification to improve engagement.
+
+[Visit the live site here.](https://technical-skills-12c3cb7561cc.herokuapp.com/)
+
+[Back to top](#table-of-contents)
+
+---
+
+## Design Choices
+
+### Typography
+
+- **Headings:** Montserrat, chosen for its professional and modern appeal.
+- **Body Text:** Open Sans, selected for readability on all devices.
+
+### Colour Scheme
+
+- **Primary Color:** Blue - symbolizes trust and expertise.
+- **Secondary Color:** White - ensures a clean and approachable design.
+- **Accent Color:** Green - highlights actions and important elements.
+
+![color palatte](readmeImages/palette-color.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+## Business Model
+
+### Target Audience
+
+- **Primary Users:** Individuals seeking technical skill development, including students, professionals, and hobbyists.
+- **Secondary Users:** Employers and organizations interested in upskilling employees through curated courses.
+
+### Value Proposition
+
+- **For Learners:** A centralized platform offering tailored recommendations to guide users in finding courses aligned with their skill level, learning goals, and career aspirations.
+- **For Organizations:** A resource for focused technical training and employee development.
+
+### Revenue Streams
+
+  1. **Course Sales:** Revenue from one-time purchases or subscriptions.
+  2. **Featured Listings:** Paid promotions for course providers.
+  3. **Corporate Partnerships:** Customized packages for organizations.
+  4. **Affiliate Links:** Commissions earned through partnerships with external educational platforms.
+
+### **Cost Structure**
+
+- Platform development and maintenance.
+- Marketing and outreach campaigns.
+- Customer support services.
+
+### **Key Partners**
+
+- **Course Providers:** Subject matter experts and institutions.
+- **Tech Platforms:** Payment processors and analytics tools.
+- **Affiliate Partners:** External platforms offering complementary courses.
+
+### **Channels**
+
+- **Web Platform:** Main interface for course browsing and participation.
+- **Email Marketing:** Personalized recommendations and updates.
+- **Social Media:** Community engagement and course promotions.
+
+---
+
+## **Features**
+
+Our platform is a simple and efficient e-learning marketplace built with Django, allowing users to explore, purchase, and enroll in courses. Below are the key features:
+
+---
+
+### Header
+
+The header provides users with easy navigation and access to key features of the platform.
+
+#### Features:
+- **Logo:** A clickable logo that redirects to the homepage.
+- **Dropdown Menus:** 
+  - **Categories:** Allows users to browse courses by specific categories.
+  - **Sort:** Enables users to sort courses based on criteria like price, popularity, or ratings.
+- **Search Bar:** A quick way for users to search for courses by keywords.
+- **Shopping Cart:** Displays items added to the cart and links to the checkout page.
+- **Account Options:** 
+  - **Login/Register:** Links for users to log in or register.
+  - **User Profile:** Access to the user dashboard for logged-in users.
+
+#### Preview:
+![Header](readmeImages/header.png)
+
+[Back to top](#table-of-contents)
+
+### 1. User Authentication and Authorization
+- **Secure Registration, Login, and Logout:** Robust user authentication for a secure experience.
+- **Role-Based Permissions:** Separate access levels for regular users and admins.
+- **Password Reset and Email Verification:** Users can reset forgotten passwords securely.
+  
+![Login](readmeImages/login.png)  
+![Logout](readmeImages/logout.png)  
+![Password Reset](readmeImages/profile.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### 2. Course Management
+- **Admin Dashboard:** Manage courses, including creating, updating, and deleting.
+- **Categorization:** Organize courses into categories for easier discovery.
+- **Detailed Course View:** Includes title, description, and cover image.  
+
+![Course Management](readmeImages/admin-course-management.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### 3. Course Category and Search
+- **Organized Catalog View:** Browse courses by category and use filters for a tailored experience.
+- **Search Functionality:** Quickly find courses using keywords.
+  
+![Categories](readmeImages/categories.png)  
+![Search](readmeImages/search-categories.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### 4. Shopping Cart and Checkout
+- **Add/Remove Courses:** Easily manage selected courses in your shopping cart.
+- **Secure Payment:** Integrated with Stripe for real-time payment processing.
+
+![Cart Items](readmeImages/cart-addup.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### 5. Order History and Enrollment
+- **View Past Orders:** Access order history and download receipts.
+- **Purchased Courses:** Easy access to all purchased content.
+
+![Order History](readmeImages/orders.png)
+![my learning profile](readmeImages/myLearningCourses.png)
+![course to learn](readmeImages/MyCourse.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### 6. Admin Panel for Content and User Management
+- **Content Management:** Tools for managing courses, users, orders, and enrollments.
+- **Sales and Analytics:** Monitor platform performance directly from the admin dashboard.
+
+![Course Management](readmeImages/course-management.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### 7. Security and Privacy
+- **Environment Variable Management:** Protect sensitive data like SECRET_KEY and API keys.
+- **Secure Payment Handling:** Uses Stripe for safe and reliable transactions.
+
+![Password Reset](readmeImages/profile.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+## **Step-by-Step User Actions**
+
+### Registering a New Account
+1. Go to the **Register Page**.  
+2. Fill in the required details (username, email, password).  
+3. Submit the form and verify your email to activate your account.  
+
+![Register Form](readmeImages/registerForm.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### Logging In
+1. Navigate to the **Login Page**.  
+2. Enter your registered email and password.  
+3. Upon successful login, you will be redirected to the homepage.  
+
+![Login](readmeImages/login.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### Browsing Courses
+- Browse available courses from the homepage.  
+- Filter courses by category or search for specific ones using keywords.  
+
+![Search by Keywords](readmeImages/search-words.png)  
+![All Courses](readmeImages/all-products.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### Viewing Course Details
+- Click on a course card to view details.  
+- The tooltip provides a description, price, and an option to add the course to your cart.  
+
+![Product Details](readmeImages/product-detail.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### Adding Courses to the Shopping Cart
+- From the course detail page, click **Add to Cart**.  
+- Access your shopping cart anytime from the navigation bar.  
+
+[Back to top](#table-of-contents)
+
+---
+
+### Managing the Shopping Cart
+- Review and manage selected courses in your cart.  
+- Remove unwanted courses or adjust quantities.  
+
+![Add to Cart](readmeImages/item-added-to-cart.png)  
+![Remove from Cart](readmeImages/delete-from-cart.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### Checking Out and Making a Payment
+1. Once your cart is ready, click **Checkout**.  
+2. Enter payment details on the secure Stripe page.  
+3. Complete the purchase and receive a confirmation page.  
+4. **Note:** Use Stripe test card `4242 4242 4242 4242` for testing purposes.  
+
+![Stripe Payment](readmeImages/paying-items.png)  
+![Payment Confirmation](readmeImages/payed-item.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### Viewing Order History
+- Navigate to **My Account** and select **Order History** to view all purchased courses.
+
+[Back to top](#table-of-contents)
+
+---
+
+### Admin Features (Admin Users Only)
+- **Admin Dashboard:** Tools to create, edit, and delete courses.  
+- **User Management:** Monitor user activity and manage permissions.  
+
+![Create Course](readmeImages/create-course.png)
+![Edit/Delete Course](readmeImages/edit-or-delete-course.png)
+
+[Back to top](#table-of-contents)
+
+### Social Links
+
+The platform actively engages with the community through social media for updates, course promotions, and user interaction.
+
+#### Features:
+- **Facebook:** Stay updated with our latest course offerings and promotions.
+- **Instagram:** Share and discover learning milestones and community stories.
+
+#### Previews:
+![Facebook](readmeImages/facebook-page.png)
+![Instagram](readmeImages/instagram.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### Error Page
+
+A custom **404 Error Page** is displayed when users try to access a broken or non-existent link. This page helps guide users back to the site's main sections.
+
+#### Features:
+- **Friendly Message:** A clear explanation of the error.
+- **Navigation Options:** Quick links to the homepage or other key sections.
+
+#### Preview:
+![Error 404](readmeImages/404.png)
+
+[Back to top](#table-of-contents)
+
+---
+
+### Footer
+
+The footer provides essential information and links, creating a consistent and polished user experience across all pages.
+
+#### Features:
+- **Copyright Notice:** Ensures legal compliance and branding.
+- **Newsletter Subscription:** Allows users to stay updated on new courses and promotions.
+- **Social Media Links:** Quick access to the platform’s social media accounts.
+
+#### Preview:
+![Footer](readmeImages/footer.png)
+
+[Back to top](#table-of-contents)
+
+---
+
 
 # Business Model
 # ![main](readmeImages/main.png)
@@ -90,131 +521,43 @@ To provide a well-organized and user-friendly platform that connects users with 
 	- **Google Ads & Retargeting**: Use Google Ads to reach users searching for technical courses and retarget site visitors who didn’t complete purchases.
 	- **Seasonal & Limited-Time Offers**: Run promotional campaigns around significant times like "Back to School" or "New Year, New Skill" campaigns to capitalize on users’ learning motivations.
 
-# Project Management
-This project was managed using GitHub's project management tools to ensure organized and efficient development. GitHub Projects and Issues were utilized to create a Kanban-style workflow, which allowed the team to track progress and prioritize tasks effectively. Each task or bug was represented as an "Issue," and labeled based on its type (e.g., "feature," "bug," "enhancement") for quick categorization.
-
-**The Kanban board** provided visibility into the project’s workflow by dividing tasks into stages, such as "To Do," "In Progress," and "Completed." This helped maintain an organized workflow, identify bottlenecks, and keep team members aligned on priorities.
-
-Using GitHub’s tools allowed for seamless version control and communication within the team, ensuring that every change was documented and linked to the relevant tasks, fostering transparency and accountability across the project.
-
-![Kanban board.](readmeImages/Kanban.png)
-
-# Database Schema
-
-This document outlines the database schema used in the e-learning Django project, describing each model and the relationships among them.
-
-## 1. Category Table
-
-- **Fields**:
-  - `id`: (Primary Key, Auto-generated by Django)
-  - `name`: Name of the category (CharField, max length 254)
-  - `description`: Description of the category (TextField)
-  
-- **Description**: Contains course categories to help organize and filter the courses on the platform.
-
-- **Relationships**:
-  - Each `Product` (course) has a foreign key to a single `Category`.
-
-## 2. Product Table
-
-- **Fields**:
-  - `id`: (Primary Key, Auto-generated by Django)
-  - `courseName`: Name of the course (CharField, max length 254)
-  - `instructor`: Name of the instructor (CharField, max length 254)
-  - `courseUrl`: URL for more course information (URLField, optional)
-  - `imageUrl`: URL to the course image (URLField, optional)
-  - `description`: Detailed description of the course (TextField)
-  - `category`: Foreign key to `Category` (on_delete=PROTECT, optional)
-  - `rating`: Course rating (DecimalField, max_digits=6, decimal_places=2, optional)
-  - `reviews`: Number of course reviews (IntegerField, optional)
-  - `duration`: Duration of the course in hours (DecimalField, max_digits=6, decimal_places=2)
-  - `lectures`: Number of lectures in the course (IntegerField, optional)
-  - `level`: Course difficulty level (CharField, max length 50)
-  - `price`: Course price (DecimalField, max_digits=10, decimal_places=2)
-  - `flag`: Boolean indicating whether the course is featured
-  - `students`: Number of enrolled students (IntegerField, optional)
-  
-- **Description**: Stores comprehensive details about each course offered.
-
-- **Relationships**:
-  - Each course belongs to a single `Category`.
-
-## 3. Cart Table
-
-- **Fields**:
-  - `id`: (Primary Key, Auto-generated by Django)
-  - `user`: Foreign key to `User` (on_delete=CASCADE, optional)
-  - `created_at`: Timestamp of when the cart was created (DateTimeField, auto_add_now)
-  
-- **Description**: Manages cart associations for users, storing temporary order data before checkout.
-
-- **Relationships**:
-  - Each cart has a one-to-many relationship with `CartItem`, linking multiple items to a single cart.
-
-## 4. CartItem Table
-
-- **Fields**:
-  - `id`: (Primary Key, Auto-generated by Django)
-  - `cart`: Foreign key to `Cart` (on_delete=CASCADE)
-  - `product`: Foreign key to `Product` (on_delete=CASCADE)
-  
-- **Description**: Stores individual items within each cart, associating products with a specific user’s cart.
-
-- **Relationships**:
-  - Each `CartItem` links a specific product to a cart.
-
-## 5. Order Table
-
-- **Fields**:
-  - `id`: (Primary Key, Auto-generated by Django)
-  - `user`: Foreign key to `User` (on_delete=PROTECT)
-  - `amount`: Total amount for the order (IntegerField)
-  - `stripe_id`: Stripe PaymentIntent ID for payment verification (CharField, max length 255)
-  - `status`: Status of the order (e.g., Pending, Completed, Canceled) (CharField, max length 20)
-  - `date`: Timestamp of when the order was created (DateTimeField, auto_add_now)
-  
-- **Description**: Stores completed orders with Stripe payment details and status.
-
-- **Relationships**:
-  - Each order has a one-to-many relationship with `OrderItems`, associating multiple purchased products with a single order.
-
-## 6. OrderItems Table
-
-- **Fields**:
-  - `id`: (Primary Key, Auto-generated by Django)
-  - `order`: Foreign key to `Order` (on_delete=PROTECT)
-  - `product`: Foreign key to `Product` (on_delete=PROTECT)
-  - `price`: Price at the time of purchase (IntegerField)
-  
-- **Description**: Logs the specific products purchased within each order, including price snapshots.
-
-- **Relationships**:
-  - Each `OrderItem` links a purchased product to an order, maintaining an association between items and orders.
+[Back to top](#table-of-contents)
 
 ---
 
-## Relationships Summary
+## Technologies Used
+### Main Language
+- Python Language
 
-- **One-to-Many**:
-  - Each `Category` can have multiple `Products`.
-  - Each `Cart` can contain multiple `CartItems`.
-  - Each `Order` can include multiple `OrderItems`.
+### Frameworks, Libraries & Programs
 
-- **Many-to-One**:
-  - Each `Product` belongs to a single `Category`.
-  - Each `OrderItem` and `CartItem` associates a single `Product` with an order or cart.
+- [**AmIResponsive**](https://ui.dev/amiresponsive) - the responsive preview image on different gadgets.
+- [**iloveimg**](https://www.iloveimg.com/) - to compress the images.
+- [**Google Fonts**](https://fonts.google.com/) site was used to pick the best typography style. The most importance was given to balance between style and readability. As a developer I needed to ensure that all text is displayed clear.
+- [**Schemas**](https://app.diagrams.net/) - to create database structure.
 
-This schema provides a scalable, relational data structure suited for an e-learning platform with courses, shopping carts, and an integrated payment system.
+- [**Django/Jinja**](https://docs.djangoproject.com/en/5.0/) - main Framework of the project
+- [**Python**](https://www.python.org/) - main BackEnd programming language of the project
+- [**HTML**](https://developer.mozilla.org/en-US/docs/Web/HTML) - templates programming language of this project (FrontEnd)
+- [**CSS**](https://developer.mozilla.org/en-US/docs/Web/CSS) - styling the project via external CSS file `./static/css/style.css`
+- [**Java Script**](https://developer.mozilla.org/en-US/docs/Web/JavaScript) - dynamic templates programming language of this project (FrontEnd)
+- [**jQuery**](https://api.jquery.com/) - API for JavaScript - dynamic templates programming language of this project (FrontEnd)
+- [**Bootstrap v. 5.**](https://getbootstrap.com/) - styling framework used in this project (FrontEnd)
+- [**Gitpod**](https://gitpod.com/) - online IDE - gitpod was used to create this project
+- [**Git**](https://git-scm.com/doc) - to make commitments of progress and push the results back to GitHub
+- [**GitHub**](https://github.com/) - to keep the track of version control
+- [**Heroku**](https://heroku.com) - to deploy this project
+- [**Google Fonts**](https://fonts.google.com/) - used for picking the best typography
+- [**PostgresSQL**](https://www.postgressql.com/) - used as a database storage
+- [**Cloudinary**](https://console.cloudinary.com/) - used as a storage of static files
+- [**FavIcon.io**](https://favicon.io/favicon-converter/) - used to compress favicon
+- [**W3Schools**](https://www.w3schools.com/) - useful information and cheat sheets
+- [**Google Fonts**](https://fonts.google.com/) site was used to pick the best typography style. The most importance was given to balance between style and readability. As a developer I needed to ensure that all text is displayed clear.
 
-![Models](readmeImages/tech_skills_model_diagram.png)
+[Back to top](<#table-of-contents>)
 
-# User Experience (UX)
-## Wireframes
-The wireframes for the site were created in the software Balsamiq. The wireframes have been created for desktop, tablet and mobile devices. The text content wasn't finalized during the wireframe process. It's also worth mentioning that there are some visual differences in the deployed version compared to the original wireframes, the reason being design choices that was made during the creation process.
-
-![Wireframes](readmeImages/homepage_wireframe.png)
-
-# User Stories
+# Testing
+## User Stories testing
 Below the user stories for the project are listed to clarify why particular feature matters. These will then be tested and confirmed in the Testing section.
 
 ## 1. User Registration and Authentication
@@ -253,8 +596,9 @@ Below the user stories for the project are listed to clarify why particular feat
   - As a user, I want to receive a notification upon completing a purchase so that I’m immediately aware of my successful order.
   - As a user, I want an emailed receipt and access to my invoice details so that I have a permanent record of my transaction.
 
+[Back to top](<#table-of-contents>)
 
-# Admin User Stories
+## Admin User Stories Testing
 ## 1. Course Management
   - As an admin, I want to create, update, and delete courses, so that I can keep the course offerings current and relevant for users.
   - As an admin, I want to categorize courses, so that users can easily find courses in specific areas of interest.
@@ -268,78 +612,62 @@ Below the user stories for the project are listed to clarify why particular feat
   - As an admin, I want to update the status of orders (e.g., processing, completed), so that I can ensure all orders are correctly tracked.
   - As an admin, I want to view payment details and history for each order, so that I can assist users with payment issues and verify transactions.
 
-# Features
-Our platform is a simple and efficient e-learning marketplace built with Django, allowing users to explore, purchase, and enroll in courses. Key features include:
+[Back to top](<#table-of-contents>)
 
-## 1. User Authentication and Authorization
-  - Secure registration, login, and logout system.
-  - Role-based permissions for admins, staff, and regular users.
-  - Password reset and email verification.
-## 2. Course Management
-  - Admin dashboard: Create, update, and delete courses easily from the admin panel.
-  - Categorization: Assign courses to categories, helping users discover courses by topic or area of interest.
-  - Course details: Each course includes a title, description, and cover image to provide users with a course overview.
-## 3. Course Catalog and Search
-  - Browse courses in an organized catalog view with filters by category and search functionality.
-  - Display course details, including title, description, price, and ratings, to assist users in making informed decisions.
-## 4. Shopping Cart and Checkout
-  - Add multiple courses to a shopping cart before purchasing.
-  - Remove items from cart.
-  - Checkout and Payment Integration: Integrated with Stripe for secure, real-time payment processing.
-## 5. Order History and Enrollment
-  - View past orders and receipts for courses purchased.
-  - Allowing users to easily view purchased courses.
-## 6. Admin Panel for Content and User Management
-  - Access to an admin dashboard where admins can:
-  - Manage courses, users, orders, and enrollments.
-  - View sales and analytics to monitor platform performance.
-## 7. Responsive Design
-  - Fully responsive UI for optimal viewing across devices, including mobile, tablet, and desktop.
-## 8. Security and Privacy
-  - Environment variable management for sensitive data (e.g., SECRET_KEY, Stripe API keys).
-  - Secure user data handling with hashed passwords and secure payment processing via Stripe.
+## Responsiveness Test
+The responsive design tests were carried out manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Responsive Design](https://ui.dev/amiresponsive).
+Tested across devices and browsers for seamless functionality and appearance.  
+- **Devices:** Desktop, tablet, and various mobile devices  
 
-# Usage
-The platform allows users to register, browse, purchase, and enroll in courses. Below are step-by-step instructions for using the main features:
 
-## 1. Registering a New Account
-# ![register](readmeImages/registerForm.png)
-  - Go to the Register page.
-  - Fill out the required details (username, email, password) and submit the form.
-  - Check your email for a verification link (if email verification is enabled) and complete the verification to activate your account.
-## 2. Logging In
-# ![login](readmeImages/login.png)
-  - Navigate to the Login page.
-  - Enter your registered email and password.
-  - Upon successful login, you will be redirected to the homepage.
-## 3. Browsing Courses
-  - From the homepage, you can browse all available courses or filter by category to find courses that match your interests.
-  - Use the search bar to look up specific courses by title or keyword.
-## 4. Viewing Course Details
-  - Click on any course card to open its tooltip.
-  - The tooltip enables you to add the course to cart or view the course details.
-  - Here, you can find a course description, price, and image preview.
-  - If you’re interested, you can add the course to your shopping cart.
-## 5. Adding Courses to the Shopping Cart
-  - On a course's detail page, click Add to Cart to add it to your shopping cart.
-  - You can view your shopping cart at any time by clicking the cart icon in the navigation bar.
-## 6. Managing the Shopping Cart
-  - In the cart, you can:
-    - Remove courses if you no longer wish to purchase them.
-    - Review your total before proceeding to checkout.
-## 7. Checking Out and Making a Payment
-  - Once your cart is ready, click on Checkout.
-  - You will be redirected to a secure checkout page integrated with Stripe.
-  - Enter your payment details and complete the payment.
-  **Note**: For testing purposes, you can use the Stripe test card number 4242 4242 4242 4242 with any valid expiration date and CVC code.
-  - After payment, you will be redirected to a confirmation page.
-## 8. Viewing Order History
-  - Once logged in, go to My Account and navigate to the Order History section to view a list of all courses you’ve purchased.
-## 9. Admin Features (For Admin Users Only)
-  - Admin users can log into the Admin Dashboard to manage courses, users, and orders.
-  - Admins have access to additional features, including:
-    - Adding, updating, or removing courses.
-    - Viewing user accounts and order details.
+| Desktop    | Display > 1280px      | Display < 1280px   |
+|------------|-----------------------|--------------------|
+| Render     | pass                  | pass               |
+| Links      | pass                  | pass               |
+| Images     | pass                  | pass               |
+
+| Tablet     | Samsung Galaxy Tab 10 | Amazon Kindle Fire | iPad Mini | iPad Pro |
+|------------|-----------------------|--------------------|-----------|----------|
+| Render     | pass                  | pass               | pass      | pass     |
+| Links      | pass                  | pass               | pass      | pass     |
+| Images     | pass                  | pass               | pass      | pass     |
+
+| Phone      |Galaxy S5/S6/S7/S20+   | iPhone 6/7/8/ plus | iPhone 14pro max     |
+|------------|-----------------------|--------------------|----------------------|
+| Render     | pass                  | pass               | pass      | pass     |
+| Links      | pass                  | pass               | pass      | pass     |
+| Images     | pass                  | pass               | pass      | pass     |
+
+[Back to top](<#table-of-contents>)
+
+## Browser Compatibility Testing
+`Technical skills` blog was tested for functionality and appearance in the following browsers on desktop. No visible or funcional issues on all 
+the browsers below.
+- **Browsers:** Chrome, Firefox, Edge
+
+[Back to top](<#table-of-content>)
+
+# Testing
+
+- Lighthouse testing: ![Performance diagnodtics](readmeImages/lighthouse.png)
+  
+## Validator Testing
+
+- [HTML Checker](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftechnical-skills-12c3cb7561cc.herokuapp.com%2F)
+
+  ![HTML checker](readmeImages/html-validator.png)
+  - There are no errors but 4 footer h1 warnings found but if changed it could look smaller.
+
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+
+  ![CSS results](readmeImages/css-Validator.png)
+  - There are no errors but 30 warnings found due to django framework.
+
+-
+- [Web Accessibility Evaluation Tool Validator](https://wave.webaim.org/report#/https://technical-skills-12c3cb7561cc.herokuapp.com/)
+  ![WebAim](readmeImages/wave.png)
+   - There are no errors or alerts bur 3 contrast errors found due to boostrap.
+
 
 # Deployment
 
@@ -412,6 +740,7 @@ Follow these steps to deploy the Technical Skills course platform on **Heroku**.
      STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
      ```
 
+[Back to top](<#table-of-contents>)
 ---
 
 ### Deploying to Heroku
@@ -478,17 +807,78 @@ Follow these steps to deploy the Technical Skills course platform on **Heroku**.
   ```bash
   heroku logs --tail
   ```
+[Back to top](<#table-of-contents>)
 
-## Credits
+## **Credits**
 
-- [Dave Gray's](https://youtu.be/Rp5vd34d-z4?si=Iau1px_g565k1H3y)
-- [Code Institute](https://codeinstitute.net/)
-- [iloveimg](https://www.iloveimg.com/) for image compression
-- [Django](https://www.djangoproject.com/)
-- [Pexels](https://www.pexels.com/) for images
-- [Stack Overflow](https://stackoverflow.com/) for coding solutions
-- [Mentor: Precious Ijege](#)
+### **Content**
+
+Written and curated by the Technical Skills developer.
+
+---
+
+### **Media**
+
+- [Pexels](https://www.pexels.com/) Images sourced under proper permissions.
+- [iloveimg](https://www.iloveimg.com/)Image compression.
+
+---
+
+### **Frameworks and Tools**
+
+- **HTML5**: Core structure and semantics of the website.
+- **Bootstrap 5**: Used for responsive design, grid layout, navigation bar, modals, and other components.
+  - [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/)
+  - Customizations applied for color schemes, typography, and UI elements.
+- **Django Framework**: Backend logic, database management, and API integration.
+  - [Django Documentation](https://www.djangoproject.com/)
+  - [Django Admin Site](https://docs.djangoproject.com/en/5.0/ref/contrib/admin/) for superuser interface setup.
+  - [Django Model `__str__`](https://docs.djangoproject.com/en/5.0/ref/models/instances/) for managing model string representations.
+  - [Django Templates](https://docs.djangoproject.com/en/5.0/topics/templates/) for template rendering.
+  - [Django Time Zone Support](https://docs.djangoproject.com/en/5.0/topics/i18n/) for internationalization settings.
+  - [Django Password Validation](https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators) for authentication security.
+- **JavaScript & jQuery**:
+  - [jQuery Post API](https://api.jquery.com/jQuery.post/) for handling AJAX requests.
+  - Dynamic form submission using [Ajax Form Submission Guide](https://youtu.be/KgnPSmrQrXI?si=Y1Whk2AATEYZB1Dz).
+- **FontAwesome**: Icons for navigation and interactive components.
+  - [FontAwesome Documentation](https://fontawesome.com/)
+- **CSS3**: Custom styles to enhance the Bootstrap 5 components.
+- **Color Contrast Checker**: Ensured color scheme accessibility using [Color Contrast Checker](https://color.a11y.com/Contrast/).
+
+[Back to top](<#table-of-contents>)
+---
+
+### **Acknowledgements**
+
+The application **Technical Skills** was developed as Portfolio Project 5 for the Full Stack Software Development Diploma at the [Code Institute](https://codeinstitute.net/).
+
+#### Special Thanks:
+
+- **Mentor**: Precious Ijege for providing valuable feedback and guidance throughout the project.
+- [Dave Gray's YouTube Channel](https://youtu.be/Rp5vd34d-z4?si=Iau1px_g565k1H3y) for tutorial support and additional insights.
+- [Code Institute](https://codeinstitute.net/) for offering comprehensive resources for software development.
+- [Stack Overflow](https://stackoverflow.com/) for solutions to coding challenges and community support.
+
+---
+
+### **Documentation and Tutorials**
+
+- [GeeksforGeeks Jinja Tutorial](https://www.geeksforgeeks.org/jinja-for-server-side-rendering-in-django/) for Jinja templating techniques.
+- [Bootstrap 5 Components](https://getbootstrap.com/docs/5.0/components/) for creating a responsive design.
+- [User Authentication Guide](https://youtu.be/WuyKxdLcw3w?si=a_-3HyADtu5sblOR) for secure user management.
+
+---
+
+### **Testing and Development Tools**
+
+- **Browser Compatibility Testing**: Verified performance on Chrome, Firefox, and Edge.
+- **Responsiveness Testing**: Ensured seamless performance on desktops, tablets, and mobile devices.
+- **Version Control**: Managed using Git and GitHub for consistent code updates and collaboration.
+
+---
 
 ## Developed
-- Elsie Nagawa
-- 29.12.2024
+  - *[Elsie Nagawa ](https://github.com/EIN-1/justask)
+  - 29.12.2024
+
+  [Back to top](<#table-of-contents>) 
