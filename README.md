@@ -819,8 +819,10 @@ Written and curated by the Technical Skills developer.
 
 ### **Media**
 
-- [Pexels](https://www.pexels.com/) Images sourced under proper permissions.
-- [iloveimg](https://www.iloveimg.com/)Image compression.
+- [Pexels](https://www.pexels.com/): Images sourced under proper permissions.
+- [iloveimg](https://www.iloveimg.com/): Used for image compression.
+- [Kaggle](https://www.kaggle.com/datasets/yusufdelikkaya/udemy-online-education-courses): Provided JSON file data for course information.
+- [csvjson](https://csvjson.com/csv2json): Tool for converting CSV files to JSON format.
 
 ---
 
@@ -843,7 +845,8 @@ Written and curated by the Technical Skills developer.
 - **FontAwesome**: Icons for navigation and interactive components.
   - [FontAwesome Documentation](https://fontawesome.com/)
 - **CSS3**: Custom styles to enhance the Bootstrap 5 components.
-- **Color Contrast Checker**: Ensured color scheme accessibility using [Color Contrast Checker](https://color.a11y.com/Contrast/).
+- **Color Contrast Checker**: Ensured color scheme accessibility using [Coolors](https://coolors.co/contrast-checker/112a46-acc8e5).
+- **Color schema**: [color palette](https://coolors.co/ffc107-0dcaf0-ffffff-dc3545-198754)
 
 [Back to top](<#table-of-contents>)
 ---
